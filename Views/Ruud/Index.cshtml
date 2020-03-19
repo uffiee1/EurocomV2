@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    
+   
+}
+
+    <div class="text-center">
+        <h1 style ="padding-top:5%"class="display-4">Welkom</h1>
+
+        <div >
+            <input id="Button1" type="button" value="overeenkomst" style="background-color:transparent;  height: 100px; width: 150px; font-size: 20px;" onclick="location.href = '@Url.Page("overeenkomst")'" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="Button1" type="button" value="log uit" style="background-color:transparent;  height: 100px; width: 100px; font-size: 30px;" onclick="location.href = '@Url.Page("login")'" />
+        </div>
+
+        
+
+        <div style=" padding-top: 15%">
+            <input id="Button1" type="button" value="status" style="background-color:transparent;  height: 200px; width: 200px; font-size: 30px;" onclick="location.href = '@Url.Page("status")'" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="Button1" type="button" value="accgegevens" style="background-color:transparent;  height: 200px; width: 200px; font-size: 30px;" onclick="location.href = '@Url.Page("accgegevens")'" />
+        </div>
+
+    </div>
+    
+
+
