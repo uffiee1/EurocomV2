@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using EurocomV2.Models;
+using EurocomV2.Models.Classes;
 
 namespace EurocomV2.Controllers
 {
@@ -20,34 +21,37 @@ namespace EurocomV2.Controllers
         [HttpPost]
         public IActionResult Status(StatusViewModel model)
         {
+            Random rnd = new Random();
+            double inrValue = rnd.NextDouble(1.0, 5.0);
+
+            inrValue = Math.Round(inrValue, 1);
+
+            SqlCommand insertIntoTable = new SqlCommand("UPDATE PatientStatus SET IR = @IR WHERE @userID = userID", sqlConnection);
+            insertIntoTable.CommandType = CommandType.Text;
+            insertIntoTable.Parameters.AddWithValue("@userID", model.userID);
+            insertIntoTable.Parameters.AddWithValue("@IR", inrValue);
             SqlCommand checkStatus = new SqlCommand("CheckStatus", sqlConnection);
             checkStatus.CommandType = CommandType.StoredProcedure;
             checkStatus.Parameters.AddWithValue("@userID", model.userID);
-            SqlParameter IR = new SqlParameter();
-            IR.ParameterName = "IR";
-            IR.Direction = ParameterDirection.Output;
-            IR.SqlDbType = SqlDbType.Int;
-            checkStatus.Parameters.Add(IR);
             sqlConnection.Open();
+            insertIntoTable.ExecuteNonQuery();
             checkStatus.ExecuteNonQuery();
-            int irReader = Convert.ToInt32(IR.Value);
             sqlConnection.Close();
 
-            switch (irReader)
+
+            if (inrValue > 0 && inrValue < 2)
             {
-                case 1:
-                    ViewBag.Status = "Perfect!";
-                    break;
-                case 2:
-                    ViewBag.Status = "Goed";
-                    break;
-                case 3:
-                    ViewBag.Status = "Goed";
-                    break;
-                default:
-                    ViewBag.Status = "Zie eventueel een huisarts";
-                    break;
+                ViewBag.Status = "Perfect! Uw INR Waarde is " + inrValue;
             }
+            else if (inrValue >= 2 && inrValue <= 3)
+            {
+                ViewBag.Status = "Goed! Uw INR Waarde is " + inrValue;
+            }
+            else
+            {
+                ViewBag.Status = "Ga misschien langs bij uw huisarts, uw INR Waarde is " + inrValue;
+            }
+
             return View();
         }
     }
