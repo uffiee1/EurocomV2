@@ -8,5 +8,12 @@
     min-height: 400px;
     background-color: transparent;
     text-align: center;
-    font-size: 90px;
+    font-size:large;
+}
+
+.test {
+    min-height: 400px;
+    background-color: transparent;
+    text-align: center;
+    font-size: 60px;
 }
