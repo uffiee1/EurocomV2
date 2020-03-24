@@ -126,8 +126,10 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\ru\Micro
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.Views.pdb
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CopyComplete
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache

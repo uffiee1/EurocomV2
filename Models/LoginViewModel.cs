@@ -28,7 +28,7 @@ namespace EurocomV2.Models
             set { _Password = value; }
         }
 
-        [Display(Name = "Remember Me")]
+        [Display(Name = "Onthoud mijn E-mail adres")]
         public bool Remember
         {
             get { return this._Remember; }
