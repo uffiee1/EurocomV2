@@ -15,26 +15,23 @@ namespace EurocomV2.Controllers
         SqlConnection sqlConnection = new SqlConnection("server = (LocalDB)\\MSSQLLocalDB; database = EurocomJulian; Trusted_Connection = true; MultipleActiveResultSets = True");
         public IActionResult Status()
         {
-            return View();
-        }
 
-        [HttpPost]
-        public IActionResult Status(StatusViewModel model)
-        {
+
+
             Random rnd = new Random();
             double inrValue = rnd.NextDouble(1.0, 5.0);
 
             inrValue = Math.Round(inrValue, 1);
 
-            SqlCommand insertIntoTable = new SqlCommand("UPDATE PatientStatus SET IR = @IR WHERE @userID = userID", sqlConnection);
-            insertIntoTable.CommandType = CommandType.Text;
-            insertIntoTable.Parameters.AddWithValue("@userID", model.userID);
-            insertIntoTable.Parameters.AddWithValue("@IR", inrValue);
+            SqlCommand updateStatus = new SqlCommand("UPDATE PatientStatus SET IR = @IR WHERE @userID = userID", sqlConnection);
+            updateStatus.CommandType = CommandType.Text;
+            updateStatus.Parameters.AddWithValue("@userID", TempData["SelectedUser"]);
+            updateStatus.Parameters.AddWithValue("@IR", inrValue);
             SqlCommand checkStatus = new SqlCommand("CheckStatus", sqlConnection);
             checkStatus.CommandType = CommandType.StoredProcedure;
-            checkStatus.Parameters.AddWithValue("@userID", model.userID);
+            checkStatus.Parameters.AddWithValue("@userID", TempData["SelectedUser"]);
             sqlConnection.Open();
-            insertIntoTable.ExecuteNonQuery();
+            updateStatus.ExecuteNonQuery();
             checkStatus.ExecuteNonQuery();
             sqlConnection.Close();
 
@@ -53,6 +50,6 @@ namespace EurocomV2.Controllers
             }
 
             return View();
+
         }
     }
-}

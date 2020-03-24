@@ -137,3 +137,4 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.View
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Status\Status.cshtml.g.cs
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Mockup\Login.cshtml.g.cs
