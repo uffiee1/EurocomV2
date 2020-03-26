@@ -2,18 +2,26 @@
 @model accgegevensModel
 @{
     ViewData["Title"] = "Account gegevens";
+    connectionstring Connectionstring = new connectionstring();
+    Connectionstring.Main();
+    int personOrId = 0; //uiteindelijk gwn het gewenste id - 1
+    string FirstName = "voornaam: " + Connectionstring.FirstName[personOrId];
+    string LastName = "achternaam: " + Connectionstring.LastName[personOrId];
+    string number = "telefoonnummer: " + Connectionstring.Number[personOrId];
+    string doctor = "huisarts: " + Connectionstring.Doctor[personOrId];
+    string numberdoctor = "nummer huisarts: " + Connectionstring.NumberDoctor[personOrId];
 }
 
     <div class="text-center">
         <h1 style="padding-top:5%">@ViewData["Title"]</h1>
 
-        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">voornaam:(opvragen database)<br><br>achternaam:(opvragen database)<br><br>telefoonnummer:(opvragen database)<br><br>huisarts:(opvragen database)<br><br>telefoonnummer huisarts:(opvragen database)</p>
+        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">@FirstName<br><br>@LastName<br><br>@number<br><br>@doctor<br><br>@numberdoctor</p>
     </div>
 
     <div class="text-center">
         <h1 style="padding-top:5%">Contactpersonen</h1>
 
-        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">(naam persoon) (nummer)<br><br>(naam persoon) (nummer)<br><br>(naam persoon) (nummer)
+        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">(naam persoon) (nummer)<br><br>(naam persoon) (nummer)<br><br>(naam persoon) (nummer)</p>
 
     </div>
     
