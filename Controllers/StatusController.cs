@@ -53,19 +53,22 @@ namespace EurocomV2.Controllers
             updateStatus.ExecuteNonQuery();
             checkStatus.ExecuteNonQuery();
             sqlConnection.Close();
-
+  
 
             if (inrValue > 0 && inrValue < 2)
             {
                 ViewBag.Status = "Perfect! Uw INR Waarde is " + inrValue;
+                TempData["Statusicon"] = "Perfect";
             }
             else if (inrValue >= 2 && inrValue <= 3)
             {
                 ViewBag.Status = "Goed! Uw INR Waarde is " + inrValue;
+                TempData["Statusicon"] = "Goed";
             }
             else
             {
                 ViewBag.Status = "Ga misschien langs bij uw huisarts, uw INR Waarde is " + inrValue;
+                TempData["Statusicon"] = "Slecht";
             }
 
             return View();

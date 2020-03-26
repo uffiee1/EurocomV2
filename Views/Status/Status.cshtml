@@ -3,21 +3,35 @@
 @{
     ViewData["Title"] = "Status";
 }
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <h1>Status</h1>
 
 <h4>StatusViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-            <p>@ViewBag.Status</p>
+        <p>@ViewBag.Status</p>
+        @switch (TempData["Statusicon"])
+        {
+            case "Perfect":
+                <span class="glyphicon glyphicon-ok-sign"></span>
+                break;
+            case "Goed":
+                <span class="glyphicon glyphicon-minus-sign"></span>
+                break;
+            case "Slecht":
+                <span class="glyphicon glyphicon-remove-sign"></span>
+                break;
+            default:
+                break;
+        }
     </div>
-</div>
+        </div>
 
-<div>
-    <a asp-action="Login" asp-controller="Mockup">Back to Login</a>
-</div>
+        <div>
+            <a asp-action="Login" asp-controller="Mockup">Back to Login</a>
+        </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
