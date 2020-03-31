@@ -11,20 +11,7 @@
 <div class="row">
     <div class="col-md-4">
         <p>@ViewBag.Status</p>
-        @switch (TempData["Statusicon"])
-        {
-            case "Perfect":
-                <span class="glyphicon glyphicon-ok-sign"></span>
-                break;
-            case "Goed":
-                <span class="glyphicon glyphicon-minus-sign"></span>
-                break;
-            case "Slecht":
-                <span class="glyphicon glyphicon-remove-sign"></span>
-                break;
-            default:
-                break;
-        }
+
     </div>
         </div>
 

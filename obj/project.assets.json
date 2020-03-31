@@ -6412,7 +6412,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rense\\.nuget\\packages\\": {},
+    "C:\\Users\\Julia\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -6428,7 +6428,7 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rense\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
