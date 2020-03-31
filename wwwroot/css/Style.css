@@ -14,7 +14,6 @@
         color: white;
         font-size: 5vw;
         font-weight: bold;
-        min-height: 50vw;
     }
     .button {
         background-color: lightskyblue;
@@ -59,7 +58,6 @@
         color: white;
         font-size: 3.5vw;
         font-weight: bold;
-        min-height: 20vw;
     }
     .button {
         background-color: lightskyblue;
