@@ -12,15 +12,15 @@ namespace EurocomV2.Models
         private string _Password;
         private bool _Remember;
 
-        [Required]
-        [EmailAddress]
+        [Display(Name ="Email ID")]
+        [Required(AllowEmptyStrings =false, ErrorMessage ="Email ID required")]
         public string Email
         {
             get { return this._Email; }
             set { _Email = value; }
         }
 
-        [Required]
+        [Required(AllowEmptyStrings =false, ErrorMessage ="Password required")]
         [DataType(DataType.Password)]
         public string Password
         {
