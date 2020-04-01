@@ -63,6 +63,7 @@ namespace EurocomV2.Controllers
             return View();
         }
 
+        //Registration POST action 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Registration(User Account)

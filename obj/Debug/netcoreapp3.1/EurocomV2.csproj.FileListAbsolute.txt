@@ -441,3 +441,6 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\Ubiety.D
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache

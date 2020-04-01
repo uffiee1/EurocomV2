@@ -28,7 +28,7 @@ namespace EurocomV2
         {
             //This is for a Identity Check.
             services.AddControllersWithViews();
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EUCOM")));
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("eurocomdb")));
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
