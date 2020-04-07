@@ -16,7 +16,7 @@ namespace EurocomV2.Models
 
         public System.DateTime DateOfBirth { get; set; }
 
-        //Could have [To-Do]
+        //Could have [To-Do ]
         public System.Guid ActivationCode { get; set; }
 
 

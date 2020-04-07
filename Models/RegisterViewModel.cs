@@ -25,7 +25,7 @@ namespace EurocomV2.Models
         private string _Password;
         private string _ConfirmPassword;
         private DateTime _DateOfBirth;
-
+         
 
         [Display(Name ="Name")]
         [Required(AllowEmptyStrings = false, ErrorMessage ="First Name required")]

@@ -32,7 +32,7 @@ namespace EurocomV2.Models
         public bool Remember
         {
             get { return this._Remember; }
-            set { _Remember = value; }
+            set { _Remember = value; } 
         }
     }
 }

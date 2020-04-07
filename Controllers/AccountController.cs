@@ -22,7 +22,9 @@ namespace EurocomV2.Controllers
             this.signInManager = signInManager;
         }
 
-        //Logout
+    /// <summary>
+    /// Logout button by header section
+    /// </summary>
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> Logout()
@@ -54,7 +56,7 @@ namespace EurocomV2.Controllers
             }
 
             return View(model);
-        }
+        } 
 
         //Registration Action
         [HttpGet]
@@ -99,22 +101,22 @@ namespace EurocomV2.Controllers
                 Account.IsEmailVerified = false;
 
 
-                #region Save to Database
+                //#region Save to Database
 
                 //MySqlConnection conn = new MySqlConnection();
                 //MySqlDataAdapter adapter = new MySqlDataAdapter();
 
                 //using (MySqlConnection dc = new MySqlConnection())
                 //{
-                //    dc.Users.Add(Account);
+                //    dc.User.Add(Account);
 
                 //    //Send Email to User
                 //    SendVerificationLinkEmail(Account.EmailID, Account.ActivationCode.ToString());
-                //    message = "Registration successfully done. Account activation link " + 
+                //    message = "Registration successfully done. Account activation link " +
                 //              " has been sent to your email id:" + Account.EmailID;
                 //    Status = true;
                 //}
-                #endregion
+                //#endregion
             }
             else
             {
@@ -138,9 +140,9 @@ namespace EurocomV2.Controllers
         //    var fromEmailPassword = "********"; // Replace with actual password
         //    string subject = "Your account is successfully created!";
 
-        //    string body = "<br/><br/>We are excited to tell you that your Dotnet Awesome account is" + 
-        //                  " successfully created. Please click on the below link to verify your account" + 
-        //                  " <br/><br/><a href='"+link+"'>"+link+"</a> ";
+        //    string body = "<br/><br/>We are excited to tell you that your Dotnet Awesome account is" +
+        //                  " successfully created. Please click on the below link to verify your account" +
+        //                  " <br/><br/><a href='" + link + "'>" + link + "</a> ";
         //}
 
         [NonAction]
