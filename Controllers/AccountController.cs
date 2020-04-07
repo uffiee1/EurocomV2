@@ -13,12 +13,13 @@ namespace EurocomV2.Controllers
 {
     public class AccountController : Controller
     {
-
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> signInManager;
 
         public AccountController(UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager)
         {
+            this._userManager = userManager;
             this.signInManager = signInManager;
         }
 

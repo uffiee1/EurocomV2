@@ -27,7 +27,7 @@ using EurocomV2.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\Julia\Documents\GitHub\EurocomV2\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
