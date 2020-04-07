@@ -1,7 +1,7 @@
 ﻿@page
 @model accgegevensModel
 @{
-    ViewData["Title"] = "Account gegevens";
+    // ViewData["Title"] = "Account gegevens";
     connectionstring Connectionstring = new connectionstring();
     Connectionstring.Main();
     int personOrId = 0; //uiteindelijk gwn het gewenste id - 1
@@ -13,7 +13,7 @@
 }
 
     <div class="text-center">
-        <h1 style="padding-top:5%">@ViewData["Title"]</h1>
+        <h1 style="padding-top:5%">Account gegevens</h1>
 
         <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">@FirstName<br><br>@LastName<br><br>@number<br><br>@doctor<br><br>@numberdoctor</p>
     </div>
