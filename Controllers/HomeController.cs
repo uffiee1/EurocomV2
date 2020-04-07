@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using EurocomV2.Models;
-using System.Data.SqlClient;
 using EurocomV2.Models.Classes;
-using System.Data;
+using System.Data.SqlClient;
 
 namespace EurocomV2.Controllers
 {

@@ -16,9 +16,12 @@ namespace EurocomV2
 {
     public class Startup
     {
+        private IConfiguration _config;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            _config = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -27,10 +30,9 @@ namespace EurocomV2
         public void ConfigureServices(IServiceCollection services)
         {
             //This is for a Identity Check.
-            services.AddControllersWithViews();
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("eurocomdb")));
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>();
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("eurocomdb")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             //Use to changing the code while the program is running.
             services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -53,9 +55,8 @@ namespace EurocomV2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
