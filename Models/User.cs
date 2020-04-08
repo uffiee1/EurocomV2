@@ -19,7 +19,6 @@ namespace EurocomV2.Models
         //Could have [To-Do ]
         public System.Guid ActivationCode { get; set; }
 
-
         public int UserID
         {
             get { return this._UserID; }
@@ -57,6 +56,5 @@ namespace EurocomV2.Models
         }
 
         public string ConfirmPassword { get; internal set; }
-
     }
 }

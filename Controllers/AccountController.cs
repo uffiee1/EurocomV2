@@ -80,12 +80,12 @@ namespace EurocomV2.Controllers
 
                 #region //Email is already Exist 
 
-                var isExist = IsEmailExist(Account.EmailID);
-                if (isExist)
-                {
-                    ModelState.AddModelError("EmailExist", "Email already exist");
-                    return View(Account);
-                }
+                //var isExist = IsEmailExist(Account.EmailID);
+                //if (isExist)
+                //{
+                //    ModelState.AddModelError("EmailExist", "Email already exist");
+                //    return View(Account);
+                //}
                 #endregion
 
                 //[Could Have] Activation Code voor nieuwe Gebruikers
@@ -145,14 +145,14 @@ namespace EurocomV2.Controllers
         //                  " <br/><br/><a href='" + link + "'>" + link + "</a> ";
         //}
 
-        [NonAction]
-        private bool IsEmailExist(string emailID)
-        {
-            using (MyDatabaseEntities dc = new MyDatabaseEntities())
-            {
-                var v = dc.Users.Where(a => a.EmailID == emailID).FirstOrDefault();
-                return v != null;
-            }
-        }
+        //[NonAction]
+        //private bool IsEmailExist(string emailID)
+        //{
+        //    using (MyDatabaseEntities dc = new MyDatabaseEntities())
+        //    {
+        //        var v = dc.Users.Where(a => a.EmailID == emailID).FirstOrDefault();
+        //        return v != null;
+        //    }
+        //}
     }
 }
