@@ -3,13 +3,29 @@
 @{
     // ViewData["Title"] = "Account gegevens";
     connectionstring Connectionstring = new connectionstring();
-    Connectionstring.Main();
-    int personOrId = 0; //uiteindelijk gwn het gewenste id - 1
-    string FirstName = "voornaam: " + Connectionstring.FirstName[personOrId];
-    string LastName = "achternaam: " + Connectionstring.LastName[personOrId];
-    string number = "telefoonnummer: " + Connectionstring.Number[personOrId];
-    string doctor = "huisarts: " + Connectionstring.Doctor[personOrId];
-    string numberdoctor = "nummer huisarts: " + Connectionstring.NumberDoctor[personOrId];
+
+    int personOrId = 1; //uiteindelijk gwn het gewenste id - 1
+    Connectionstring.Main(personOrId);
+    string FirstName = "voornaam: " + Connectionstring.patients[personOrId].FirstName;
+    string LastName = "achternaam: " + Connectionstring.patients[personOrId].LastName;
+    string number = "telefoonnummer: " + Connectionstring.patients[personOrId].Number;
+    string doctor = "huisarts: ";
+    string numberdoctor = "nummer huisarts: ";
+    for (int i = 0; i < Connectionstring.DoctorsPerPatient.Count; i++)
+    {
+        if(i == 0)
+        {
+            doctor += Connectionstring.DoctorsPerPatient[i].Name;
+            numberdoctor += Connectionstring.DoctorsPerPatient[i].Number;
+        }
+        else
+        {
+            doctor += " || " + Connectionstring.DoctorsPerPatient[i].Name;
+            numberdoctor += " || " + Connectionstring.DoctorsPerPatient[i].Number;
+        }
+        
+    }
+
 }
 
     <div class="text-center">
