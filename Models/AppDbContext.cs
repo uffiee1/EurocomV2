@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using EurocomV2.Models.Classes;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
 namespace EurocomV2.Models
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -21,6 +21,7 @@ namespace EurocomV2.Models
 
         protected override void OnModelCreating(ModelBuilder model)
         {
+            base.OnModelCreating(model);
             model.Seed();
         }
     }
