@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using EurocomV2.Models;
 
 namespace EurocomV2.Models
 {
@@ -14,6 +15,8 @@ namespace EurocomV2.Models
 
         }
 
-        public DbSet<User> User { get; set; } 
+        public DbSet<User> User { get; set; }
+
+        public DbSet<EurocomV2.Models.AdminCRUD> AdminCRUD { get; set; }
     }
 }

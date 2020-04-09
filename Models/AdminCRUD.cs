@@ -8,10 +8,10 @@ namespace EurocomV2.Models
     public class AdminCRUD
     {
         private int _ID;
-        private string _Name;
+        private string _FirstName;
         private string _LastName;
         private string _Specialty;
-        private int _TreatTeamID;
+        private string _Email;
 
 
         public int ID
@@ -20,10 +20,10 @@ namespace EurocomV2.Models
             set { _ID = value; }
         }
 
-        public string Name
+        public string FirstName
         {
-            get { return this._Name; }
-            set { _Name = value; }
+            get { return this._FirstName; }
+            set { _FirstName = value; }
         }
 
         public string Lastname
@@ -38,11 +38,10 @@ namespace EurocomV2.Models
             set { _Specialty = value; }
         }
 
-        public int TreatTeamID
+        public string Email
         {
-            get { return this._TreatTeamID; }
-            set { _TreatTeamID = value; }
+            get { return this._Email; }
+            set { _Email = value; }
         }
-
     }
 }
