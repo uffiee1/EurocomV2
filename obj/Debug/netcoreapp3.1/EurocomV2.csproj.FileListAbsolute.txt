@@ -133,3 +133,5 @@ F:\RenseGit\Eurocom\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Works
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Status.cshtml.g.cs
+F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
+F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\DokterDashboard.cshtml.g.cs
