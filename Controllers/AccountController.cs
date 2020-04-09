@@ -30,6 +30,7 @@ namespace EurocomV2.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
+            TempData["LastName"] = model.LastName;
             string firstName;
             string lastName;
             if (ModelState.IsValid)
