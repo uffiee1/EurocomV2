@@ -29,5 +29,8 @@ namespace EurocomV2.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords do not match")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public char gender { get; set; }
     }
 }

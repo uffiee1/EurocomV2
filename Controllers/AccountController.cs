@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using EurocomV2.Models;
+using EurocomV2.Models.Classes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +14,10 @@ namespace EurocomV2.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -46,12 +47,13 @@ namespace EurocomV2.Controllers
                     firstName = model.FirstName;
                     lastName = model.LastName;
                 }
-                var user = new IdentityUser { UserName = Guid.NewGuid() + "_" + firstName + lastName, Email = model.Email };
+                var user = new ApplicationUser() { UserName = Guid.NewGuid() + "_" + firstName + lastName, Email = model.Email, gender = model.gender };
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
+                    ViewData["Gender"] = user.gender.ToString();
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -60,6 +62,7 @@ namespace EurocomV2.Controllers
                     ModelState.AddModelError(String.Empty, error.Description);
                 }
             }
+
 
             return View(model);
         }
@@ -78,6 +81,7 @@ namespace EurocomV2.Controllers
             {
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.rememberMe, false);
+                TempData["Gender"] = user.gender;
 
                 if (result.Succeeded)
                 {
