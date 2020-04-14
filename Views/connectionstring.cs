@@ -10,22 +10,19 @@ namespace EurocomV2
 {
     public class connectionstring
     {
-        public List<patient> patients = new List<patient>();
-        public List<Doctor> Doctors = new List<Doctor>();
         public List<Doctor> DoctorsPerPatient = new List<Doctor>();
-
-        public void Main(int idMinEen)
+        public patient CurrentPatient = new patient("error","error","error","error");
+        
+        public void Read(int UserId)
         {
             string str = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocom; Persist Security Info = True; User ID = dbi406383_eurocom; Password = Kastanje81;";
-            string str2 = "SELECT Firstname, Lastname, PhoneNumber, Username FROM [User] WHERE Username LIKE 'p%';";
-            string str3 = "SELECT Firstname, PhoneNumber FROM [User] WHERE Username LIKE 'd%';";
-            ReadData(str, str2);
-            ReadData2(str, str3);
-            ReadData3(str, idMinEen);
-
+            string str2 = "SELECT Firstname, Lastname, PhoneNumber, Username FROM [User] WHERE Username LIKE 'p%' AND UserId = '" + UserId + "';";
+            ReadDataPatient(str, str2);
+            ReadDataDoctor(str);
         }
         
-        private void ReadData(string connectionString, string queryString)
+        // ReadDataPatient reads all of the info from the patient and sets that patient as the currentpatient
+        private void ReadDataPatient(string connectionString, string queryString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -37,13 +34,12 @@ namespace EurocomV2
                 // Call Read before accessing data.
                 while (reader.Read())
                 {
-                    
                     string LastName2 = reader.GetString("Lastname");
                     string FirstName2 = reader.GetString("Firstname");
                     string number = reader.GetString("PhoneNumber");
                     string UserName = reader.GetString("Username");
                     patient Patient = new patient(FirstName2, LastName2, number, UserName);
-                    patients.Add(Patient);
+                    CurrentPatient = Patient;
                 }
 
                 // Call Close when done reading.
@@ -51,38 +47,16 @@ namespace EurocomV2
             }
         }
 
-        private void ReadData2(string connectionString, string queryString)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(queryString, connection);
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                // Call Read before accessing data.
-                while (reader.Read())
-                {
-                    string doctor = reader.GetString("Firstname");
-                    string numberdoctor = reader.GetString("PhoneNumber");
-                    
-
-                    Doctor Doctor1 = new Doctor(doctor, numberdoctor);
-                    Doctors.Add(Doctor1);  
-                }
-
-                // Call Close when done reading.
-                reader.Close();
-            }
-        }
-        private void ReadData3(string connectionString, int idMinEen)
+        // ReadDataDoctor uses a stored procedure to find the doctors that are asigned to this patient
+        // and the doctors get added to a list
+        private void ReadDataDoctor(string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand("PatientOverview", connection);
 
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add(new SqlParameter("@UserName", patients[idMinEen].UserName));
+                command.Parameters.Add(new SqlParameter("@UserName", CurrentPatient.UserName));
 
                 connection.Open();
 
