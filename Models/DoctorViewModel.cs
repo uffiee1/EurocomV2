@@ -7,5 +7,6 @@ namespace EurocomV2.Models
 {
     public class DoctorViewModel : UserViewModel
     {
+        public bool ExistingRelation { get; set; }
     }
 }

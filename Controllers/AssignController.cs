@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using EurocomV2.Models;
 using EurocomV2_Model;
 using EurocomV2_Logic.Container;
+using EurocomV2.Resources;
 
 namespace EurocomV2.Controllers
 {
@@ -25,17 +26,26 @@ namespace EurocomV2.Controllers
             return View("Index", assignViewModel);
         }
 
-        public ActionResult AssignClick(string firstname, string lastname)
+        public ActionResult AssignClick(int userId)
         {
             DoctorContainer doctorContainer = new DoctorContainer();
-            string username = "dTest2";
-            doctorContainer.UseAddPatientToDoctor(username, firstname, lastname);
+            //string username wordt uiteindelijk meegegeven, voor nu is het een test string.
+            string username = "dTest4";
             AssignViewModel assignViewModel = new AssignViewModel
             {
-                patients = GetPatientNames(),
-                assignSuccess = true,
-                assignMessage = "Patient successfully added to doctor!"
+                doctorViewModel = new DoctorViewModel { ExistingRelation = doctorContainer.CallCheckRelationDoctorPatient(username, userId) },
+                patients = GetPatientNames()
             };
+
+            if(assignViewModel.doctorViewModel.ExistingRelation)
+            {
+                assignViewModel.assignMessage = Resource.AssignExistingRelation;
+            }
+            else
+            {
+                doctorContainer.UseAddPatientToDoctor(username, userId);
+                assignViewModel.assignMessage = Resource.AssignSuccess;
+            }
 
             return View("Index", assignViewModel);
         }
@@ -49,6 +59,7 @@ namespace EurocomV2.Controllers
             {
                 PatientViewModel patientViewModel = new PatientViewModel
                 {
+                    UserId = patient.UserId,
                     Firstname = patient.Firstname,
                     Lastname = patient.Lastname
                 };

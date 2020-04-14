@@ -1,4 +1,26 @@
 ﻿@model EurocomV2.Models.AssignViewModel
 
 <h1>Index</h1>
+<link rel="stylesheet" href="~/css/Dropdown.css">
 
+<div class="dropdown">
+    <button class="dropbtn">Please select a patient...</button>
+    <div class="dropdown-content">
+        @foreach (var patient in Model.patients)
+        {
+            <a asp-controller="Assign" asp-action="AssignClick" asp-route-userId="@patient.UserId">@patient.Firstname @patient.Lastname</a>
+        }
+    </div>
+    <div>
+        <br />
+    </div>
+    @if (Model != null)
+    {
+        if (Model.assignMessage != null)
+        {
+            <div>
+                <p>@Model.assignMessage</p>
+            </div>
+        }
+    }
+</div>

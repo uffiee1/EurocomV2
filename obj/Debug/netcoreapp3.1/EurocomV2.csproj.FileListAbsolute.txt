@@ -135,3 +135,17 @@ C:\Users\Gebruiker\Source\Repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 C:\Users\Gebruiker\Source\Repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
 C:\Users\Gebruiker\Source\Repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
 C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Assign\Index.cshtml.g.cs
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Data.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Logic.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Model.dll
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Logic.pdb
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Data.pdb
+C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.Resources.Resource.resources
+C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.GenerateResource.cache
