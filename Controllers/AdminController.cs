@@ -21,7 +21,7 @@ namespace EurocomV2.Controllers
         // GET: Admin
         public async Task<IActionResult> Index()
         {
-            return View(await _context.AdminCRUD.ToListAsync());
+            return View(_context.AdminCRUD.ToList());
         }
 
         // GET: Admin/Details/5
