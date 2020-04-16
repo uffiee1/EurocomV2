@@ -5,20 +5,26 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using EurocomV2.Views;
+using EurocomV2.Controllers;
 
 namespace EurocomV2
 {
     public class connectionstring
     {
         public List<Doctor> DoctorsPerPatient = new List<Doctor>();
+        public List<Contact> Contacts = new List<Contact>(); 
         public patient CurrentPatient = new patient("error","error","error","error");
         
         public void Read(int UserId)
         {
+            DoctorsPerPatient.Clear();
+            Contacts.Clear();
             string str = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocom; Persist Security Info = True; User ID = dbi406383_eurocom; Password = Kastanje81;";
             string str2 = "SELECT Firstname, Lastname, PhoneNumber, Username FROM [User] WHERE Username LIKE 'p%' AND UserId = '" + UserId + "';";
+            string str3 = "SELECT FirstnameContact, LastnameContact, NumberContact FROM [contactpersonen] WHERE UserId = '" + UserId + "';";
             ReadDataPatient(str, str2);
             ReadDataDoctor(str);
+            ReadDataContact(str, str3);
         }
         
         // ReadDataPatient reads all of the info from the patient and sets that patient as the currentpatient
@@ -71,6 +77,31 @@ namespace EurocomV2
 
                     Doctor doctor = new Doctor(Name, Number);
                     DoctorsPerPatient.Add(doctor);
+                }
+
+                // Call Close when done reading.
+                reader.Close();
+            }
+        }
+
+        // ReadDataContact reads all the data from all the contacts that are linked to the UserId and it puts all of those contacts in a list.
+        private void ReadDataContact(string connectionString, string queryString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Call Read before accessing data.
+                while (reader.Read())
+                {
+                    string LastName = reader.GetString("LastnameContact");
+                    string FirstName = reader.GetString("FirstnameContact");
+                    string number = reader.GetString("NumberContact");
+                    Contact contact = new Contact(FirstName, LastName, number);
+                    Contacts.Add(contact);
                 }
 
                 // Call Close when done reading.
