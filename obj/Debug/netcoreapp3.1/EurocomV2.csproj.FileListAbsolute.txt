@@ -24,10 +24,6 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Euro
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Data\obj\EurocomV2_Data.csproj.nuget.dgspec.json
-C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Data\obj\project.assets.json
-C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Model\obj\EurocomV2_Model.csproj.nuget.dgspec.json
-C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Model\obj\project.assets.json
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\appsettings.json
@@ -62,3 +58,16 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\System.Net.Htt
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CopyComplete
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2.deps.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2.runtimeconfig.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2.runtimeconfig.dev.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2.dll
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2.Views.dll
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2.Views.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.Views.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache

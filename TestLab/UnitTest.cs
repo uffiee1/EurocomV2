@@ -1,4 +1,4 @@
-using EurocomV2.DataLogic;
+/*using EurocomV2.DataLogic;
 using Xunit;
 
 namespace TestLab
@@ -62,3 +62,4 @@ namespace TestLab
         }
     }
 }
+*/
