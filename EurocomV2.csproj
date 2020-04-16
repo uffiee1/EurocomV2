@@ -7,6 +7,8 @@
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
     <None Include="wwwroot\css\Style.css" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
   </ItemGroup>
 
   <ItemGroup>
