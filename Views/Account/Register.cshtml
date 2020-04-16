@@ -1,20 +1,15 @@
-﻿@model EurocomV2.Models.User
+﻿@model RegisterViewModel
 
 @{
     ViewData["Title"] = "Register";
 } 
 
-<h1>Registeration</h1>
+<h4>RegisterViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserID" class="control-label"></label>
-                <input asp-for="UserID" class="form-control" />
-                <span asp-validation-for="UserID" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -26,9 +21,9 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EmailID" class="control-label"></label>
-                <input asp-for="EmailID" class="form-control" />
-                <span asp-validation-for="EmailID" class="text-danger"></span>
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
@@ -41,9 +36,12 @@
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label"></label>
-                <input asp-for="DateOfBirth" class="form-control" />
-                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                <label>Man</label>
+                <input asp-for="gender" type="radio" value='m'/>
+                <br/>
+                <label>Vrouw</label>
+                <input asp-for="gender" type="radio" value='f'/>
+                <span asp-validation-for="gender" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -53,9 +51,5 @@
 </div>
 
 <div>
-    <a asp-action="Login">Login</a>
+    <a asp-action="Index" asp-controller="Home">Back to List</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

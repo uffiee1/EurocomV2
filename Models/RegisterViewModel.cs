@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace EurocomV2.Models
 {
-    //Applying validation in UserModel. (Laag bij laag)
-    [MetadataType(typeof(UserRegisteration))]
-
     public class RegisterViewModel
     {
-        //Omdat dit niet in actuele model zit, moet ik hier ook toevoegen.
-        //Laat zien in register page maar saved niet in database.
-        public string ConfirmPassword { get; set; }
-    }
+        [Required]
+        [DataType(DataType.Text)]
+        public string FirstName { get; set; }
 
     public class UserRegisteration
     {
@@ -53,38 +49,19 @@ namespace EurocomV2.Models
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email adress required")]
         [EmailAddress]
-        [DataType(DataType.EmailAddress)]
-        public string Email
-        {
-            get { return this._Email; }
-            set { _Email = value; }
-        }
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [MinLength(6,ErrorMessage ="Minimum 6 characters required")]
-        public string Password
-        {
-            get { return this._Password; }
-            set { _Password = value; }
-        }
+        public string Password { get; set; }
 
+        [Required]
         [Display(Name = "Confirm Password")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords do not match")]
-        public string ConfirmPassword
-        {
-            get { return this._ConfirmPassword; }
-            set { _ConfirmPassword = value; }
-        }
+        public string ConfirmPassword { get; set; }
 
-        [Display(Name = "Date of birth")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime DateOfBirth
-        {
-            get { return this._DateOfBirth; }
-            set { _DateOfBirth = value; }
-        }
+        [Required]
+        public char gender { get; set; }
     }
 }
