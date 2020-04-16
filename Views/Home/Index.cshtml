@@ -1,31 +1,33 @@
-﻿@using EurocomV2.Models.Classes
+﻿@using EurocomV2.Controllers
+@using EurocomV2.Models.Classes
 @inject UserManager<ApplicationUser> userManager
 @inject SignInManager<ApplicationUser> signInManager
 @{
     ViewData["Title"] = "Home Page";
-
 }
-
-<body style="background: #9fdefa">
+    <body style="background: #9fdefa">
 <div class="Head">Welkom</div>
-@if (signInManager.IsSignedIn(User))
-{
-    @if (ViewData["Gender"] == "m")
+<!--if (signInManager.IsSignedIn(User))    hier niet op letten, wordt gefixt
     {
-        <div class="Head2">Meneer @TempData["LastName"]</div>
-    }
+        {
+            ((HomeController)this.ViewContext.Controller).getGender(userManager.GetUserId(TempData["userID"]));
+        }
+        if (gender == 'm')
+        {
+        <div class="Head2">Meneer TempData["LastName"]</div>
+        }
     else
-    {
-        <div class="Head2">Mevrouw @TempData["LastName"]</div>
-    }
+        {
+        <div class="Head2">Mevrouw TempData["LastName"]</div>
+        }
 
-}
-<div class="container">
+    }-->
+    <div class="container">
         <div class="row">
 
             <div class="col-6" style="text-align:center; min-height:150px;">
                 <a href="Home/Status">
-                    <button asp-action="Status"  type="button" class="btn btn-primary button btn w-75 h-100">
+                    <button asp-action="Status" type="button" class="btn btn-primary button btn w-75 h-100">
                         Status<div></div>
                         <span class="glyphicon glyphicon-heart buttonGlyph" aria-hidden="true"></span>
                     </button>

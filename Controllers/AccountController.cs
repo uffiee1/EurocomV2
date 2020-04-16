@@ -53,7 +53,7 @@ namespace EurocomV2.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    ViewData["Gender"] = user.gender.ToString();
+                    ViewBag.Gender = user.gender;
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -81,7 +81,7 @@ namespace EurocomV2.Controllers
             {
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.rememberMe, false);
-                TempData["Gender"] = user.gender;
+                TempData["User"] = user;
 
                 if (result.Succeeded)
                 {

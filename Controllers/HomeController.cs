@@ -79,8 +79,14 @@ namespace EurocomV2.Controllers
             return View();
         }
 
+        public char getGender(ApplicationUser user)
+        {
+            return user.gender;
+        }
+
         public IActionResult Index()
         {
+
             return View();
         }
 
