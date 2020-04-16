@@ -23,7 +23,7 @@ namespace EurocomV2.Controllers
         {
             if (ModelState.IsValid)
             {
-                SqlConnection sqlConnection = new SqlConnection("server = (LocalDB)\\MSSQLLocalDB; database = EurocomJulian; Trusted_Connection = true; MultipleActiveResultSets = True");
+                SqlConnection sqlConnection = new SqlConnection("server=(LocalDB)\\MSSQLLocalDB;database=TestLogin; MultipleActiveResultSets = True");
                 SqlCommand login = new SqlCommand("login", sqlConnection);
                 login.CommandType = CommandType.StoredProcedure;
                 login.Parameters.AddWithValue("@naam", model.name);

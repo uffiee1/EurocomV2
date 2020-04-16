@@ -19,8 +19,6 @@ namespace EurocomV2.Models
             
         }
 
-        public Microsoft.EntityFrameworkCore.DbSet<User> users { get; set; }
-
         protected override void OnModelCreating(ModelBuilder model)
         {
             base.OnModelCreating(model);
@@ -29,6 +27,6 @@ namespace EurocomV2.Models
 
         public DbSet<User> User { get; set; }
 
-        public DbSet<EurocomV2.Models.AdminCRUD> AdminCRUD { get; set; }
+        public DbSet<AdminCRUD> AdminCRUD { get; set; }
     }
 }

@@ -8,19 +8,31 @@ namespace EurocomV2.Models
 {
     public class LoginViewModel
     {
+        private string _Email;
+        private string _Password;
+        private bool _Remember;
+
         [Required]
         [EmailAddress]
-        public string Email { get; set; }
+        public string Email
+        {
+            get { return this._Email; }
+            set { _Email = value; }
+        }
 
         [Required]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string Password
+        {
+            get { return this._Password; }
+            set { _Password = value; }
+        }
 
         [Display(Name = "Onthoud mijn E-mail adres")]
         public bool Remember
         {
             get { return this._Remember; }
-            set { _Remember = value; } 
+            set { _Remember = value; }
         }
     }
 }
