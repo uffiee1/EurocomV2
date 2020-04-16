@@ -120,6 +120,9 @@
   <data name="AssignExistingRelation" xml:space="preserve">
     <value>This patient is already assigned to you!</value>
   </data>
+  <data name="AssignSecurityCodeError" xml:space="preserve">
+    <value>The code is incorrect or does not exist. Please try again.</value>
+  </data>
   <data name="AssignSuccess" xml:space="preserve">
     <value>Patient successfully assigned!</value>
   </data>

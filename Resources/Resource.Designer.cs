@@ -70,6 +70,15 @@ namespace EurocomV2.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The code is incorrect or does not exist. Please try again..
+        /// </summary>
+        public static string AssignSecurityCodeError {
+            get {
+                return ResourceManager.GetString("AssignSecurityCodeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Patient successfully assigned!.
         /// </summary>
         public static string AssignSuccess {

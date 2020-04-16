@@ -7,5 +7,6 @@ namespace EurocomV2.Models
 {
     public class PatientViewModel : UserViewModel
     {
+        public string securityCode { get; set; }
     }
 }
