@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj": {}
+    "C:\\Users\\Julia\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj": {
+    "C:\\Users\\Julia\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
-        "projectName": "EurocomV2",
-        "projectPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
+        "projectUniqueName": "C:\\Users\\Julia\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj",
+        "projectName": "EurocomV2_Model",
+        "projectPath": "C:\\Users\\Julia\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj",
         "packagesPath": "C:\\Users\\Julia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\obj\\",
+        "outputPath": "C:\\Users\\Julia\\source\\repos\\EurocomV2_Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,16 +40,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "Microsoft.AspNet.WebApi.Client": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -61,9 +51,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
