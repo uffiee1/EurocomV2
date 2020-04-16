@@ -4,24 +4,24 @@
 @inject SignInManager<ApplicationUser> signInManager
 @{
     ViewData["Title"] = "Home Page";
+    getGender get = new getGender();
 }
-    <body style="background: #9fdefa">
-<div class="Head">Welkom</div>
-<!--if (signInManager.IsSignedIn(User))    hier niet op letten, wordt gefixt
+<body style="background: #9fdefa">
+    <div class="Head">Welkom</div>
+    @if (signInManager.IsSignedIn(User))
     {
-        {
-            ((HomeController)this.ViewContext.Controller).getGender(userManager.GetUserId(TempData["userID"]));
-        }
-        if (gender == 'm')
-        {
-        <div class="Head2">Meneer TempData["LastName"]</div>
-        }
-    else
-        {
-        <div class="Head2">Mevrouw TempData["LastName"]</div>
-        }
 
-    }-->
+        char gender = get.getGenderMethod(await userManager.FindByIdAsync(TempData["UserID"].ToString()));
+
+        @if (gender == 'm')
+        {
+            <div class="Head2">Meneer @TempData["LastName"]</div>
+        }
+        else
+        {
+            <div class="Head2">Mevrouw @TempData["LastName"]</div>
+        }
+    }
     <div class="container">
         <div class="row">
 
