@@ -26,8 +26,15 @@ using EurocomV2.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "F:\RenseGit\Eurocom\Views\_ViewImports.cshtml"
+using EurocomV2.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"adef95c3e101997dfb62482b1ea59f4af509661e", @"/Views/Home/Account.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"563cd55ede89a1e66ddb0358f924b2bef799b290", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5941ee4dd1ca0019c3f3097fe23f397f5b1d473a", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Account : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("background: #9fdefa"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -64,7 +71,7 @@ using EurocomV2.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "adef95c3e101997dfb62482b1ea59f4af509661e3500", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "adef95c3e101997dfb62482b1ea59f4af509661e3655", async() => {
                 WriteLiteral(@"
     <div class=""Head"">Account</div>
     <div class=""container"">

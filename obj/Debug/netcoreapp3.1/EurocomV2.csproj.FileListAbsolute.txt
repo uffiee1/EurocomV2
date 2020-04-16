@@ -135,3 +135,4 @@ F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssembl
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Status.cshtml.g.cs
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\DokterDashboard.cshtml.g.cs
+F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
