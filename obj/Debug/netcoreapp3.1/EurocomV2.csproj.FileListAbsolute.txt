@@ -454,3 +454,14 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.Enti
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\TestLab.deps.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\TestLab.runtimeconfig.dev.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\bin\Debug\netcoreapp3.1\TestLab.runtimeconfig.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\obj\project.assets.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\TestLab\obj\TestLab.csproj.nuget.dgspec.json
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
