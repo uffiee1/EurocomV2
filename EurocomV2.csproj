@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200414112943_ExtendIdentity.cs" />
     <Compile Remove="Migrations\20200414112943_ExtendIdentity.Designer.cs" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
   </ItemGroup>
 
   <ItemGroup>
