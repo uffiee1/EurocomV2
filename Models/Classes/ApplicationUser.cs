@@ -9,5 +9,7 @@ namespace EurocomV2.Models.Classes
     public class ApplicationUser : IdentityUser
     {
         public char gender { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

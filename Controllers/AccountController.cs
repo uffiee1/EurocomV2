@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using EurocomV2.Models;
 using EurocomV2.Models.Classes;
+using EurocomV2.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ using MySql.Data.MySqlClient;
 
 namespace EurocomV2.Controllers
 {
+
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -47,7 +49,7 @@ namespace EurocomV2.Controllers
                     firstName = model.FirstName;
                     lastName = model.LastName;
                 }
-                var user = new ApplicationUser() { UserName = Guid.NewGuid() + "_" + firstName + lastName, Email = model.Email, gender = model.gender };
+                var user = new ApplicationUser() { UserName = Guid.NewGuid() + "_" + firstName + lastName, Email = model.Email, gender = model.gender, FirstName = model.FirstName, LastName = model.LastName};
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -91,6 +93,12 @@ namespace EurocomV2.Controllers
             }
 
             return View(model);
+        }
+
+        public IActionResult Logout()
+        {
+            _signInManager.SignOutAsync();
+            return RedirectToAction("Login");
         }
     }
 }

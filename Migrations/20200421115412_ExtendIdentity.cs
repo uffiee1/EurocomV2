@@ -7,16 +7,24 @@ namespace EurocomV2.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "gender",
+                name: "FirstName",
                 table: "AspNetUsers",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "LastName",
+                table: "AspNetUsers",
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "gender",
+                name: "FirstName",
+                table: "AspNetUsers");
+
+            migrationBuilder.DropColumn(
+                name: "LastName",
                 table: "AspNetUsers");
         }
     }

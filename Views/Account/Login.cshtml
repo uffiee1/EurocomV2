@@ -1,34 +1,44 @@
-﻿@model LoginViewModel
-
+﻿@model EurocomV2.ViewModels.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewData["Title"] = "User Login";
 }
 
-<h1>User Login</h1>
-
-<div class="row">
-    <div class="col-md-12">
-        <form method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+<body style="background: #9fdefa">
+    <div class="Head">Login</div>
+    <div class="container">
+        <div class="row">
+            <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
             </div>
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+            <div class="col-12 col-lg-8 Privacytext">
+                <form method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="text-align:center;">
+                        <div class="btn btn-info" style="background-color:#9fdefa; border-color:white;">
+                            <label asp-for="rememberMe">
+                                <input style="" type="checkbox" asp-for="rememberMe" />
+                                @Html.DisplayNameFor(m => m.rememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div style="text-align:center;">
+                        <button type="submit" class="btn btn-primary w-50" style="background-color:#9fdefa; font-size:large; font-weight:bold; border-color:white;">Login</button>
+                    </div>
+                </form>
+                <div class="col-12" style="min-height:20px;"></div>
             </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label asp-for="rememberMe">
-                        <input asp-for="rememberMe" />
-                        @Html.DisplayNameFor(model => model.rememberMe)
-                    </label>
-                </div>
+            <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+            <div class="col-12" style="min-height:60px"></div>
+        </div>
     </div>
-</div>
+</body>

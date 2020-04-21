@@ -5,13 +5,18 @@ using System.Threading.Tasks;
 
 namespace EurocomV2.Models.Classes
 {
-    public class getGender
+    public class getInfo
     {
 
 
         public char getGenderMethod(ApplicationUser user)
         {
             return user.gender;
+        }
+
+        public string getLastName(ApplicationUser user)
+        {
+            return user.LastName;
         }
     }
 }

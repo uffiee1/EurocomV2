@@ -4,40 +4,46 @@
 @inject SignInManager<ApplicationUser> signInManager
 @{
     ViewData["Title"] = "Home Page";
-    getGender get = new getGender();
+    getInfo get = new getInfo();
 }
 <body style="background: #9fdefa">
     <div class="Head">Welkom</div>
     @if (signInManager.IsSignedIn(User))
     {
-
-        char gender = get.getGenderMethod(await userManager.FindByIdAsync(TempData["UserID"].ToString()));
-
-        @if (gender == 'm')
+        if (TempData["UserID"] != null)
         {
-            <div class="Head2">Meneer @TempData["LastName"]</div>
-        }
-        else
-        {
-            <div class="Head2">Mevrouw @TempData["LastName"]</div>
+            char gender = get.getGenderMethod(await userManager.FindByIdAsync(TempData["UserID"].ToString()));
+            string lastname = get.getLastName(await userManager.FindByIdAsync(TempData["UserID"].ToString()));
+
+            @if (gender == 'm')
+            {
+                <div class="Head2">Meneer @lastname</div>
+            }
+            else
+            {
+                <div class="Head2">Mevrouw @lastname</div>
+            }
         }
     }
+
+
     <div class="container">
         <div class="row">
-            <div class="col-12" style="min-height:60px"></div>
-            <div class="col-md-6 col-12" style="text-align:center; min-height:150px;">
+            <div class="col-12" style="min-height: 60px"></div>
+            <div class="col-md-6 col-12" style="text-align: center; min-height: 150px;">
                 <a href="Home/Status">
-                    <button asp-action="Status" type="button" class="btn btn-primary button btn w-75 h-100">
-                        Status<div></div>
+                    <div type="button" class="btn btn-primary button btn w-75" style="height: auto">
+                        Status
+                        <div></div>
                         <span class="glyphicon glyphicon-heart buttonGlyph" aria-hidden="true"></span>
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-6" style="text-align: center;
-        min-height: 150px;">
+            <div class="col-12 col-md-6" style="text-align: center; min-height: 150px;">
                 <a href="Home/Account">
-                    <div type="button" class="btn btn-primary button btn w-75" style="height:auto">
-                        Account<div></div>
+                    <div type="button" class="btn btn-primary button btn w-75" style="height: auto">
+                        Account
+                        <div></div>
                         <span class="glyphicon glyphicon-user buttonGlyph" aria-hidden="true"></span>
                     </div>
                 </a>

@@ -10,10 +10,13 @@ using EurocomV2.Models;
 using EurocomV2.Models.Classes;
 using System.Data.SqlClient;
 using System.Security.Claims;
+using EurocomV2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
 namespace EurocomV2.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -79,11 +82,7 @@ namespace EurocomV2.Controllers
             return View();
         }
 
-        public char getGender(ApplicationUser user)
-        {
-            return user.gender;
-        }
-
+        [Route("Home")]
         public IActionResult Index()
         {
 
@@ -99,10 +98,6 @@ namespace EurocomV2.Controllers
             return View();
         }
         public IActionResult DokterDashboard()
-        {
-            return View();
-        }
-        public IActionResult Login()
         {
             return View();
         }

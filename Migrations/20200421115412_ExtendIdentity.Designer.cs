@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EurocomV2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200414113055_ExtendIdentity")]
+    [Migration("20200421115412_ExtendIdentity")]
     partial class ExtendIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,12 @@ namespace EurocomV2.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
