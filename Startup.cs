@@ -32,12 +32,7 @@ namespace EurocomV2
             //This is for a Identity Check.
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("eurocomdb")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>((opt =>)
-            {
-
-            }
-                
-                .AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             //Use to changing the code while the program is running.
             services.AddRazorPages().AddRazorRuntimeCompilation();

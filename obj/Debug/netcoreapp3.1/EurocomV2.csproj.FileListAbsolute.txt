@@ -477,3 +477,10 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Create.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Delete.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Details.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Index.cshtml.g.cs
