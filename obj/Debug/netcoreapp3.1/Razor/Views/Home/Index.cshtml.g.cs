@@ -174,16 +174,13 @@ using EurocomV2.Models.Classes;
                 WriteLiteral(@"
                 </a>
             </div>
-            <div class=""col-6"" style=""text-align: center;
+            <div class=""col-12 col-md-6"" style=""text-align: center;
         min-height: 150px;"">
-                <button type=""button"" class=""btn btn-primary button btn w-75 h-100"">
-                    Account <div></div>
-                    <span class=""glyphicon glyphicon-user buttonGlyph"" aria-hidden=""true""></span>
-                </button>
-            </div>
-        </div>
-    </div>
-");
+                <a href=""Home/Account"">
+                    <div type=""button"" class=""btn btn-primary button btn w-75"" style=""height:auto"">
+                        Account<div></div>
+                        <span class=""glyphicon glyphicon-user buttonGlyph"" aria-hidden=""tru");
+                WriteLiteral("e\"></span>\r\n                    </div>\r\n                </a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper>();

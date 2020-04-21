@@ -94,6 +94,18 @@ namespace EurocomV2.Controllers
         {
             return View();
         }
+        public IActionResult Account()
+        {
+            return View();
+        }
+        public IActionResult DokterDashboard()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
