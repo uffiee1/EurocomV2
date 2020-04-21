@@ -129,7 +129,6 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\zh-Hant\Micros
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.Views.pdb
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
-C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Status\Status.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Status.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
@@ -466,3 +465,4 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\System.Net.Htt
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\DokterDashboard.cshtml.g.cs
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\accgegevens.cshtml.g.cs

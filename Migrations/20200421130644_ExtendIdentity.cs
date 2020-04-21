@@ -15,6 +15,13 @@ namespace EurocomV2.Migrations
                 name: "LastName",
                 table: "AspNetUsers",
                 nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "gender",
+                table: "AspNetUsers",
+                nullable: false,
+                defaultValue: "");
+                
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -25,6 +32,10 @@ namespace EurocomV2.Migrations
 
             migrationBuilder.DropColumn(
                 name: "LastName",
+                table: "AspNetUsers");
+
+            migrationBuilder.DropColumn(
+                name: "gender",
                 table: "AspNetUsers");
         }
     }

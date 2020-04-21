@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EurocomV2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200421115412_ExtendIdentity")]
+    [Migration("20200421130644_ExtendIdentity")]
     partial class ExtendIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

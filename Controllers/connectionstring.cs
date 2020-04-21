@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-using EurocomV2.Views;
+using EurocomV2.Models.Classes;
 using EurocomV2.Controllers;
 
 namespace EurocomV2

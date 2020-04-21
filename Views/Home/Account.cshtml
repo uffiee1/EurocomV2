@@ -1,38 +1,117 @@
-﻿@{
-    ViewData["Title"] = "Account";
+﻿@using EurocomV2.Models.Classes
+@model accgegevensModel
+@inject UserManager<ApplicationUser> userManager
+@inject SignInManager<ApplicationUser> signInManager
+@{
+    ViewData["Title"] = "Account gegevens";
+    getInfo get = new getInfo();
+    string FirstName = get.getFirstName(await userManager.FindByIdAsync(TempData["UserID"].ToString()));
+    string LastName = get.getLastName(await userManager.FindByIdAsync(TempData["UserID"].ToString()));
+    string Phonenumber = get.getPhoneNumber(await userManager.FindByIdAsync(TempData["UserID"].ToString()));
+    /* ViewData["Title"] = "Account";
+     // ViewData["Title"] = "Account gegevens";
+     connectionstring Connectionstring = new connectionstring();
+     int UserId = 2; // this is where the UserId should be placed
+     Connectionstring.Read(UserId);
+     string FirstName =  Connectionstring.CurrentPatient.FirstName;
+     string LastName = "achternaam: " + Connectionstring.CurrentPatient.LastName;
+     string number = "telefoonnummer: " + Connectionstring.CurrentPatient.Number;
+     string doctor = "huisarts: ";
+     string numberdoctor = "nummer huisarts: ";
+     List<string> contacts2 = new List<string>();
+     contacts2.Add("x");
+     contacts2.Add("x");
+     contacts2.Add("x");
+
+
+     // adding all the doctors to the string
+     for (int i = 0; i < Connectionstring.DoctorsPerPatient.Count; i++)
+     {
+         if (i == 0)
+         {
+             doctor += Connectionstring.DoctorsPerPatient[i].Name;
+             numberdoctor += Connectionstring.DoctorsPerPatient[i].Number;
+         }
+         else
+         {
+             doctor += " || " + Connectionstring.DoctorsPerPatient[i].Name;
+             numberdoctor += " || " + Connectionstring.DoctorsPerPatient[i].Number;
+         }
+     }
+     // adding the contacts
+     for (int i = 0; i < Connectionstring.Contacts.Count; i++)
+     {
+         contacts2[i] = Connectionstring.Contacts[i].FirstName + " " + Connectionstring.Contacts[i].LastName + " || " + Connectionstring.Contacts[i].Number;
+     } */
 }
 
+
 <body style="background: #9fdefa">
-    <div class="Head">Account</div>
-    <div class="container">
-        <div class="row">
-            <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
-            </div>
-            <div class="col-12 col-lg-8 Privacytext">
-                <div class="row">
-                    <div class="col-xl-4 col-12">
-                        Voornaam:<br />
-                    </div>
-                    <div class="col-xl-8 col-12">
-                        Annelies<br />
-                    </div>
-                    <div class="col-xl-4 col-12">
-                        Achternaam:<br />
-                    </div>
-                    <div class="col-xl-8 col-12">
-                        de vries<br />
-                    </div>
-                    <div class="col-xl-4 col-12">
-                        Telefoonnummer:<br />
-                    </div>
-                    <div class="col-xl-8 col-12">
-                        0646721290<br />
+        <div class="Head">Account</div>
+        <div class="container">
+            <div class="row">
+                <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
+                </div>
+                <div class="col-12 col-lg-8 Privacytext">
+                    <div class="row">
+                        <div class="col-xl-4 col-12">
+                            Voornaam: <br />
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            @FirstName<br />
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            Achternaam:<br />
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            @LastName<br />
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            Telefoonnummer:<br />
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            @Phonenumber<br />
+                        </div>
                     </div>
                 </div>
+                <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
+                </div>
+                <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
+                </div>
+                <div class="col-12 col-lg-8 Privacytext">
+                    <h3>Doktoren:</h3>
+                    <div class="row">
+                        <div class="col-xl-4 col-12">
+                            Naam: <br/>
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            Dr. Kornips<br/>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            Telefoonnummer:<br/>
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            0884540662<br/>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="col-xl-4 col-12">
+                            Naam: <br/>
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            Dr. Jeurninck<br/>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            Telefoonnummer:<br/>
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            0402448277<br/>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
+                </div>
+                <div class="col-12" style="min-height:60px"></div>
             </div>
-            <div class="d-none d-lg-block col-lg-2" style="text-align:center; min-height:150px;">
-            </div>
-            <div class="col-12" style="min-height:60px"></div>
         </div>
-    </div>
-</body>
+    </body>

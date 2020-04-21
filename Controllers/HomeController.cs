@@ -93,8 +93,9 @@ namespace EurocomV2.Controllers
         {
             return View();
         }
-        public IActionResult Account()
+        public async Task<IActionResult> Account()
         {
+            TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
         public IActionResult DokterDashboard()

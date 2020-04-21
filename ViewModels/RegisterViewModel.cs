@@ -31,6 +31,10 @@ namespace EurocomV2.ViewModels
         public string ConfirmPassword { get; set; }
 
         [Required]
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNumber { get; set; }
+
+        [Required]
         public char gender { get; set; }
     }
 }

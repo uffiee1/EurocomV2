@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EurocomV2.Views
+namespace EurocomV2.Models.Classes
 {
     public class patient
     {

@@ -49,7 +49,7 @@ namespace EurocomV2.Controllers
                     firstName = model.FirstName;
                     lastName = model.LastName;
                 }
-                var user = new ApplicationUser() { UserName = Guid.NewGuid() + "_" + firstName + lastName, Email = model.Email, gender = model.gender, FirstName = model.FirstName, LastName = model.LastName};
+                var user = new ApplicationUser() { UserName = Guid.NewGuid() + "_" + firstName + lastName, Email = model.Email, gender = model.gender, FirstName = model.FirstName, LastName = model.LastName, PhoneNumber = model.PhoneNumber};
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)

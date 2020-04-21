@@ -18,5 +18,15 @@ namespace EurocomV2.Models.Classes
         {
             return user.LastName;
         }
+
+        public string getFirstName(ApplicationUser user)
+        {
+            return user.FirstName;
+        }
+
+        public string getPhoneNumber(ApplicationUser user)
+        {
+            return user.PhoneNumber;
+        }
     }
 }
