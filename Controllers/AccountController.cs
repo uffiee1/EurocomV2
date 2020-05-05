@@ -82,13 +82,15 @@ namespace EurocomV2.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(model.Email);
-                var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.rememberMe, false);
-                TempData["UserID"] = user.Id;
-                if (result.Succeeded)
+                if (user != null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.rememberMe, false);
+                    TempData["UserID"] = user.Id;
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
-
                 ModelState.AddModelError(string.Empty, "Email/Password combination invalid");
             }
 

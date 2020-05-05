@@ -83,9 +83,10 @@ namespace EurocomV2.Controllers
         }
 
         [Route("Home")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-
+            TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            await _userManager.FindByIdAsync(TempData["UserID"].ToString());
             return View();
         }
 
