@@ -484,3 +484,14 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Details.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Users\Index.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Doctor\Create.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Doctor\Delete.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Doctor\Details.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Doctor\Edit.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Doctor\Index.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Patient\Create.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Patient\Delete.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Patient\Details.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Patient\Edit.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Patient\Index.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\AdminNew\Index.cshtml.g.cs
