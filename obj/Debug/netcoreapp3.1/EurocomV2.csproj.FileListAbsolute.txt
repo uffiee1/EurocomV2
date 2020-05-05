@@ -136,3 +136,5 @@ F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Status.cshtml.g.cs
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\DokterDashboard.cshtml.g.cs
 F:\RenseGit\Eurocom\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+F:\RenseGit\Eurocom\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+F:\RenseGit\Eurocom\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
