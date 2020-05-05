@@ -2,7 +2,7 @@
 @model accgegevensModel
 @{
     // ViewData["Title"] = "Account gegevens";
-    connectionstring Connectionstring = new connectionstring();
+    patientAndContactReader Connectionstring = new patientAndContactReader();
     int UserId = 2; // this is where the UserId should be placed
     Connectionstring.Read(UserId);
     string FirstName = "voornaam: " + Connectionstring.CurrentPatient.FirstName;
@@ -14,7 +14,7 @@
     contacts2.Add("x");
     contacts2.Add("x");
     contacts2.Add("x");
-    
+
 
     // adding all the doctors to the string
     for (int i = 0; i < Connectionstring.DoctorsPerPatient.Count; i++)

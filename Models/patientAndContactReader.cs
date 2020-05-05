@@ -9,7 +9,7 @@ using EurocomV2.Controllers;
 
 namespace EurocomV2
 {
-    public class connectionstring
+    public class patientAndContactReader
     {
         public List<Doctor> DoctorsPerPatient = new List<Doctor>();
         public List<Contact> Contacts = new List<Contact>(); 

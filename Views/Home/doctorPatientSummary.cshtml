@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Patient Overzicht";
+    DoctorReader doctorReader = new DoctorReader();
+    int UserId = 3;
+    doctorReader.Read(UserId);
+    string name = doctorReader.patients[0].FirstName;
+}
+<body style="background: #9fdefa">
+    <p>@ViewData["Title"]</p>
+    <textarea readonly id="TextArea1" rows="20" cols="50">@name</textarea>
+</body>
