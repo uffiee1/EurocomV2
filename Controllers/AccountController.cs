@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
+using Data_Layer;
 
 namespace EurocomV2.Controllers
 {
@@ -76,7 +77,7 @@ namespace EurocomV2.Controllers
             return View();
         }
 
-        [HttpPost]
+       /* [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -95,6 +96,22 @@ namespace EurocomV2.Controllers
             }
 
             return View(model);
+        }
+        */
+
+       [HttpPost]
+       public async Task<IActionResult> Login(APILoginTestViewModel model)
+       {
+           if (ModelState.IsValid)
+           {
+               var data = await ProcessAPIData.LoadInrData(model.id);
+               if (data != null)
+               {
+                   return RedirectToAction("Status", "Home", data);
+               }
+
+           }
+           return View(model);
         }
 
         public IActionResult Logout()

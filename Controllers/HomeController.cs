@@ -10,13 +10,14 @@ using EurocomV2.Models;
 using EurocomV2.Models.Classes;
 using System.Data.SqlClient;
 using System.Security.Claims;
+using Data_Layer;
 using EurocomV2.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
 namespace EurocomV2.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class HomeController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -34,61 +35,48 @@ namespace EurocomV2.Controllers
 
 
         SqlConnection sqlConnection = new SqlConnection("server = (LocalDB)\\MSSQLLocalDB; database = EurocomJulian; Trusted_Connection = true; MultipleActiveResultSets = True");
-        public IActionResult Status()
+        public IActionResult Status(InrDTO data)
         {
-            if (_signInManager.IsSignedIn(User))
+            var model = new InrDTO()
             {
+                id = data.id,
+                lowerBoundary = data.lowerBoundary,
+                targetValue = data.targetValue,
+                upperBoundary = data.upperBoundary
+            };
 
-
-                var selectedUser = User.FindFirstValue(ClaimTypes.Name);
-
-
-                Random rnd = new Random();
-                double inrValue = rnd.NextDouble(1.0, 5.0);
-
-                inrValue = Math.Round(inrValue, 1);
-                SqlCommand updateStatus = new SqlCommand("INSERT INTO  PatientStatus(userID, IR) VALUES(" + "'"+ selectedUser + "'"  +", " + inrValue + ")", sqlConnection);
-                updateStatus.CommandType = CommandType.Text;
-
-                SqlCommand checkStatus = new SqlCommand("CheckStatus", sqlConnection);
-                checkStatus.CommandType = CommandType.StoredProcedure;
-                checkStatus.Parameters.AddWithValue("@userID", selectedUser);
-                sqlConnection.Open();
-                updateStatus.ExecuteNonQuery();
-                checkStatus.ExecuteNonQuery();
-                sqlConnection.Close();
-
-
-                if (inrValue > 0 && inrValue < 2)
-                {
-                    ViewBag.Status = "Perfect!";
-                    TempData["Statusicon"] = "Perfect";
-                    TempData["INR"] = inrValue;
-                }
-                else if (inrValue >= 2 && inrValue <= 3)
-                {
-                    ViewBag.Status = "Goed!";
-                    TempData["Statusicon"] = "Goed";
-                    TempData["INR"] = inrValue;
-                }
-                else
-                {
-                    ViewBag.Status = "Ga misschien langs bij uw huisarts";
-                    TempData["Statusicon"] = "Slecht";
-                    TempData["INR"] = inrValue;
-                }
+            if (model.targetValue <= model.lowerBoundary)
+            {
+                ViewBag.Status = "INR Waarde te laag!";
+                TempData["StatusIcon"] = "Slecht";
             }
-
-            return View();
+            else if (model.targetValue >= model.upperBoundary)
+            {
+                ViewBag.Status = "INR Waarde te hoog!";
+                TempData["StatusIcon"] = "Slecht";
+            }
+            else if (model.targetValue > model.lowerBoundary && model.targetValue < model.upperBoundary)
+            {
+                ViewBag.Status = "INR Waarde is niet te hoog en ook niet te laag!";
+                TempData["StatusIcon"] = "Perfect";
+            }
+            return View(model);
         }
 
-        [Route("Home")]
+     /*   [Route("Home")]
         public async Task<IActionResult> Index()
         {
             TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
             await _userManager.FindByIdAsync(TempData["UserID"].ToString());
             return View();
         }
+        */
+
+     public JsonResult Index()
+     {
+         return Json(ProcessAPIData.LoadInrData("00000bb9-00c8-0000-0000-000000000000"));
+    
+;     }
 
         public IActionResult Privacy()
         {

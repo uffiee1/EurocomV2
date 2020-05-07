@@ -466,3 +466,6 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Newtonsoft.Jso
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\DokterDashboard.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\accgegevens.cshtml.g.cs
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Data_Layer.dll
+C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Data_Layer.pdb

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data_Layer;
 using EurocomV2.Models;
 using EurocomV2.Models.Classes;
 using Microsoft.AspNetCore.Builder;
@@ -37,8 +38,9 @@ namespace EurocomV2
 
             //Use to changing the code while the program is running.
             services.AddRazorPages().AddRazorRuntimeCompilation();
-
+            services.AddHttpClient();
             services.AddControllersWithViews();
+            //services.AddSingleton<APICaller>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
