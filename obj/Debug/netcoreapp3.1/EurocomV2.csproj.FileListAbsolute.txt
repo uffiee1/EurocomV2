@@ -134,7 +134,6 @@ C:\Users\Gebruiker\Source\Repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.View
 C:\Users\Gebruiker\Source\Repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 C:\Users\Gebruiker\Source\Repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
 C:\Users\Gebruiker\Source\Repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
-C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Assign\Index.cshtml.g.cs
 C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
@@ -149,3 +148,6 @@ C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Mode
 C:\Users\Gebruiker\source\repos\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Data.pdb
 C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.Resources.Resource.resources
 C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.GenerateResource.cache
+C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Assign.cshtml.g.cs
+C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Delete.cshtml.g.cs
+C:\Users\Gebruiker\source\repos\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Overview.cshtml.g.cs

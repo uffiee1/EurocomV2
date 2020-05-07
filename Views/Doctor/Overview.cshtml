@@ -1,0 +1,28 @@
+﻿@model EurocomV2.Models.OverviewViewModel
+
+<h1>Overview</h1>
+
+@if (Model != null)
+{
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+       @foreach(var patient in Model.patients)
+        {
+            <tr>
+                <td>@patient.Firstname</td>
+                <td>@patient.Lastname</td>
+                @*<td>@patient.Status</td>
+                <td>@patient.Date</td>*@
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No info available</p>
+}

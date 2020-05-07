@@ -126,4 +126,7 @@
   <data name="AssignSuccess" xml:space="preserve">
     <value>Patient successfully assigned!</value>
   </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value>Patient successfully removed!</value>
+  </data>
 </root>

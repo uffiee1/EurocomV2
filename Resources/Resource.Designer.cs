@@ -86,5 +86,14 @@ namespace EurocomV2.Resources {
                 return ResourceManager.GetString("AssignSuccess", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patient successfully removed!.
+        /// </summary>
+        public static string DeleteSuccess {
+            get {
+                return ResourceManager.GetString("DeleteSuccess", resourceCulture);
+            }
+        }
     }
 }
