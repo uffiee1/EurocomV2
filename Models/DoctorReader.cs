@@ -76,17 +76,19 @@ namespace EurocomV2.Models
             List<string> UserIds = new List<string>();
             for (int i = 0; i < patientIds.Count; i++)
             {
-                if(patientIds.Count - i == i)
+                if(patientIds.Count == 1 || patientIds.Count - 1 == i)
                 {
-                    PatientIds += "'" + patientIds[i] + "'";
+                    PatientIds += patientIds[i];
                 }
                 else
                 {
-                    PatientIds +="'" + patientIds[i] + "'" + ", ";
-                }  
+                    PatientIds += patientIds[i] + ", ";
+                } 
             }
-            
+
             string queryString = "SELECT UserId FROM [Patient] WHERE PatientId IN (" + PatientIds + ");";
+            
+            //string queryString = $"SELECT UserId FROM [Patient] WHERE  PatientId = (" + PatientIds + ");";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -109,13 +111,13 @@ namespace EurocomV2.Models
         {
             for (int i = 0; i < UserIds.Count; i++)
             {
-                if (UserIds.Count - i == i)
+                if (UserIds.Count == 1 || UserIds.Count - 1 == i)
                 {
-                    userIds += "'" + UserIds[i] + "'";
+                    userIds += UserIds[i];
                 }
                 else
                 {
-                    userIds += "'" + UserIds[i] + "'" + ", ";
+                    userIds += UserIds[i] + ", ";
                 }
             }
             

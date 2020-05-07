@@ -2,11 +2,16 @@
 @{
     ViewData["Title"] = "Patient Overzicht";
     DoctorReader doctorReader = new DoctorReader();
-    int UserId = 3;
+    int UserId = 26;
     doctorReader.Read(UserId);
     string name = doctorReader.patients[0].FirstName;
+    string InfoPatients = "";
+    for (int i = 0; i < doctorReader.patients.Count; i++)
+    {
+        InfoPatients += doctorReader.patients[i].FirstName + " " + doctorReader.patients[i].LastName + "\n" + doctorReader.patients[i].Number + "\n------------------------------------------\n";
+    }
 }
 <body style="background: #9fdefa">
     <p>@ViewData["Title"]</p>
-    <textarea readonly id="TextArea1" rows="20" cols="50">@name</textarea>
+    <textarea readonly id="TextArea1" rows="20" cols="50">@InfoPatients</textarea>
 </body>
