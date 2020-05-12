@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "01ZGnHu5mNp2RMikm1n6JPYo2LLEciIB0acv59oiwg1v3aMufBrzaUABeaXbK3m217w3fp2B8FZwstBsdkjgGw==",
+  "dgSpecHash": "pZdDn0XMlRbBGSUGcL8c+BhHQHa2NcTwgvIgKXrHZsPprWenlhSc+umMUxE8cmpE28lNsr5lTMfTqKprIK872Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,8 @@
     "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.2.0\\microsoft.aspnetcore.identity.2.2.0.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.3\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.3.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.3\\microsoft.aspnetcore.jsonpatch.3.1.3.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.3\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.3.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.3\\microsoft.aspnetcore.mvc.razor.extensions.3.1.3.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.3\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.3.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
@@ -84,7 +86,7 @@
     "C:\\Users\\Julia\\.nuget\\packages\\mysql.data\\8.0.19\\mysql.data.8.0.19.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

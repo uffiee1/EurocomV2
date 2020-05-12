@@ -40,6 +40,9 @@ namespace EurocomV2
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddHttpClient();
             services.AddControllersWithViews();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             //services.AddSingleton<APICaller>();
         }
 

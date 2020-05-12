@@ -72,11 +72,11 @@ namespace EurocomV2.Controllers
         }
         */
 
-     public JsonResult Index()
+     [HttpGet]
+     public async Task<List<MeasurementDTO>> Index()
      {
-         return Json(ProcessAPIData.LoadInrData("00000bb9-00c8-0000-0000-000000000000"));
-    
-;     }
+         return await ProcessAPIData.GetMeasurementData("00000bb9-00c8-0000-0000-000000000000");
+     }
 
         public IActionResult Privacy()
         {
