@@ -7,6 +7,7 @@ namespace EurocomV2.Models
 {
     public class OverviewViewModel
     {
-        public List<PatientViewModel> patients { get; set; }
+        public PatientViewModel patientViewModel { get; set; }
+        public List<PatientViewModel> patientStatus { get; set; }
     }
 }

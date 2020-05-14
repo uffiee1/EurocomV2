@@ -8,6 +8,6 @@ namespace EurocomV2.Models
     public class StatusViewModel
     {
         public DateTime Date { get; set; }
-        public double INR { get; set; }
+        public decimal INR { get; set; }
     }
 }
