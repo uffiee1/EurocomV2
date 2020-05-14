@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using EurocomV2.Models.Classes
+
+@inject SignInManager<ApplicationUser> signInManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,7 +15,7 @@
     <link href="~/css/Style.css" rel="stylesheet" />
 </head>
 <body>
-    
+
     <header>
         <nav class="navbar navbar-expand navbar-light border-bottom box-shadow mb-3" style="background-color:steelblue;">
             <div class="container">

@@ -1,29 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using EurocomV2.Models;
+using EurocomV2.Models.Classes;
+using System.Data.SqlClient;
+using System.Security.Claims;
+using EurocomV2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace EurocomV2.Controllers
 {
+   // [Authorize]
     public class HomeController : Controller
     {
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+
+
+        public HomeController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILogger<HomeController> logger)
         {
+            _userManager = userManager;
+            _signInManager = signInManager;
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+
+        SqlConnection sqlConnection = new SqlConnection("server = (LocalDB)\\MSSQLLocalDB; database = EurocomJulian; Trusted_Connection = true; MultipleActiveResultSets = True");
         public IActionResult Status()
         {
+            if (_signInManager.IsSignedIn(User))
+            {
+
+
+                var selectedUser = User.FindFirstValue(ClaimTypes.Name);
+
+
+                Random rnd = new Random();
+                double inrValue = rnd.NextDouble(1.0, 5.0);
+
+                inrValue = Math.Round(inrValue, 1);
+                SqlCommand updateStatus = new SqlCommand("INSERT INTO  PatientStatus(userID, IR) VALUES(" + "'"+ selectedUser + "'"  +", " + inrValue + ")", sqlConnection);
+                updateStatus.CommandType = CommandType.Text;
+
+                SqlCommand checkStatus = new SqlCommand("CheckStatus", sqlConnection);
+                checkStatus.CommandType = CommandType.StoredProcedure;
+                checkStatus.Parameters.AddWithValue("@userID", selectedUser);
+                sqlConnection.Open();
+                updateStatus.ExecuteNonQuery();
+                checkStatus.ExecuteNonQuery();
+                sqlConnection.Close();
+
+
+                if (inrValue > 0 && inrValue < 2)
+                {
+                    ViewBag.Status = "Perfect!";
+                    TempData["Statusicon"] = "Perfect";
+                    TempData["INR"] = inrValue;
+                }
+                else if (inrValue >= 2 && inrValue <= 3)
+                {
+                    ViewBag.Status = "Goed!";
+                    TempData["Statusicon"] = "Goed";
+                    TempData["INR"] = inrValue;
+                }
+                else
+                {
+                    ViewBag.Status = "Ga misschien langs bij uw huisarts";
+                    TempData["Statusicon"] = "Slecht";
+                    TempData["INR"] = inrValue;
+                }
+            }
+
+            return View();
+        }
+
+        [Route("Home")]
+        public IActionResult Index()
+        {
+
             return View();
         }
 
@@ -31,15 +93,16 @@ namespace EurocomV2.Controllers
         {
             return View();
         }
-        public IActionResult Account()
+        public async Task<IActionResult> Account()
         {
+            TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
         public IActionResult DokterDashboard()
         {
             return View();
         }
-        public IActionResult Login()
+        public IActionResult accgegevens()
         {
             return View();
         }
@@ -48,6 +111,13 @@ namespace EurocomV2.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult test()
+        {
+            patient bob = new patient("Bob", "bobson", "10", "test");
+            patient herman = new patient("herman", "hermanson", "42", "groen");
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman);
+            return View(patientenviewmodel);
         }
     }
 }

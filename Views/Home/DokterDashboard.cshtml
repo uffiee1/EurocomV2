@@ -7,9 +7,9 @@
         <div class="container">
             <div class="row">
                 <div><br /><br /></div>
-                <div class="col-xl-7 col-12 w-100" style="height:20rem;">
+                <div class="col-xl-7 col-12 w-100" style="height:25rem;">
                         <div class="w-100 Privacytext" style="height:3rem">Meldingen</div>
-                        <div class="col-12 Privacytext w-100" style="height:17rem">
+                        <div class="col-12 Privacytext w-100" style="height:22rem">
                             <div>
                                 @* @foreach (melding in meldingen){
                  <div class="col-12">
@@ -22,19 +22,16 @@
                         </div>
                 </div>
                 <div class="col-12 d-xl-none" style="height:60px;"></div>
-                <div class="col-xl-5 col-12" style="text-align:center; height:20rem;">
+                <div class="col-xl-5 col-12" style="text-align:center; height:25rem;">
                     <input type="text" class="w-75" style="height:2rem" /><button class="w-25" style="height:2rem"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                     <div class="w-100 Privacytext" style="height:3rem">Patienten</div>
-                    <div class="col-12 Privacytext" style="height:12.5rem;">
-                        <ul class="list-group w-100">
-                            @* @foreach (patient in patienten){
-                             <div class="col-12 w-100">
-                             <a href="Doctor/patient">
-                             <div>patient.naam</div>
-                             </a>
-                             </div>
-                            }*@
-                        </ul>
+                    <div class="list-group w-100 Privacytext" style="overflow-y:scroll; height:17.5rem;">
+                        <a asp-controller="Home" asp-action="Privacy" class="list-group-item list-group-item-action">Ein</a>
+                        <a asp-controller="Home" asp-action="Privacy" class="list-group-item list-group-item-action">Zwei</a>
+                        <a asp-controller="Home" asp-action="Privacy" class="list-group-item list-group-item-action">polizei</a>
+                        <a asp-controller="Home" asp-action="Privacy" class="list-group-item list-group-item-action">Drie</a>
+                        <a asp-controller="Home" asp-action="Privacy" class="list-group-item list-group-item-action">Vier</a>
+                        <a asp-controller="Home" asp-action="Privacy" class="list-group-item list-group-item-action">Flesje Bier</a>
                     </div>
                     <button class="btn btn-primary w-100" style="height:2.5rem">Create patient</button>
                 </div>
