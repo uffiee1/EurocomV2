@@ -6,12 +6,63 @@
     doctorReader.Read(UserId);
     string name = doctorReader.patients[0].FirstName;
     string InfoPatients = "";
+    List<string> names = new List<string>();
+    List<string> ids = doctorReader.ReadUserIds(doctorReader.ReadPatientIds(doctorReader.ConnectionString, doctorReader.test), doctorReader.ConnectionString);
+    for (int i = 0; i < doctorReader.patients.Count; i++)
+    {
+        names.Add(doctorReader.patients[i].FirstName + " " + doctorReader.patients[i].LastName);
+        
+    }
     for (int i = 0; i < doctorReader.patients.Count; i++)
     {
         InfoPatients += doctorReader.patients[i].FirstName + " " + doctorReader.patients[i].LastName + "\n" + doctorReader.patients[i].Number + "\n------------------------------------------\n";
     }
+   
 }
-<body style="background: #9fdefa">
-    <p>@ViewData["Title"]</p>
-    <textarea readonly id="TextArea1" rows="20" cols="50">@InfoPatients</textarea>
-</body>
+    <body style="background: #9fdefa">
+        <p>@ViewData["Title"]</p>
+        <textarea style="resize:none" readonly id="TextArea1" rows="15" cols="27">@InfoPatients</textarea>
+        <div class="container">
+            <input class="search-input" type="text" placeholder="Search here..." />
+            <div class="suggestions">
+                @for (int i = 0; i < names.Count; i++)
+                 {
+                    <a href=@ids[i]><div>@names[i]</div></a>
+                 } 
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript" language="javascript">
+    const Patienten = [
+    ];
+
+        var arr = JSON.parse('@Html.Raw(Json.Serialize(names))');
+        var arrid = JSON.parse('@Html.Raw(Json.Serialize(ids))');
+        
+
+        for (var i = 0; i < @doctorReader.patients.Count; i++) {
+        Patienten.push({ name: arr[i], value: arrid[i] });
+        }
+        const searchInput = document.querySelector('.search-input');
+        const suggestionsPanel = document.querySelector('.suggestions');
+
+
+        searchInput.addEventListener('keyup', function () {
+        const input = searchInput.value;
+        suggestionsPanel.innerHTML = '';
+        const suggestions = Patienten.filter(function (patient) {
+            return patient.name.toLowerCase().startsWith(input);
+        });
+        suggestions.forEach(function (suggested) {
+            const Uberdiv = document.createElement('div');
+            const a = document.createElement('a');
+            const div = document.createElement('div');
+            div.innerHTML = suggested.name;
+            a.setAttribute("href", suggested.value);
+            a.appendChild(div);
+            Uberdiv.appendChild(a);
+            suggestionsPanel.appendChild(Uberdiv);
+        });
+    })
+    </script>

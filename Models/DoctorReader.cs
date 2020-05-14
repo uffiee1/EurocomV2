@@ -13,16 +13,18 @@ namespace EurocomV2.Models
         public List<patient> patients = new List<patient>();
         string PatientIds = "";
         string userIds = "";
-
+        public string test = "";
+        public string ConnectionString = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocom; Persist Security Info = True; User ID = dbi406383_eurocom; Password = Kastanje81;";
         public void Read(int UserId)
         {
             PatientIds = "";
             userIds = "";
             patients.Clear();
 
-            string ConnectionString = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocom; Persist Security Info = True; User ID = dbi406383_eurocom; Password = Kastanje81;";
             string str = "SELECT DoctorId FROM [Doctor] WHERE UserId = '" + UserId + "';";
             string str2 = "SELECT PatientId FROM [DoctorPatient] WHERE DoctorId = '" + ReadDocterId(ConnectionString, str) + "'";
+            test = str2;
+           
             ReadPatients(ReadUserIds(ReadPatientIds(ConnectionString, str2), ConnectionString), ConnectionString);
         }
 
