@@ -9912,11 +9912,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\RenseGit\\Eurocom\\EurocomV2.csproj",
+      "projectUniqueName": "F:\\RenseGit\\EurocomV2\\EurocomV2.csproj",
       "projectName": "EurocomV2",
-      "projectPath": "F:\\RenseGit\\Eurocom\\EurocomV2.csproj",
+      "projectPath": "F:\\RenseGit\\EurocomV2\\EurocomV2.csproj",
       "packagesPath": "C:\\Users\\Rense\\.nuget\\packages\\",
-      "outputPath": "F:\\RenseGit\\Eurocom\\obj\\",
+      "outputPath": "F:\\RenseGit\\EurocomV2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

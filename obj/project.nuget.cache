@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vJ+V8441Z7QmWLJ4wslGvOXPOhgE4TINC3VGh9BMv+rojSzOXEZmtas3YTE4E0s3WeaM5zor3wD8bqRxraq3ow==",
+  "dgSpecHash": "sIbDlasTV9/MYYlDhUUask7avWidnTgZqzLOBbd9mm7nJshLm3DwBW4T8fv2SEbSmnkG6NjnsTqkuVpMg6bKBQ==",
   "success": true,
-  "projectFilePath": "F:\\RenseGit\\Eurocom\\EurocomV2.csproj",
+  "projectFilePath": "F:\\RenseGit\\EurocomV2\\EurocomV2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rense\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
