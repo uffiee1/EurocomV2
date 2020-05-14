@@ -100,14 +100,22 @@ namespace EurocomV2.Controllers
         */
 
        [HttpPost]
+       
        public async Task<IActionResult> Login(APILoginTestViewModel model)
        {
            if (ModelState.IsValid)
            {
-               var data = await ProcessAPIData.LoadInrData(model.id);
+               string deviceID = ProcessAPIData.GetUserDevice(await ProcessAPIData.GetAllDevices(), model.id);
+               
+               StatusViewModel data = new StatusViewModel()
+               {
+                   Measurement = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(deviceID)),
+                   InrDto = await ProcessAPIData.LoadInrData(deviceID)
+               };
                if (data != null)
                {
-                   return RedirectToAction("Status", "Home", data);
+                   TempData["Id"] = data.InrDto.id;
+                   return RedirectToAction("Status", "Home");
                }
 
            }

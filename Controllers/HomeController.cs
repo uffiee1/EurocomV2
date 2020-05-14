@@ -35,32 +35,32 @@ namespace EurocomV2.Controllers
 
 
         SqlConnection sqlConnection = new SqlConnection("server = (LocalDB)\\MSSQLLocalDB; database = EurocomJulian; Trusted_Connection = true; MultipleActiveResultSets = True");
-        public IActionResult Status(InrDTO data)
+        public async Task<IActionResult> Status()
         {
-            var model = new InrDTO()
+            var id = TempData["Id"];
+
+            StatusViewModel data = new StatusViewModel()
             {
-                id = data.id,
-                lowerBoundary = data.lowerBoundary,
-                targetValue = data.targetValue,
-                upperBoundary = data.upperBoundary
+                Measurement = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(id.ToString())),
+                InrDto = await ProcessAPIData.LoadInrData(id.ToString())
             };
 
-            if (model.targetValue <= model.lowerBoundary)
+            if (data.InrDto.targetValue <= data.InrDto.lowerBoundary)
             {
-                ViewBag.Status = "INR Waarde te laag!";
-                TempData["StatusIcon"] = "Slecht";
+                data.Status = "INR Waarde te laag!";
+                data.Icon = StatusIcon.Slect;
             }
-            else if (model.targetValue >= model.upperBoundary)
+            else if (data.InrDto.targetValue >= data.InrDto.upperBoundary)
             {
-                ViewBag.Status = "INR Waarde te hoog!";
-                TempData["StatusIcon"] = "Slecht";
+                data.Status = "INR Waarde te hoog!";
+                data.Icon = StatusIcon.Slect;
             }
-            else if (model.targetValue > model.lowerBoundary && model.targetValue < model.upperBoundary)
+            else if (data.InrDto.targetValue > data.InrDto.lowerBoundary && data.InrDto.targetValue < data.InrDto.upperBoundary)
             {
-                ViewBag.Status = "INR Waarde is niet te hoog en ook niet te laag!";
-                TempData["StatusIcon"] = "Perfect";
+                data.Status = "INR Waarde is niet te hoog en ook niet te laag!";
+                data.Icon = StatusIcon.Perfect;
             }
-            return View(model);
+            return View(data);
         }
 
      /*   [Route("Home")]
