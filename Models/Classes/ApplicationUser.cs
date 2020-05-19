@@ -11,5 +11,6 @@ namespace EurocomV2.Models.Classes
         public char gender { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Name { get; set; }
     }
 }

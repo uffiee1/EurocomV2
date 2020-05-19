@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EurocomV2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200421130644_ExtendIdentity")]
-    partial class ExtendIdentity
+    [Migration("20200519124618_extend-identity")]
+    partial class extendidentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,9 @@ namespace EurocomV2.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
