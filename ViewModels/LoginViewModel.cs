@@ -9,14 +9,14 @@ namespace EurocomV2.ViewModels
     public class LoginViewModel
     {
         [Required]
-        public string Name { get; set; }
+        public string Email { get; set; }
 
 
-       // [Required]
-      //  [DataType(DataType.Password)]
-       // public string Password { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
 
-       // [Display(Name = "Remember Me")]
-       // public bool rememberMe { get; set; }
+        [Display(Name = "Remember Me")]
+        public bool rememberMe { get; set; }
     }
 }

@@ -438,7 +438,6 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win\l
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
@@ -471,3 +470,4 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.AspN
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Julia\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
