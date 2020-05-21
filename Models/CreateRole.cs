@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace EurocomV2.Models
 {
-    public class RoleViewModel
+    public class CreateRole
     {
         [Key]
-        public string UserId { get; set; }
-
         [Required]
-        public string UserName { get; set; }
-
-        public bool IsSelected { get; set; }
+        [Display(Name = "Role")]
+        public string RoleName { get; set; }
     }
 }
