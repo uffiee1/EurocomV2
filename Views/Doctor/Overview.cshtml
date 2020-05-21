@@ -2,23 +2,9 @@
 
 @if (Model.patientStatus.Count > 0)
 {
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>INR</th>
-        </tr>
-        @foreach (var status in Model.patientStatus)
-        {
-            <tr>
-                <td>@status.statusViewModel.Date</td>
-                <td>@status.statusViewModel.INR</td>
-            </tr>
-        }
-    </table>
-
     <head>
         <script>
-    window.onload = function () {
+        window.onload = function () {
 
         var dataPoints = [];
 
@@ -35,7 +21,7 @@
             },
             data: [{
                 type: "line",
-                yValueFormatString: "HK$#,###",
+                //yValueFormatString: "HK$#,###",
                 dataPoints: dataPoints
             }]
         });
@@ -60,6 +46,39 @@
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
         <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <div>
+            <p>@*witregel*@<br /></p>
+        </div>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>INR</th>
+            </tr>
+            @foreach (var status in Model.patientStatus)
+            {
+                <tr>
+                    <td>@status.statusViewModel.Date</td>
+                    <td>@status.statusViewModel.INR</td>
+                </tr>
+            }
+        </table>
+        <div>
+            <p>@*witregel*@<br /></p>
+        </div>
+        <table>
+            <tr>
+                <th>Phonenumber</th>
+                <th>Email</th>
+                <th>Date of birth</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>@Model.patientViewModel.Phonenumber</td>
+                <td>@Model.patientViewModel.Email</td>
+                <td>@Model.patientViewModel.DateOfBirth</td>
+                <td>@Model.patientViewModel.Age</td>
+            </tr>
+        </table>
     </body>
 }
 else

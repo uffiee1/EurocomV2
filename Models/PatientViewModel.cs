@@ -9,6 +9,8 @@ namespace EurocomV2.Models
     public class PatientViewModel : UserViewModel
     {
         public StatusViewModel statusViewModel { get; set; }
+        public string DateOfBirth { get; set; }
+        public int Age { get; set; }
         public string securityCode { get; set; }
     }
 }

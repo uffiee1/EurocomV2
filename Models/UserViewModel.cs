@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,5 +14,6 @@ namespace EurocomV2.Models
         public string Username { get; set; }
         public string Phonenumber { get; set; }
         public bool Agreement { get; set; }
+        public string Email { get; set; }
     }
 }
