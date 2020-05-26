@@ -25,7 +25,15 @@
                 break;
         }
             </div>
-            <div class="col-1">
+            <div class="col-2">
+                @{string gezondheid = "kut";}
+                @if(gezondheid == "kut"){
+                <a href="Mail/GetMail">
+                    <div type="button" class="btn btn-danger btn w-100" style="height: auto; font-weight:bold; text-align:center; font-size:larger">
+                        Contact <br /> Doktor
+                    </div>
+                </a>
+                }
             </div>
             <div class="col-7 Textvlak2" style="text-align:center;">
                 @Model.Status

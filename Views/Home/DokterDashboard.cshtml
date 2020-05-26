@@ -1,44 +1,75 @@
-﻿@{
+﻿@model EurocomV2.ViewModels.patientenviewmodel
+@{
     ViewData["Title"] = "Dashboard";
 }
 
-    <body style="background: #9fdefa">
-        <div class="Head">Welkom, Dr de Laat</div>
-        <div class="container">
-            <div class="row">
-                <div><br /><br /></div>
-                <div class="col-xl-7 col-12 w-100" style="height:20rem;">
-                        <div class="w-100 Privacytext" style="height:3rem">Meldingen</div>
-                        <div class="col-12 Privacytext w-100" style="height:17rem">
-                            <div>
-                                @* @foreach (melding in meldingen){
-                 <div class="col-12">
-                 <a href="Doctor/meldingInhoud">
-                 <div>melding.naam</div>
-                 </a>
-                 </div>
-                }*@
-                            </div>
-                        </div>
-                </div>
-                <div class="col-12 d-xl-none" style="height:60px;"></div>
-                <div class="col-xl-5 col-12" style="text-align:center; height:20rem;">
-                    <input type="text" class="w-75" style="height:2rem" /><button class="w-25" style="height:2rem"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                    <div class="w-100 Privacytext" style="height:3rem">Patienten</div>
-                    <div class="col-12 Privacytext" style="height:12.5rem;">
-                        <ul class="list-group w-100">
-                            @* @foreach (patient in patienten){
-                             <div class="col-12 w-100">
-                             <a href="Doctor/patient">
-                             <div>patient.naam</div>
-                             </a>
-                             </div>
-                            }*@
-                        </ul>
+<body style="background: #9fdefa">
+    <div class="Head">Welkom, Dr de Laat</div>
+    <div class="container">
+        <div class="row">
+            <div><br /><br /></div>
+            <div class="col-xl-7 col-12 w-100" style="height:25rem;">
+                <div class="w-100 Privacytext" style="height:3rem">Meldingen</div>
+                <div class="col-12 Privacytext w-100" style="height:22rem">
+                    <div>
+                        @* @foreach (melding in meldingen){
+                     <div class="col-12">
+                     <a href="Doctor/meldingInhoud">
+                     <div>melding.naam</div>
+                     </a>
+                     </div>
+                    }*@
                     </div>
-                    <button class="btn btn-primary w-100" style="height:2.5rem">Create patient</button>
                 </div>
-                <div class="col-12" style="height:60px"></div>
             </div>
+            <div class="col-12 d-xl-none" style="height:60px;"></div>
+            <div class="col-xl-5 col-12" style="text-align:center; height:25rem;">
+                <div class="w-100 Privacytext" style="height:3rem">Patienten</div>
+                <input type="text" class="w-100 search-input" style="height:2rem; border-style:solid; border-color:white;" placeholder="Zoek hier..." />
+                <div class="list-group w-100 Privacytext suggestions" style="overflow-y:scroll; height:17.5rem;">
+                    @foreach (EurocomV2.Models.Classes.patient patient in Model.patienten)
+                    {
+                        <div class="searchresults"><a style="color:white;" href=@patient.Number><div>@patient.FirstName @patient.LastName</div></a></div>
+                    }
+                </div>
+                <button class="btn btn-primary w-100" style="height:2.5rem">Create patient</button>
+            </div>
+            <div class="col-12" style="height:60px"></div>
         </div>
-    </body>
+    </div>
+</body>
+
+<script type="text/javascript" language="javascript">
+    const Patienten = [
+    ];
+    var count = @Model.patienten.Count();
+    var arr = JSON.parse('@Html.Raw(Json.Serialize(@Model.Namen))');
+    var arrid = JSON.parse('@Html.Raw(Json.Serialize(@Model.ids))');
+
+    for (var i = 0; i < count; i++) {
+        Patienten.push({ name: arr[i], value: arrid[i] });
+    }
+    const searchInput = document.querySelector('.search-input');
+    const suggestionsPanel = document.querySelector('.suggestions');
+
+
+    searchInput.addEventListener('keyup', function () {
+        const input = searchInput.value;
+        suggestionsPanel.innerHTML = '';
+        const suggestions = Patienten.filter(function (patient) {
+            return patient.name.toLowerCase().startsWith(input);
+        });
+        suggestions.forEach(function (suggested) {
+            const Uberdiv = document.createElement('div');
+            const a = document.createElement('a');
+            const div = document.createElement('div');
+            div.innerHTML = suggested.name;
+            a.setAttribute("href", suggested.value);
+            a.setAttribute("style", "color:white;");
+            a.appendChild(div);
+            Uberdiv.setAttribute("class", "searchresults")
+            Uberdiv.appendChild(a);
+            suggestionsPanel.appendChild(Uberdiv);
+        });
+    })
+</script>

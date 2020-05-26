@@ -73,33 +73,67 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n    ");
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "340a31fa239237b379555bfc35d433077c351cdd3828", async() => {
                 WriteLiteral(@"
-        <div class=""Head"">Welkom, Dr de Laat</div>
-        <div class=""container"">
-            <div class=""row"">
-                <div><br /><br /></div>
-                <div class=""col-xl-7 col-12 w-100"" style=""height:20rem;"">
-                        <div class=""w-100 Privacytext"" style=""height:3rem"">Meldingen</div>
-                        <div class=""col-12 Privacytext w-100"" style=""height:17rem"">
-                            <div>
+    <div class=""Head"">Welkom, Dr de Laat</div>
+    <div class=""container"">
+        <div class=""row"">
+            <div><br /><br /></div>
+            <div class=""col-xl-7 col-12 w-100"" style=""height:25rem;"">
+                <div class=""w-100 Privacytext"" style=""height:3rem"">Meldingen</div>
+                <div class=""col-12 Privacytext w-100"" style=""height:22rem"">
+                    <div>
 ");
-                WriteLiteral(@"                            </div>
-                        </div>
+                WriteLiteral(@"                    </div>
                 </div>
-                <div class=""col-12 d-xl-none"" style=""height:60px;""></div>
-                <div class=""col-xl-5 col-12"" style=""text-align:center; height:20rem;"">
-                    <input type=""text"" class=""w-75"" style=""height:2rem"" /><button class=""w-25"" style=""height:2rem""><span class=""glyphicon glyphicon-search"" aria-hidden=""true""></span></button>
-                    <div class=""w-100 Privacytext"" style=""height:3rem"">Patienten</div>
-                    <div class=""col-12 Privacytext"" style=""height:12.5rem;"">
-                        <ul class=""list-group w-100"">
-");
-                WriteLiteral(@"                        </ul>
-                    </div>
-                    <button class=""btn btn-primary w-100"" style=""height:2.5rem"">Create patient</button>
-                </div>
-                <div class=""col-12"" style=""height:60px""></div>
             </div>
-        </div>
-    ");
+            <div class=""col-12 d-xl-none"" style=""height:60px;""></div>
+            <div class=""col-xl-5 col-12"" style=""text-align:center; height:25rem;"">
+                <div class=""w-100 Privacytext"" style=""height:3rem"">Patienten</div>
+                <input type=""text"" class=""w-100 search-input"" style=""height:2rem; border-style:solid; border-color:white;"" placeholder=""Zoek hier..."" />
+                <div class=""list-group w-100 Privacytext suggestions"" style=""overflow-y:scroll; height:17.5rem;"">
+");
+#nullable restore
+#line 30 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+                     foreach (EurocomV2.Models.Classes.patient patient in Model.patienten)
+                    {
+
+#line default
+#line hidden
+#nullable disable
+                WriteLiteral("                        <div class=\"searchresults\"><a style=\"color:white;\"");
+                BeginWriteAttribute("href", " href=", 1585, "", 1606, 1);
+#nullable restore
+#line 32 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+WriteAttributeValue("", 1591, patient.Number, 1591, 15, false);
+
+#line default
+#line hidden
+#nullable disable
+                EndWriteAttribute();
+                WriteLiteral("><div>");
+#nullable restore
+#line 32 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+                                                                                                Write(patient.FirstName);
+
+#line default
+#line hidden
+#nullable disable
+                WriteLiteral(" ");
+#nullable restore
+#line 32 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+                                                                                                                   Write(patient.LastName);
+
+#line default
+#line hidden
+#nullable disable
+                WriteLiteral("</div></a></div>\r\n");
+#nullable restore
+#line 33 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+                    }
+
+#line default
+#line hidden
+#nullable disable
+                WriteLiteral("                </div>\r\n                <button class=\"btn btn-primary w-100\" style=\"height:2.5rem\">Create patient</button>\r\n            </div>\r\n            <div class=\"col-12\" style=\"height:60px\"></div>\r\n        </div>\r\n    </div>\r\n");
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper>();
@@ -112,7 +146,56 @@ using Microsoft.AspNetCore.Identity;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            WriteLiteral("\r\n");
+            WriteLiteral("\r\n\r\n<script type=\"text/javascript\" language=\"javascript\">\r\n    const Patienten = [\r\n    ];\r\n    var count = ");
+#nullable restore
+#line 45 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+           Write(Model.patienten.Count());
+
+#line default
+#line hidden
+#nullable disable
+            WriteLiteral(";\r\n    var arr = JSON.parse(\'");
+#nullable restore
+#line 46 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+                     Write(Html.Raw(Json.Serialize(@Model.Namen)));
+
+#line default
+#line hidden
+#nullable disable
+            WriteLiteral("\');\r\n    var arrid = JSON.parse(\'");
+#nullable restore
+#line 47 "F:\RenseGit\EurocomV2\Views\Home\DokterDashboard.cshtml"
+                       Write(Html.Raw(Json.Serialize(@Model.ids)));
+
+#line default
+#line hidden
+#nullable disable
+            WriteLiteral(@"');
+
+    for (var i = 0; i < count; i++) {
+        Patienten.push({ name: arr[i], value: arrid[i] });
+    }
+    const searchInput = document.querySelector('.search-input');
+    const suggestionsPanel = document.querySelector('.suggestions');
+
+
+    searchInput.addEventListener('keyup', function () {
+        const input = searchInput.value;
+        suggestionsPanel.innerHTML = '';
+        const suggestions = Patienten.filter(function (patient) {
+            return patient.name.toLowerCase().startsWith(input);
+        });
+        suggestions.forEach(function (suggested) {
+            const Uberdiv = document.createElement('div');
+            const a = document.createElement('a');
+            const div = document.createElement('div');
+            div.innerHTML = suggested.name;
+            a.setAttribute(""href"", suggested.value);
+            a.setAttribute(""style"", ""color:white;"");
+            a.appendChild(div);
+            Uberdiv.setAttribute(""class"", ""searchresults"")
+            Uberdi");
+            WriteLiteral("v.appendChild(a);\r\n            suggestionsPanel.appendChild(Uberdiv);\r\n        });\r\n    })\r\n</script>");
         }
         #pragma warning restore 1998
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
@@ -124,7 +207,7 @@ using Microsoft.AspNetCore.Identity;
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<EurocomV2.ViewModels.patientenviewmodel> Html { get; private set; }
     }
 }
 #pragma warning restore 1591
