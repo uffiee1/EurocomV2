@@ -4,12 +4,12 @@
 }
 
 
-    <body style="background: #9fdefa">
-        <div class="Head">Status</div>
-        <div class="Head2">@Model.InrDto.client.name<br /><br /><br /></div>
-        <div class="row">
-            <div class="col-4 Textvlak" style="text-align:center;">
-                INR @Math.Round(Convert.ToDecimal(Model.Measurement.measurementValue), 2) <br />
+<body style="background: #9fdefa">
+<div class="Head">Status</div>
+<div class="Head2">@Model.InrDto.client.name<br /><br /><br /></div>
+<div class="row">
+    <div class="col-4 Textvlak" style="text-align:center;">
+        INR @Math.Round(Convert.ToDecimal(Model.Measurement.measurementValue), 2) <br />
         @switch (@Model.Icon)
         {
             case StatusIcon.Perfect:
@@ -17,27 +17,18 @@
                 break;
             case StatusIcon.Goed:
                 <span class="glyphicon glyphicon-minus-sign"></span>
-                        break;
-                    case StatusIcon.Slect:
+                break;
+            case StatusIcon.Slect:
                 <span class="glyphicon glyphicon-remove-sign"></span>
                 break;
             default:
                 break;
         }
-            </div>
-            <div class="col-2">
-                @{string gezondheid = "kut";}
-                @if(gezondheid == "kut"){
-                <a href="Mail/GetMail">
-                    <div type="button" class="btn btn-danger btn w-100" style="height: auto; font-weight:bold; text-align:center; font-size:larger">
-                        Contact <br /> Doktor
-                    </div>
-                </a>
-                }
-            </div>
-            <div class="col-7 Textvlak2" style="text-align:center;">
-                @Model.Status
-            </div>
-        </div>
-    </body>
-
+    </div>
+    <div class="col-1">
+    </div>
+    <div class="col-7 Textvlak2" style="text-align:center;">
+        @Model.Status
+    </div>
+</div>
+</body>
