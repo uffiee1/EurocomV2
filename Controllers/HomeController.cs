@@ -100,7 +100,10 @@ namespace EurocomV2.Controllers
         }
         public IActionResult DokterDashboard()
         {
-            return View();
+            patient bob = new patient("Bob", "bobson", "10", "test");
+            patient herman = new patient("herman", "hermanson", "42", "groen");
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman);
+            return View(patientenviewmodel);
         }
         public IActionResult accgegevens()
         {

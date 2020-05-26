@@ -112,5 +112,11 @@
         font-size: 4.4vw;
     }
 }
+.searchresults {
+    background-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    font-size: x-large;
+}
 
 
