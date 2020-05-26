@@ -79,6 +79,13 @@
                 <td>@Model.patientViewModel.Age</td>
             </tr>
         </table>
+        <div>
+            <p>@*witregel*@<br/></p>
+        </div>
+        <form method="post" asp-controller="Doctor" asp-action="Status_RemovePatientFromDoctor">
+            <p><b>Remove patient from doctor</b></p>
+            <input type="submit" value="Remove" />
+        </form>
     </body>
 }
 else

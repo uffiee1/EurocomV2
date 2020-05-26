@@ -22,7 +22,7 @@ namespace EurocomV2.Controllers
         string username = "dTest5";
 
         //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
-        int userId = 6;
+        int userId = 1;
 
         public ActionResult Assign()
         {
@@ -86,7 +86,7 @@ namespace EurocomV2.Controllers
                     SecurityCodeMatch = assignModel.SecurityCodeMatch,
                     AssignMessage = Resource.AssignSecurityCodeError
                 };
-                return View("Index", assignViewModel);
+                return View("Assign", assignViewModel);
             }
             else
             {
@@ -99,13 +99,13 @@ namespace EurocomV2.Controllers
                 if(assignViewModel.ExistingRelation)
                 {
                     assignViewModel.AssignMessage = Resource.AssignExistingRelation;
-                    return View("Index", assignViewModel);
+                    return View("Assign", assignViewModel);
                 }
                 else
                 {
                     doctorContainer.UseAddPatientToDoctor(username, assignViewModel.patientViewModel.UserId);
                     assignViewModel.AssignMessage = Resource.AssignSuccess;
-                    return View("Index", assignViewModel);
+                    return View("Assign", assignViewModel);
                 }
             }
         }
@@ -122,6 +122,14 @@ namespace EurocomV2.Controllers
             };
 
             return View("Delete", deleteViewModel);
+        }
+
+        public ActionResult Status_RemovePatientFromDoctor()
+        {
+            PatientContainer patientContainer = new PatientContainer();
+            patientContainer.CallRemovePatientLinkedToDoctor(username, userId);
+
+            return RedirectToAction("Overview_Start");
         }
 
         public List<PatientViewModel> GetPatients(string username)
