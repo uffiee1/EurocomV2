@@ -4,31 +4,33 @@
 }
 
 
-<body style="background: #9fdefa">
-<div class="Head">Status</div>
-<div class="Head2">@Model.InrDto.client.name<br /><br /><br /></div>
-<div class="row">
-    <div class="col-4 Textvlak" style="text-align:center;">
-        INR @Math.Round(Convert.ToDecimal(Model.Measurement.measurementValue), 2) <br />
+    <body style="background: #9fdefa">
+        <div class="Head">Status</div>
+        <div class="Head2">@Model.InrDto.client.name<br /><br /><br /></div>
+        <div class="row">
+            <div class="col-4 Textvlak" style="text-align:center;">
+                INR @Math.Round(Convert.ToDecimal(Model.Measurement.measurementValue), 2) <br />
         @switch (@Model.Icon)
         {
             case StatusIcon.Perfect:
                 <span class="glyphicon glyphicon-ok-sign"></span>
+
                 break;
             case StatusIcon.Goed:
                 <span class="glyphicon glyphicon-minus-sign"></span>
-                break;
-            case StatusIcon.Slect:
-                <span class="glyphicon glyphicon-remove-sign"></span>
-                break;
+                        break;
+                    case StatusIcon.Slect:
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                        break;
             default:
                 break;
         }
-    </div>
-    <div class="col-1">
-    </div>
-    <div class="col-7 Textvlak2" style="text-align:center;">
-        @Model.Status
-    </div>
-</div>
-</body>
+            </div>
+            <div class="col-1">
+            </div>
+            <div class="col-7 Textvlak2" style="text-align:center;">
+                @Model.Status
+                <p>Drink voldoende water.</p>
+            </div>
+        </div>
+    </body>
