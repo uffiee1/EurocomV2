@@ -458,7 +458,6 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\runtimes
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Status.cshtml.g.cs
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Mockup\Login.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Status\Status.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cs
@@ -484,3 +483,4 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\NotFound.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Partial.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\CreateRole.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

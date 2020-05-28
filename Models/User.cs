@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -35,6 +36,8 @@ namespace EurocomV2.Models
             set { _LastName = value; }
         }
 
+        [Display(Name = "Username")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Username required")]
         public string Username
         {
             get { return this._Username; }
@@ -47,6 +50,8 @@ namespace EurocomV2.Models
             set { _Email = value; }
         }
 
+        [Required]
+        [DataType(DataType.Password, ErrorMessage = "Incorrent or Missing password")]
         public string Password
         {
             get { return this._Password; }
