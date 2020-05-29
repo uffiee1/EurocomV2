@@ -352,3 +352,6 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 *.cache
+EurocomV2/.vs/EurocomV2/v16/.suo
+EurocomV2/.vs/EurocomV2/v16/TestStore/0/000.testlog
+EurocomV2/obj/Debug/netcoreapp3.1/EurocomV2.csprojAssemblyReference.cache
