@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cR+cAfS+ODZ6v2kj1YJeWGeJUJmP8nUmHEIsyvtnVEzJhWW90z6Vxl5wugmtuoPegaTi9t/HOHOK7BFVeC4orA==",
+  "dgSpecHash": "Lq7pPwoQn55ZUUpSvdUNMUJga6Vyxu+JVI7uGCkXkuq7PXq5WrL3LAW6NK1L4oh0rYaHXiIp35xZ+ovZze8f/g==",
   "success": true,
   "projectFilePath": "D:\\Github\\EurocomV2\\Data Layer\\Data Layer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

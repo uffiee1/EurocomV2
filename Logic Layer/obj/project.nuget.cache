@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7E7qkDKWNz34lBRgyd8xNKoYktkiZzEK6jhSRIJ/uBFFzyP6l2JcNmH3yU3V6uuNACMVB4u5x2iAp6AcClWpKA==",
+  "dgSpecHash": "EMsVd2tEo3UUqbPCg2WHeLftaKYDTK4PBWlfmVopRW/jabFlDpYf86ATGZXu2J4blByIByv2BAdF4GFnQmtA1w==",
   "success": true,
   "projectFilePath": "D:\\Github\\EurocomV2\\Logic Layer\\Logic Layer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
