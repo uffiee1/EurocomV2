@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using EurocomV2.Models;
 using EurocomV2.Models.Classes;
@@ -15,23 +12,42 @@ using Data_Layer;
 namespace EurocomV2.Controllers
 {
 
+    [Authorize(Roles = Role.Administrator)]
     public class AccountController : Controller
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<User> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly ILogger logger;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        [BindProperty] public RegisterViewModel RegisterViewModel { get; set; }
+
+        public AccountController(UserManager<User> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager, ILogger logger)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
+            this.roleManager = roleManager;
+            this.logger = logger;
         }
+
+        [Authorize(Roles = Role.Administrator)]
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+           var RegisterViewModel = new RegisterViewModel
+            {
+                RoleItems = roleManager.Roles.Select(iR => new SelectListItem
+                {
+                    Text = iR.Name,
+                    Value = iR.Name
+                })
+            };
+            return View(RegisterViewModel);
         }
 
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             var user = new ApplicationUser() { UserName = model.FirstName + model.LastName, Name = model.FirstName + " " + model.LastName, Email = model.Email, gender = model.gender, FirstName = model.FirstName, LastName = model.LastName, PhoneNumber = model.PhoneNumber };

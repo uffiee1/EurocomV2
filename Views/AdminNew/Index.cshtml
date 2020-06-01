@@ -1,0 +1,34 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<div class="container">
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class="row">
+        <div class="col-6" style="text-align: center; min-height: 150px;">
+            <a href="DoktorIndex">
+                <button asp-action="DoktorIndex" type="button" class="btn btn-primary button btn w-75 h-100">
+                    Doktoren
+                    <div></div>
+                    <span class="glyphicon glyphicon-plus buttonGlyph" aria-hidden="true"></span>
+                </button>
+            </a>
+        </div>
+        <div class="col-6" style="text-align: center; min-height: 150px;">
+            <a href="PatientIndex">
+                <button asp-action="PatientIndex" type="button" class="btn btn-primary button btn w-75 h-100">
+                    Patiënten
+                    <div></div>
+                    <span class="glyphicon glyphicon-plus buttonGlyph" aria-hidden="true"></span>
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

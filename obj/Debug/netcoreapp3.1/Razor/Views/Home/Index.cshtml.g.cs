@@ -13,35 +13,35 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Users\Julia\Documents\GitHub\EurocomV2\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Views\_ViewImports.cshtml"
 using EurocomV2;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Julia\Documents\GitHub\EurocomV2\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Views\_ViewImports.cshtml"
 using EurocomV2.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Julia\Documents\GitHub\EurocomV2\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\Julia\Documents\GitHub\EurocomV2\Views\Home\Index.cshtml"
+#line 1 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Views\Home\Index.cshtml"
 using EurocomV2.Controllers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Julia\Documents\GitHub\EurocomV2\Views\Home\Index.cshtml"
+#line 2 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Views\Home\Index.cshtml"
 using EurocomV2.Models.Classes;
 
 #line default

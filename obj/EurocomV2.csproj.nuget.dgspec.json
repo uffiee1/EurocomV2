@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj": {}
+    "C:\\Users\\Ufuk\\source\\repos\\Eurocom v2\\EurocomV2\\EurocomV2.csproj": {}
   },
   "projects": {
     "C:\\Users\\Julia\\Documents\\GitHub\\Data_Layer\\Data_Layer.csproj": {
@@ -93,18 +93,20 @@
     "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
+        "projectUniqueName": "C:\\Users\\Ufuk\\source\\repos\\Eurocom v2\\EurocomV2\\EurocomV2.csproj",
         "projectName": "EurocomV2",
-        "projectPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
-        "packagesPath": "C:\\Users\\Julia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\obj\\",
+        "projectPath": "C:\\Users\\Ufuk\\source\\repos\\Eurocom v2\\EurocomV2\\EurocomV2.csproj",
+        "packagesPath": "C:\\Users\\Ufuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ufuk\\source\\repos\\Eurocom v2\\EurocomV2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Ufuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -159,7 +161,11 @@
               "target": "Package",
               "version": "[3.1.3, )"
             },
-            "Microsoft.EntityframeworkCore.Tools": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",

@@ -23,8 +23,7 @@ namespace EurocomV2
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            _config = configuration;
-        }
+        } 
 
         public IConfiguration Configuration { get; }
 
@@ -32,7 +31,7 @@ namespace EurocomV2
         public void ConfigureServices(IServiceCollection services)
         {
             //This is for a Identity Check.
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("eurocomdb")));
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("eurocomdb")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
@@ -61,9 +60,9 @@ namespace EurocomV2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseAuthentication();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
