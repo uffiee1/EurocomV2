@@ -10425,11 +10425,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
+      "projectUniqueName": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
       "projectName": "EurocomV2",
-      "projectPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
+      "projectPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
       "packagesPath": "C:\\Users\\Julia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\obj\\",
+      "outputPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -10448,8 +10448,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Julia\\Documents\\GitHub\\Data_Layer\\Data_Layer.csproj": {
-              "projectPath": "C:\\Users\\Julia\\Documents\\GitHub\\Data_Layer\\Data_Layer.csproj"
+            "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\Data_Layer\\Data_Layer.csproj": {
+              "projectPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\Data_Layer\\Data_Layer.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3hYf3h+XrMJ8pjVW2ATpDDTfu+gQNdbC5lWlS6JNc3PMPhA81b/xMedsAVQgzHsuUSLzTUw7WE3Z+14N1ITzQg==",
+  "dgSpecHash": "QoKYnjL/Dg/tyoDxcn3FHEhniN+9w9aiJDuZypXG+hyvf3a1+PK0w90Z8g/J48S2OEoBFDG+bQT5U6zj/S8ozg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2.csproj",
+  "projectFilePath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Julia\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Julia\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
