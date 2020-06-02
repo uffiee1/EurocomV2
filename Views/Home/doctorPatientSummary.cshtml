@@ -2,22 +2,19 @@
 @{
     ViewData["Title"] = "Patient Overzicht";
     DoctorReader doctorReader = new DoctorReader();
-    int UserId = 26;
+    int UserId = 26; // input UserId
     doctorReader.Read(UserId);
-    string name = doctorReader.patients[0].FirstName;
     string InfoPatients = "";
-    List<string> names = new List<string>();
-    List<string> ids = doctorReader.ReadUserIds(doctorReader.ReadPatientIds(doctorReader.ConnectionString, doctorReader.test), doctorReader.ConnectionString);
+    List<string> names = new List<string>(); // List with the names of the patients
+    List<string> ids = doctorReader.ReadUserIds(doctorReader.ReadPatientIds(doctorReader.ConnectionString, doctorReader.Copy), doctorReader.ConnectionString); // List with the ids
     for (int i = 0; i < doctorReader.patients.Count; i++)
     {
         names.Add(doctorReader.patients[i].FirstName + " " + doctorReader.patients[i].LastName);
-        
     }
     for (int i = 0; i < doctorReader.patients.Count; i++)
     {
         InfoPatients += doctorReader.patients[i].FirstName + " " + doctorReader.patients[i].LastName + "\n" + doctorReader.patients[i].Number + "\n------------------------------------------\n";
     }
-   
 }
     <body style="background: #9fdefa">
         <p>@ViewData["Title"]</p>
@@ -34,8 +31,7 @@
     </body>
 
     <script type="text/javascript" language="javascript">
-    const Patienten = [
-    ];
+        const Patienten = [];
 
         var arr = JSON.parse('@Html.Raw(Json.Serialize(names))');
         var arrid = JSON.parse('@Html.Raw(Json.Serialize(ids))');

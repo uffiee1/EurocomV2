@@ -13,7 +13,7 @@ namespace EurocomV2.Models
         public List<patient> patients = new List<patient>();
         string PatientIds = "";
         string userIds = "";
-        public string test = "";
+        public string Copy = "";
         public string ConnectionString = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocom; Persist Security Info = True; User ID = dbi406383_eurocom; Password = Kastanje81;";
         public void Read(int UserId)
         {
@@ -23,11 +23,11 @@ namespace EurocomV2.Models
 
             string str = "SELECT DoctorId FROM [Doctor] WHERE UserId = '" + UserId + "';";
             string str2 = "SELECT PatientId FROM [DoctorPatient] WHERE DoctorId = '" + ReadDocterId(ConnectionString, str) + "'";
-            test = str2;
+            Copy = str2;
            
             ReadPatients(ReadUserIds(ReadPatientIds(ConnectionString, str2), ConnectionString), ConnectionString);
         }
-
+        // Reads the doctorId of the UserId That is logged in
         public string ReadDocterId(string connectionString, string queryString)
         {
             string doctorId = "";
@@ -50,7 +50,7 @@ namespace EurocomV2.Models
             }
             return doctorId;
         }
-
+        // Reads all patientIds that are linked to the doctorId that was found in ReadDocterId
         public List<string> ReadPatientIds(string connectionString, string queryString)
         {
             List<string> patientIds = new List<string>();
@@ -72,7 +72,7 @@ namespace EurocomV2.Models
 
             return patientIds;
         }
-
+        // Reads all UserIds that are linked to the PatientIds that were found in ReadPatientIds
         public List<string> ReadUserIds(List<string> patientIds, string connectionString)
         {
             List<string> UserIds = new List<string>();
@@ -89,8 +89,7 @@ namespace EurocomV2.Models
             }
 
             string queryString = "SELECT UserId FROM [Patient] WHERE PatientId IN (" + PatientIds + ");";
-            
-            //string queryString = $"SELECT UserId FROM [Patient] WHERE  PatientId = (" + PatientIds + ");";
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -109,6 +108,7 @@ namespace EurocomV2.Models
 
             return UserIds;
         }
+        // Reads all the patients with the UserIds from ReadUserIds
         public void ReadPatients(List<string> UserIds, string connectionString)
         {
             for (int i = 0; i < UserIds.Count; i++)
