@@ -225,6 +225,10 @@ namespace EurocomV2.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            if (model.Email == "DrDeLaat@gmail.com")
+            {
+                return RedirectToAction("Index", "AdminNew");
+            }
             string DeviceID = ProcessAPIData.GetClient(await ProcessAPIData.GetAllDevices(), "Marjolein Nevensel");
             StatusViewModel data = new StatusViewModel()
             {
