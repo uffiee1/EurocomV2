@@ -242,7 +242,6 @@ C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Euroc
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.RazorTargetAssemblyInfo.cs
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.Views.pdb
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CopyComplete
-C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
@@ -251,5 +250,4 @@ C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runti
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\accgegevens.cshtml.g.cs
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\doctorPatientSummary.cshtml.g.cs
-C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
