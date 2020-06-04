@@ -259,3 +259,4 @@ D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\staticwebassets\EurocomV2.
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
+D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Docter\Notes.cshtml.g.cs
