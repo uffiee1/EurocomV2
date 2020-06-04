@@ -22,7 +22,12 @@ namespace EurocomV2.Controllers
         string username = "dTest5";
 
         //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
-        int userId = 6;
+        int userId = 1;
+
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
 
         public ActionResult Assign()
         {
@@ -31,6 +36,7 @@ namespace EurocomV2.Controllers
 
         public ActionResult Delete()
         {
+
             return View();
         }
 
@@ -39,14 +45,24 @@ namespace EurocomV2.Controllers
             return View();
         }
 
-        public ActionResult Delete_Start()
+        public ActionResult Remove()
         {
-            DeleteViewModel deleteViewModel = new DeleteViewModel
-            {
-                patients = GetPatients(username)
-            };
-            return View("Delete", deleteViewModel);
+            return View();
         }
+
+        public ActionResult Remove_Click()
+        {
+            return View("Dashboard");
+        }
+
+        //public ActionResult Delete_Start()
+        //{
+        //    DeleteViewModel deleteViewModel = new DeleteViewModel
+        //    {
+        //        patients = GetPatients(username)
+        //    };
+        //    return View("Delete", deleteViewModel);
+        //}
 
         public ActionResult Overview_Start()
         {
@@ -59,7 +75,6 @@ namespace EurocomV2.Controllers
             {
                 PatientContainer patientContainer = new PatientContainer();
                 PatientModel patientModel = patientContainer.RetreivePatientAdditionalInfo(userId);
-                //overviewViewModel.patientViewModel.Firstname = overviewViewModel.patientStatus[0].Firstname;
                 overviewViewModel.patientViewModel = new PatientViewModel
                 {
                     Firstname = patientModel.Firstname,
@@ -110,26 +125,31 @@ namespace EurocomV2.Controllers
             }
         }
 
-        public ActionResult Delete_Click(int userId)
-        {
-            PatientContainer patientContainer = new PatientContainer();
-            patientContainer.CallRemovePatientLinkedToDoctor(username, userId);
+        //public ActionResult Delete_Click(int userId)
+        //{
+        //    PatientContainer patientContainer = new PatientContainer();
+        //    patientContainer.CallRemovePatientLinkedToDoctor(username, userId);
 
-            DeleteViewModel deleteViewModel = new DeleteViewModel
-            {
-                patients = GetPatients(username),
-                deleteMessage = Resource.DeleteSuccess
-            };
+        //    DeleteViewModel deleteViewModel = new DeleteViewModel
+        //    {
+        //        patients = GetPatients(username),
+        //        deleteMessage = Resource.RemoveSuccess
+        //    };
 
-            return View("Delete", deleteViewModel);
-        }
+        //    return View("Delete", deleteViewModel);
+        //}
 
         public ActionResult Status_RemovePatientFromDoctor()
         {
             PatientContainer patientContainer = new PatientContainer();
             patientContainer.CallRemovePatientLinkedToDoctor(username, userId);
 
-            return RedirectToAction("Overview_Start");
+            RemoveViewModel removeViewModel = new RemoveViewModel
+            {
+                Confirmation = Resource.RemoveSuccess
+            };
+
+            return View("Remove", removeViewModel);
         }
 
         public List<PatientViewModel> GetPatients(string username)
