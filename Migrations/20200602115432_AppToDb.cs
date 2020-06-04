@@ -3,10 +3,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EurocomV2.Migrations
 {
-    public partial class AddIdentity : Migration
+    public partial class AppToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AdminCRUD",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: true),
+                    Lastname = table.Column<string>(nullable: true),
+                    Specialty = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdminCRUD", x => x.ID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -39,7 +55,8 @@ namespace EurocomV2.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    gender = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,23 +64,14 @@ namespace EurocomV2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "users",
+                name: "Roles",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DateOfBirth = table.Column<DateTime>(nullable: false),
-                    ActivationCode = table.Column<Guid>(nullable: false),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    EmailID = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
-                    IsEmailVerified = table.Column<bool>(nullable: false),
-                    ConfirmPassword = table.Column<string>(nullable: true)
+                    RoleName = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_users", x => x.UserID);
+                    table.PrimaryKey("PK_Roles", x => x.RoleName);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,6 +223,9 @@ namespace EurocomV2.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AdminCRUD");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -230,7 +241,7 @@ namespace EurocomV2.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "users");
+                name: "Roles");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

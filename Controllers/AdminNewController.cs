@@ -154,131 +154,131 @@ namespace EurocomV2.Controllers
         //////////////////////
         
 
-        // GET: Users
-        public async Task<IActionResult> PatientIndex()
-        {
-            return View(await _context.User.ToListAsync());
-        }
+        //// GET: Users
+        //public async Task<IActionResult> PatientIndex()
+        //{
+        //    return View(await _context.User.ToListAsync());
+        //}
 
-        // GET: Users/Details/5
-        public async Task<IActionResult> PatientDetails(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //// GET: Users/Details/5
+        //public async Task<IActionResult> PatientDetails(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var user = await _context.User
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (user == null)
-            {
-                return NotFound();
-            }
+        //    var user = await _context.User
+        //        .FirstOrDefaultAsync(m => m.UserId == id);
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(user);
-        }
+        //    return View(user);
+        //}
 
-        // GET: Users/Create
-        public IActionResult PatientCreate()
-        {
-            return View();
-        }
+        //// GET: Users/Create
+        //public IActionResult PatientCreate()
+        //{
+        //    return View();
+        //}
 
-        // POST: Users/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> PatientCreate([Bind("UserId,FirstName,Lastname,Username,Email,Password,PhoneNumber,Agreement")] User user)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(PatientIndex));
-            }
-            return View(user);
-        }
+        //// POST: Users/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> PatientCreate([Bind("UserId,FirstName,Lastname,Username,Email,Password,PhoneNumber,Agreement")] User user)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(user);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(PatientIndex));
+        //    }
+        //    return View(user);
+        //}
 
-        // GET: Users/Edit/5
-        public async Task<IActionResult> PatientEdit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //// GET: Users/Edit/5
+        //public async Task<IActionResult> PatientEdit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var user = await _context.User.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-            return View(user);
-        }
+        //    var user = await _context.User.FindAsync(id);
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(user);
+        //}
 
-        // POST: Users/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> PatientEdit(int id, [Bind("UserId,FirstName,Lastname,Username,Email,Password,PhoneNumber,Agreement")] User user)
-        {
-            if (id != user.UserId)
-            {
-                return NotFound();
-            }
+        //// POST: Users/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> PatientEdit(int id, [Bind("UserId,FirstName,Lastname,Username,Email,Password,PhoneNumber,Agreement")] User user)
+        //{
+        //    if (id != user.UserId)
+        //    {
+        //        return NotFound();
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserExists(user.UserId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(PatientIndex));
-            }
-            return View(user);
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(user);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!UserExists(user.UserId))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction(nameof(PatientIndex));
+        //    }
+        //    return View(user);
+        //}
 
-        // GET: Users/Delete/5
-        public async Task<IActionResult> PatientDelete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //// GET: Users/Delete/5
+        //public async Task<IActionResult> PatientDelete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var user = await _context.User
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (user == null)
-            {
-                return NotFound();
-            }
+        //    var user = await _context.User
+        //        .FirstOrDefaultAsync(m => m.UserId == id);
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(user);
-        }
+        //    return View(user);
+        //}
 
-        // POST: Users/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> PatientDeleteConfirmed(int id)
-        {
-            var user = await _context.User.FindAsync(id);
-            _context.User.Remove(user);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        //// POST: Users/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> PatientDeleteConfirmed(int id)
+        //{
+        //    var user = await _context.User.FindAsync(id);
+        //    _context.User.Remove(user);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
 
-        private bool UserExists(int id)
-        {
-            return _context.User.Any(e => e.UserId == id);
-        }
+        //private bool UserExists(int id)
+        //{
+        //    return _context.User.Any(e => e.UserId == id);
+        //}
     }
 }

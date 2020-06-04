@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EurocomV2.Controllers
 {
-    [Authorize(Roles = Role.Administrator)]
+    //[Authorize(Roles = Role.Administrator)]
     public class AccountController : Controller
     {
         private readonly UserManager<User> userManager;
@@ -27,7 +27,7 @@ namespace EurocomV2.Controllers
             this.logger = logger;
         }
 
-        [Authorize(Roles = Role.Administrator)]
+      //  [Authorize(Roles = Role.Administrator)]
         [HttpGet]
         public IActionResult Register()
         {
