@@ -121,16 +121,6 @@ namespace EurocomV2.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("EurocomV2.Models.CreateRole", b =>
-                {
-                    b.Property<string>("RoleName")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("RoleName");
-
-                    b.ToTable("Roles");
-                });
-
             modelBuilder.Entity("EurocomV2.Models.User", b =>
                 {
                     b.Property<int>("UserId")

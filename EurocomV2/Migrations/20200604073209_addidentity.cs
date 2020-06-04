@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EurocomV2.Migrations
 {
-    public partial class NewIdentity : Migration
+    public partial class addidentity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,17 +64,6 @@ namespace EurocomV2.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Roles",
-                columns: table => new
-                {
-                    RoleName = table.Column<string>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Roles", x => x.RoleName);
                 });
 
             migrationBuilder.CreateTable(
@@ -261,9 +250,6 @@ namespace EurocomV2.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "Roles");
 
             migrationBuilder.DropTable(
                 name: "User");

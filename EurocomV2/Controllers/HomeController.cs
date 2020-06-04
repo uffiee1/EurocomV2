@@ -17,7 +17,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace EurocomV2.Controllers
 {
-   // [Authorize]
+    // [Authorize]
     public class HomeController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -33,17 +33,47 @@ namespace EurocomV2.Controllers
             _logger = logger;
         }
 
-
-        SqlConnection sqlConnection = new SqlConnection("server = (LocalDB)\\MSSQLLocalDB; database = EurocomJulian; Trusted_Connection = true; MultipleActiveResultSets = True");
-        public async Task<IActionResult> Status()
+        public async Task<IActionResult> Status(StatusViewModel model)
         {
             var id = TempData["Id"];
+            var measurementdata = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(id.ToString()));
+            StatusViewModel data = new StatusViewModel();
 
-            StatusViewModel data = new StatusViewModel()
+            if (measurementdata != null)
             {
-                Measurement = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(id.ToString())),
-                InrDto = await ProcessAPIData.LoadInrData(id.ToString())
-            };
+                data.Measurement = measurementdata;
+                data.InrDto = await ProcessAPIData.LoadInrData(id.ToString());
+            }
+            else
+            {
+                Random rnd = new Random();
+                var user = await _userManager.FindByIdAsync(id.ToString());
+                StatusViewModel status = new StatusViewModel()
+                {
+                    Measurement = new MeasurementDTO()
+                    {
+                        deviceID = Guid.NewGuid().ToString(),
+                        measurementDate = DateTime.Now,
+                        measurementSucceeded = true,
+                        measurementTimeInSeconds = 1,
+                        measurementValue = (decimal)1.0
+                    },
+                    InrDto = new InrDTO()
+                    {
+                        client = new ClientDTO()
+                        {
+                            age = rnd.Next(20, 30),
+                            id = user.Id,
+                            name = user.Name
+                        },
+                        id = Guid.NewGuid().ToString(),
+                        lowerBoundary = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2),
+                        targetValue = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2),
+                        upperBoundary = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2)
+                    }
+                };
+            }
+
 
             if (data.InrDto.targetValue <= data.InrDto.lowerBoundary)
             {
@@ -63,20 +93,20 @@ namespace EurocomV2.Controllers
             return View(data);
         }
 
-     /*   [Route("Home")]
-        public async Task<IActionResult> Index()
-        {
-            TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            await _userManager.FindByIdAsync(TempData["UserID"].ToString());
-            return View();
-        }
-        */
+        /*   [Route("Home")]
+           public async Task<IActionResult> Index()
+           {
+               TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
+               await _userManager.FindByIdAsync(TempData["UserID"].ToString());
+               return View();
+           }
+           */
 
-     [HttpGet]
-     public async Task<List<MeasurementDTO>> Index()
-     {
-         return await ProcessAPIData.GetMeasurementData("00000bb9-00c8-0000-0000-000000000000");
-     }
+        [HttpGet]
+        public async Task<List<MeasurementDTO>> Index()
+        {
+            return await ProcessAPIData.GetMeasurementData("00000bb9-00c8-0000-0000-000000000000");
+        }
 
         public IActionResult Privacy()
         {

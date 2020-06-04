@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EurocomV2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200602114133_NewIdentity")]
-    partial class NewIdentity
+    [Migration("20200604073209_addidentity")]
+    partial class addidentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -121,16 +121,6 @@ namespace EurocomV2.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("EurocomV2.Models.CreateRole", b =>
-                {
-                    b.Property<string>("RoleName")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("RoleName");
-
-                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("EurocomV2.Models.User", b =>
