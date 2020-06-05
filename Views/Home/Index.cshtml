@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12" style="min-height: 60px"></div>
-            <div class="col-md-6 col-12" style="text-align: center; min-height: 150px;">
+            <div class="col-md-5 col-12" style="text-align: center; min-height: 150px;">
                 <a href="Home/Status">
                     <div type="button" class="btn btn-primary button btn w-75" style="height: auto">
                         Status
@@ -39,7 +39,18 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-6" style="text-align: center; min-height: 150px;">
+            <div class="col-2">
+                @{string gezondheid = "kut";}
+                @if (gezondheid == "kut")
+                {
+                    <a href="Mail/GetMail">
+                        <div type="button" class="btn btn-danger btn w-100" style="height: auto; font-weight:bold; text-align:center; font-size:larger">
+                            Contact <br /> Doktor
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="col-12 col-md-5" style="text-align: center; min-height: 150px;">
                 <a href="Home/Account">
                     <div type="button" class="btn btn-primary button btn w-75" style="height: auto">
                         Account

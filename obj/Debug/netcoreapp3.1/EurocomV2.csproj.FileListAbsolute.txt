@@ -1024,7 +1024,6 @@ F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dl
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\netstandard.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
@@ -1049,7 +1048,6 @@ F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Data.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
@@ -1075,7 +1073,6 @@ F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitiv
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
@@ -1131,19 +1128,14 @@ F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
@@ -1168,7 +1160,6 @@ F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Web.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
-F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
 F:\RenseGit\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll

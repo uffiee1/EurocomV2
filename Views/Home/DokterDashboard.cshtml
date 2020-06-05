@@ -29,7 +29,7 @@
                 <div class="list-group w-100 Privacytext suggestions" style="overflow-y:scroll; height:17.5rem;">
                     @foreach (EurocomV2.Models.Classes.patient patient in Model.patienten)
                     {
-                        <div class="searchresults"><a style="color:white;" href=@patient.Number><div>@patient.FirstName @patient.LastName</div></a></div>
+                        <div class="searchresultsf"><a style="color:white;" href=@patient.Number><div>@patient.FirstName @patient.LastName</div></a></div>
                     }
                 </div>
                 <button class="btn btn-primary w-100" style="height:2.5rem">Create patient</button>
