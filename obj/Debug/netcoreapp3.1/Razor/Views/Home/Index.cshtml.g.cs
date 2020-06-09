@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "F:\RenseGit\EurocomV2\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\Gebruiker\source\repos\EurocomV2\Views\_ViewImports.cshtml"
 using EurocomV2;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "F:\RenseGit\EurocomV2\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Gebruiker\source\repos\EurocomV2\Views\_ViewImports.cshtml"
 using EurocomV2.Models;
 
 #line default
@@ -51,36 +51,13 @@ using EurocomV2.Models.Classes;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aab1f4d1d05d5e26acf194c03e6e93b22f616065", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("background: #9fdefa"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        #line hidden
-        #pragma warning disable 0649
-        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
-        #pragma warning restore 0649
-        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner __tagHelperRunner = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner();
-        #pragma warning disable 0169
-        private string __tagHelperStringValueBuffer;
-        #pragma warning restore 0169
-        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __backed__tagHelperScopeManager = null;
-        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __tagHelperScopeManager
-        {
-            get
-            {
-                if (__backed__tagHelperScopeManager == null)
-                {
-                    __backed__tagHelperScopeManager = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager(StartTagHelperWritingScope, EndTagHelperWritingScope);
-                }
-                return __backed__tagHelperScopeManager;
-            }
-        }
-        private global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
-#line 5 "F:\RenseGit\EurocomV2\Views\Home\Index.cshtml"
+#line 1 "C:\Users\Gebruiker\source\repos\EurocomV2\Views\Home\Index.cshtml"
   
     ViewData["Title"] = "Home Page";
-    getInfo get = new getInfo();
 
 #line default
 #line hidden
@@ -223,10 +200,6 @@ using EurocomV2.Models.Classes;
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
         }
         #pragma warning restore 1998
-        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public SignInManager<ApplicationUser> signInManager { get; private set; }
-        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public UserManager<ApplicationUser> userManager { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
