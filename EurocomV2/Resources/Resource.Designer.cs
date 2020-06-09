@@ -90,9 +90,9 @@ namespace EurocomV2.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Patient successfully removed!.
         /// </summary>
-        public static string DeleteSuccess {
+        public static string RemoveSuccess {
             get {
-                return ResourceManager.GetString("DeleteSuccess", resourceCulture);
+                return ResourceManager.GetString("RemoveSuccess", resourceCulture);
             }
         }
     }

@@ -1,0 +1,12 @@
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.deps.json
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.dll
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csprojAssemblyReference.cache
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfoInputs.cache
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfo.cs
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.dll
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.json
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.dev.json
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache
+C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csproj.CoreCompileInputs.cache
