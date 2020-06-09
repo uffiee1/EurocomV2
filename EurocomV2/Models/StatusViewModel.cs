@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EurocomV2.Models
 {
-    public class StatusViewModel
+    public class StatusGraphViewModel
     {
         public DateTime Date { get; set; }
         public decimal INR { get; set; }

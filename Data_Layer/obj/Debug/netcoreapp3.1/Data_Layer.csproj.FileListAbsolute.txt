@@ -16,3 +16,12 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Dat
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csproj.CoreCompileInputs.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.pdb
+F:\RenseGit\EurocomV2\Data_Layer\bin\Debug\netcoreapp3.1\Data_Layer.deps.json
+F:\RenseGit\EurocomV2\Data_Layer\bin\Debug\netcoreapp3.1\Data_Layer.dll
+F:\RenseGit\EurocomV2\Data_Layer\bin\Debug\netcoreapp3.1\Data_Layer.pdb
+F:\RenseGit\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csprojAssemblyReference.cache
+F:\RenseGit\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.AssemblyInfoInputs.cache
+F:\RenseGit\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.AssemblyInfo.cs
+F:\RenseGit\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csproj.CoreCompileInputs.cache
+F:\RenseGit\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.dll
+F:\RenseGit\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.pdb

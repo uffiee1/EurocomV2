@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "6VIcTB1e731DW3bgZyr3anUjy/18/MUAXgORL7tcgoC9GA9vg/FqofJQZ3eZ6+vKuYfKIJ+LqUSAlT61F/52JQ==",
+  "dgSpecHash": "Yu9nOzP8MdkNNp7hpJHJmYe3zb9+pEjb4WlOA89sCvIsqee1w0Ydi4Q13yTbppE0bjZ++uhKn9Lw8dYgGlYssA==",
   "success": true,
   "projectFilePath": "F:\\RenseGit\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rense\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
-    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.3\\microsoft.aspnetcore.jsonpatch.3.1.3.nupkg.sha512",
-    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.3\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.3.nupkg.sha512",
+    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.4\\microsoft.aspnetcore.jsonpatch.3.1.4.nupkg.sha512",
+    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.4\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.4.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.3\\microsoft.extensions.dependencyinjection.abstractions.3.1.3.nupkg.sha512",
+    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.4\\microsoft.extensions.dependencyinjection.abstractions.3.1.4.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\microsoft.identitymodel.clients.activedirectory\\5.2.7\\microsoft.identitymodel.clients.activedirectory.5.2.7.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",

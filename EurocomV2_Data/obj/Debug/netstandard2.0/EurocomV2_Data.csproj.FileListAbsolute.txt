@@ -7,3 +7,12 @@ C:\Users\Gebruiker\source\repos\EurocomV2_Data\bin\Debug\netstandard2.0\EurocomV
 C:\Users\Gebruiker\source\repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.dll
 C:\Users\Gebruiker\source\repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.pdb
 C:\Users\Gebruiker\source\repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.csproj.CoreCompileInputs.cache
+F:\RenseGit\EurocomV2\EurocomV2_Data\bin\Debug\netstandard2.0\EurocomV2_Data.deps.json
+F:\RenseGit\EurocomV2\EurocomV2_Data\bin\Debug\netstandard2.0\EurocomV2_Data.dll
+F:\RenseGit\EurocomV2\EurocomV2_Data\bin\Debug\netstandard2.0\EurocomV2_Data.pdb
+F:\RenseGit\EurocomV2\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.csprojAssemblyReference.cache
+F:\RenseGit\EurocomV2\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.AssemblyInfoInputs.cache
+F:\RenseGit\EurocomV2\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.AssemblyInfo.cs
+F:\RenseGit\EurocomV2\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.csproj.CoreCompileInputs.cache
+F:\RenseGit\EurocomV2\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.dll
+F:\RenseGit\EurocomV2\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.pdb

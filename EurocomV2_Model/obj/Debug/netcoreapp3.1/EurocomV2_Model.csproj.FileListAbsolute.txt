@@ -10,3 +10,15 @@ C:\Users\Gebruiker\source\repos\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV
 C:\Users\Gebruiker\source\repos\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.dev.json
 C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache
 C:\Users\Gebruiker\source\repos\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csproj.CoreCompileInputs.cache
+F:\RenseGit\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.deps.json
+F:\RenseGit\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.json
+F:\RenseGit\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.dev.json
+F:\RenseGit\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.dll
+F:\RenseGit\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+F:\RenseGit\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csprojAssemblyReference.cache
+F:\RenseGit\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfoInputs.cache
+F:\RenseGit\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfo.cs
+F:\RenseGit\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csproj.CoreCompileInputs.cache
+F:\RenseGit\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.dll
+F:\RenseGit\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+F:\RenseGit\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache
