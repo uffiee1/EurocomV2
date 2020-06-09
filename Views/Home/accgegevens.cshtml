@@ -2,12 +2,14 @@
 @model accgegevensModel
 @{
     // ViewData["Title"] = "Account gegevens";
-    patientAndContactReader Connectionstring = new patientAndContactReader();
-    int UserId = 2; // this is where the UserId should be placed
-    Connectionstring.Read(UserId);
-    string FirstName = "voornaam: " + Connectionstring.CurrentPatient.FirstName;
-    string LastName = "achternaam: " + Connectionstring.CurrentPatient.LastName;
-    string number = "telefoonnummer: " + Connectionstring.CurrentPatient.Number;
+    //patientAndContactReader Connectionstring = new patientAndContactReader();
+    PatientAndContactReaderV2 patientAndContactReaderV2 = new PatientAndContactReaderV2();
+    string UserId = "28c84e26-0c0a-4972-b7ba-fc69dcfdee49"; // this is where the UserId should be placed
+                                                                    //Connectionstring.Read(UserId);
+    patientAndContactReaderV2.Read(UserId);
+    string FirstName = "voornaam: " + patientAndContactReaderV2.CurrentPatient.FirstName;
+    string LastName = "achternaam: " + patientAndContactReaderV2.CurrentPatient.LastName;
+    string number = "telefoonnummer: " + patientAndContactReaderV2.CurrentPatient.Number;
     string doctor = "huisarts: ";
     string numberdoctor = "nummer huisarts: ";
     List<string> contacts2 = new List<string>();
@@ -17,7 +19,7 @@
 
 
     // adding all the doctors to the string
-    for (int i = 0; i < Connectionstring.DoctorsPerPatient.Count; i++)
+   /* for (int i = 0; i < Connectionstring.DoctorsPerPatient.Count; i++)
     {
         if(i == 0)
         {
@@ -30,12 +32,13 @@
             numberdoctor += " || " + Connectionstring.DoctorsPerPatient[i].Number;
         }
     }
+   */
     // adding the contacts
-    for (int i = 0; i < Connectionstring.Contacts.Count; i++)
+    for (int i = 0; i < patientAndContactReaderV2.Contacts.Count; i++)
     {
-        contacts2[i] = Connectionstring.Contacts[i].FirstName + " " + Connectionstring.Contacts[i].LastName + " || " + Connectionstring.Contacts[i].Number;
+        contacts2[i] = patientAndContactReaderV2.Contacts[i].FirstName + " " + patientAndContactReaderV2.Contacts[i].LastName + " || " + patientAndContactReaderV2.Contacts[i].Number;
     }
-
+   
 }
 
     <div class="text-center">
