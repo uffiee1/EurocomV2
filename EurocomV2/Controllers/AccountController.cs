@@ -250,6 +250,8 @@ namespace EurocomV2.Controllers
                                 return RedirectToAction("Status", "Home");
                             }
                         }
+
+                        TempData["Email"] = user.Email;
                         return RedirectToAction("Status", "Home");
                     }
                 }

@@ -36,43 +36,57 @@ namespace EurocomV2.Controllers
         public async Task<IActionResult> Status(StatusViewModel model)
         {
             var id = TempData["Id"];
-            var measurementdata = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(id.ToString()));
-            StatusViewModel data = new StatusViewModel();
-
-            if (measurementdata != null)
+            var email = TempData["Email"];
+            if (id != null)
             {
-                data.Measurement = measurementdata;
-                data.InrDto = await ProcessAPIData.LoadInrData(id.ToString());
-            }
-            else
-            {
-                Random rnd = new Random();
-                var user = await _userManager.FindByIdAsync(id.ToString());
-                StatusViewModel status = new StatusViewModel()
+                var measurement = new  StatusViewModel()
                 {
-                    Measurement = new MeasurementDTO()
-                    {
-                        deviceID = Guid.NewGuid().ToString(),
-                        measurementDate = DateTime.Now,
-                        measurementSucceeded = true,
-                        measurementTimeInSeconds = 1,
-                        measurementValue = (decimal)1.0
-                    },
-                    InrDto = new InrDTO()
-                    {
-                        client = new ClientDTO()
-                        {
-                            age = rnd.Next(20, 30),
-                            id = user.Id,
-                            name = user.Name
-                        },
-                        id = Guid.NewGuid().ToString(),
-                        lowerBoundary = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2),
-                        targetValue = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2),
-                        upperBoundary = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2)
-                    }
+                    InrDto = await ProcessAPIData.LoadInrData(id.ToString()),
+                    Measurement = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(id.ToString()))
                 };
+                if (measurement.InrDto.targetValue <= measurement.InrDto.lowerBoundary)
+                {
+                    measurement.Status = "INR Waarde te laag!";
+                    measurement.Icon = StatusIcon.Slect;
+                }
+                else if (measurement.InrDto.targetValue >= measurement.InrDto.upperBoundary)
+                {
+                    measurement.Status = "INR Waarde te hoog!";
+                    measurement.Icon = StatusIcon.Slect;
+                }
+                else if (measurement.InrDto.targetValue > measurement.InrDto.lowerBoundary && measurement.InrDto.targetValue < measurement.InrDto.upperBoundary)
+                {
+                    measurement.Status = "INR Waarde is niet te hoog en ook niet te laag!";
+                    measurement.Icon = StatusIcon.Perfect;
+                }
+                return View(measurement);
             }
+            Random rnd = new Random();
+            var user = await _userManager.FindByEmailAsync(email.ToString());
+            StatusViewModel data = new StatusViewModel()
+            {
+                Measurement = new MeasurementDTO()
+                {
+                    deviceID = Guid.NewGuid().ToString(),
+                    measurementDate = DateTime.Now,
+                    measurementSucceeded = true,
+                    measurementTimeInSeconds = 1,
+                    measurementValue = (decimal) 1.0
+                },
+                InrDto = new InrDTO()
+                {
+                    client = new ClientDTO()
+                    {
+                        age = rnd.Next(20, 30),
+                        id = user.Id,
+                        name = user.Name
+                    },
+                    id = Guid.NewGuid().ToString(),
+                    lowerBoundary = Math.Round((decimal) rnd.NextDouble(0, 1.0), 2),
+                    targetValue = Math.Round((decimal) rnd.NextDouble(1.0, 1.5), 2),
+                    upperBoundary = Math.Round((decimal) rnd.NextDouble(1.0, 2.0), 2)
+                }
+            };
 
 
             if (data.InrDto.targetValue <= data.InrDto.lowerBoundary)
@@ -85,7 +99,7 @@ namespace EurocomV2.Controllers
                 data.Status = "INR Waarde te hoog!";
                 data.Icon = StatusIcon.Slect;
             }
-            else if (data.InrDto.targetValue > data.InrDto.lowerBoundary && data.InrDto.targetValue < data.InrDto.upperBoundary)
+            else if (data.InrDto.targetValue > data.InrDto.lowerBoundary && data.InrDto.targetValue<data.InrDto.upperBoundary)
             {
                 data.Status = "INR Waarde is niet te hoog en ook niet te laag!";
                 data.Icon = StatusIcon.Perfect;
