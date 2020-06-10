@@ -933,10 +933,6 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Status.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\CreateRole.cshtml.g.cs
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\Delete.cshtml.g.cs
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\Details.cshtml.g.cs
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\Edit.cshtml.g.cs
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditUsersInRole.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\Index.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\NotFound.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -955,3 +951,5 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\RoleEdit.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditUserRole.cshtml.g.cs
