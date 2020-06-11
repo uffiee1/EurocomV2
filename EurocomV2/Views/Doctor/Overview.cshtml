@@ -1,7 +1,9 @@
 ﻿@model EurocomV2.Models.OverviewViewModel
-
+@{string test = "collapse" + Convert.ToString(1);}
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 @if (Model.patientStatus.Count > 0)
 {
+
     <head>
         <script>
         window.onload = function () {
@@ -42,53 +44,119 @@
     }
         </script>
     </head>
-    <body>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <body style="background: #9fdefa">
+        <div style="text-align:center;" class="Head">Patientoverzicht</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <table class="table table-light w-100" style="max-height: 370px;border-style: solid;border-color: white;">
+                        <thead class="w-100" style="display:block; height:42px; background-color:lightskyblue">
+                            <tr>
+                                <th scope="col">INR</th>
+                                <th scope="col">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody class="w-100" style=" overflow-y:auto; display:block; height:328px">
+                            @foreach (var status in Model.patientStatus)
+                            {
+                                <tr>
+                                    <td>@status.statusViewModel.INR</td>
+                                    <td>@status.statusViewModel.Date</td>
+                                </tr>
+                                <tr>
+                                    <td>@status.statusViewModel.INR</td>
+                                    <td>@status.statusViewModel.Date</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-9">
+                    <div class="w-100" id="chartContainer" style="height: 370px;"></div>
+                    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+                    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+                </div>
+            </div>
+
+            <div>
+                <br /><br />
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-light" style="border-style: solid; border-color: white;">
+                        <thead style="background-color:lightskyblue;">
+                            <tr>
+                                <th>Phonenumber</th>
+                                <th>Email</th>
+                                <th>Date of birth</th>
+                                <th>Age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.patientViewModel.Phonenumber</td>
+                                <td>@Model.patientViewModel.Email</td>
+                                <td>@Model.patientViewModel.DateOfBirth</td>
+                                <td>@Model.patientViewModel.Age</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <div>
             <p>@*witregel*@<br /></p>
         </div>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>INR</th>
-            </tr>
-            @foreach (var status in Model.patientStatus)
-            {
-                <tr>
-                    <td>@status.statusViewModel.Date</td>
-                    <td>@status.statusViewModel.INR</td>
-                </tr>
-            }
-        </table>
-        <div>
-            <p>@*witregel*@<br /></p>
+        <div style="text-align:center;">
+            <form method="post" asp-controller="Doctor" asp-action="Status_RemovePatientFromDoctor">
+                <p><b>Remove patient from doctor</b></p>
+                <input class="btn btn-danger" type="submit" value="Remove"
+                       onclick="return confirm('Are you sure you want to remove this patient?');" />
+            </form>
         </div>
-        <table>
-            <tr>
-                <th>Phonenumber</th>
-                <th>Email</th>
-                <th>Date of birth</th>
-                <th>Age</th>
-            </tr>
-            <tr>
-                <td>@Model.patientViewModel.Phonenumber</td>
-                <td>@Model.patientViewModel.Email</td>
-                <td>@Model.patientViewModel.DateOfBirth</td>
-                <td>@Model.patientViewModel.Age</td>
-            </tr>
-        </table>
-        <div>
-            <p>@*witregel*@<br/></p>
-        </div>
-        <form method="post" asp-controller="Doctor" asp-action="Status_RemovePatientFromDoctor">
-            <p><b>Remove patient from doctor</b></p>
-            <input type="submit" value="Remove" />
-        </form>
     </body>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <div class="float-md-right">
+                    <div class="btn-group-white .bg-transparent" role="group" aria-label="Group">
+                        <button type="button" class="btn btn-danger">
+                            <i class="far fa-trash-alt"></i> Verwijderen
+                        </button>
+                        <button type="button" class="btn btn-success">
+                            <i class="far fa-edit"></i> Bewerken
+                        </button>
+                        <button class="bg-primary" data-toggle="collapse" data-target="#@test" aria-expanded="true" aria-controls="@test">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="@test" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p><b>@DateTime.Now.ToShortDateString()</b> Mevrouw de Vries heeft veel stress gehad en daardoor zijn er veel schommelingen ontstaan in de INR-waarde van haar. Veel rust nemen is dus belangrijk.</p>
+                </div>
+            </div>
+        </div> <br /> <br />
+
+        <p><button onclick="myFunction('input text by rense')">Click Me</button></p>
+        <p><button onclick="myFunction('OHNEETOCHNIET')">Click Me</button></p>
+
+        <div id="myDIV">Hello</div>
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
 }
 else
 {
     <p>No status available</p>
 }
+<script>
+    function myFunction(y) {
+        var x = document.getElementById("myDIV");
+        x.innerHTML = y;
+
+    }
+</script>
