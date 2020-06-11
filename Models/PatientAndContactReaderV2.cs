@@ -22,11 +22,15 @@ namespace EurocomV2
             string str = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocomv2; Persist Security Info = True; User ID = dbi406383_eurocomV2; Password = Handjeklap1234;";
             string str2 = "SELECT FirstName, LastName, PhoneNumber, UserName FROM [AspNetUsers] WHERE Id = '" + UserId + "';";
             string str3 = "SELECT FirstName, LastName, PhoneNumber FROM [Contacts] WHERE Id = '" + UserId + "';";
+            string str4 = "SELECT doktersId FROM [PatientDokterKoppel] WHERE patientId = '" + UserId + "';";
             ReadDataPatient(str, str2);
             ReadDataContact(str, str3);
+            ReadDataDocter(ReadDocterids(str, str4), str);
         }
-        private void ReadDataDocter(string connectionString, string queryString)
+
+        private List<string> ReadDocterids(string connectionString, string queryString)
         {
+            List<string> ids = new List<string>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -37,11 +41,46 @@ namespace EurocomV2
                 // Call Read before accessing data.
                 while (reader.Read())
                 {
-                    string LastName = reader.GetString("LastnameContact");
-                    string FirstName = reader.GetString("FirstnameContact");
-                    string number = reader.GetString("NumberContact");
-                    Contact contact = new Contact(FirstName, LastName, number);
-                    Contacts.Add(contact);
+                    ids.Add(reader.GetString("doktersId"));
+                }
+
+                // Call Close when done reading.
+                reader.Close();
+            }
+            return ids;
+        }
+
+        private void ReadDataDocter(List<string>dokterIds ,string connectionString)
+        {
+            string DokterIds = "";
+            for (int i = 0; i < dokterIds.Count; i++)
+            {
+                if (dokterIds.Count == 1 || dokterIds.Count - 1 == i)
+                {
+                    DokterIds += dokterIds[i];
+                }
+                else
+                {
+                    DokterIds += dokterIds[i] + ", ";
+                }
+            }
+
+            string queryString = "SELECT FirstName, LastName, PhoneNumber FROM [AspNetUsers] WHERE Id IN (" + DokterIds + ");";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Call Read before accessing data.
+                while (reader.Read())
+                {
+                    string LastName = reader.GetString("LastName");
+                    string FirstName = reader.GetString("FirstName");
+                    string number = reader.GetString("PhoneNumber");
+                    Doctor doctor = new Doctor(FirstName + " " + LastName, number);
+                    DoctorsPerPatient.Add(doctor);
                 }
 
                 // Call Close when done reading.
