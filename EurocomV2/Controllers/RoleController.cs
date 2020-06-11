@@ -24,18 +24,18 @@ namespace EurocomV2.Controllers
             this.userManager = applicationUser;
         }
 
-        [HttpGet]
-        public IActionResult CreateRole()
-        {
-            return View();
-        }
 
         public IActionResult Index()
         {
             IQueryable<IdentityRole> roles = roleManager.Roles;
             return View(roles);
         }
-
+        
+        [HttpGet]
+        public IActionResult CreateRole()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> CreateRole(CreateRole model)
         {
@@ -60,11 +60,8 @@ namespace EurocomV2.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
             }
-
             return View(model);
         }
-
-
 
         // Role ID is passed from the URL to the action
         [HttpGet]
@@ -96,10 +93,8 @@ namespace EurocomV2.Controllers
                     model.UserList.Add(user.UserName);
                 }
             }
-
             return View(model);
         }
-
 
         // This action responds to HttpPost and receives EditRoleViewModel
         [HttpPost]
@@ -128,13 +123,9 @@ namespace EurocomV2.Controllers
                 {
                     ModelState.AddModelError("", error.Description);
                 }
-
                 return View(model);
             }
         }
-
-
-
 
         [HttpGet]
         public async Task<IActionResult> EditUserRole(string roleId)
@@ -170,10 +161,8 @@ namespace EurocomV2.Controllers
 
                 model.Add(roleViewModel);
             }
-
             return View(model);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> EditUserRole(List<RoleViewModel> model, string roleId)
@@ -217,163 +206,36 @@ namespace EurocomV2.Controllers
             }
             return RedirectToAction("RoleEdit", new { Id = roleId });
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteRole(string id)
+        {
+            var role = await roleManager.FindByIdAsync(id);
+
+            if (role == null)
+            {
+                ViewBag.ErrorMessage = $"Role with Id = {id} cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+                var result = await roleManager.DeleteAsync(role);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return View("Index");
+            }
+        }
+
+
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        private readonly AppDbContext _context;
-
-//        public RoleController(AppDbContext context)
-//        {
-//            _context = context;
-//        }
-
-//        // GET: Role
-//        public async Task<IActionResult> Index()
-//        {
-//            return View(await _context.RoleViewModel.ToListAsync());
-//        }
-
-//        // GET: Role/Details/5
-//        public async Task<IActionResult> Details(string id)
-//        {
-//            if (id == null)
-//            {
-//                return NotFound();
-//            }
-
-//            var roleViewModel = await _context.RoleViewModel
-//                .FirstOrDefaultAsync(m => m.UserId == id);
-//            if (roleViewModel == null)
-//            {
-//                return NotFound();
-//            }
-
-//            return View(roleViewModel);
-//        }
-
-//        // GET: Role/Create
-//        public IActionResult Create()
-//        {
-//            return View();
-//        }
-
-//        // POST: Role/Create
-//        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-//        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public async Task<IActionResult> Create([Bind("UserId,UserName,IsSelected")] RoleViewModel roleViewModel)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                _context.Add(roleViewModel);
-//                await _context.SaveChangesAsync();
-//                return RedirectToAction(nameof(Index));
-//            }
-
-//            return View(roleViewModel);
-//        }
-
-//        // GET: Role/Edit/5
-//        public async Task<IActionResult> Edit(string id)
-//        {
-//            if (id == null)
-//            {
-//                return NotFound();
-//            }
-
-//            var roleViewModel = await _context.RoleViewModel.FindAsync(id);
-//            if (roleViewModel == null)
-//            {
-//                return NotFound();
-//            }
-
-//            return View(roleViewModel);
-//        }
-
-//        // POST: Role/Edit/5
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public async Task<IActionResult> Edit(string id,
-//            [Bind("UserId,UserName,IsSelected")] RoleViewModel roleViewModel)
-//        {
-//            if (id != roleViewModel.UserId)
-//            {
-//                return NotFound();
-//            }
-
-//            if (ModelState.IsValid)
-//            {
-//                try
-//                {
-//                    _context.Update(roleViewModel);
-//                    await _context.SaveChangesAsync();
-//                }
-//                catch (DbUpdateConcurrencyException)
-//                {
-//                    if (!RoleViewModelExists(roleViewModel.UserId))
-//                    {
-//                        return NotFound();
-//                    }
-//                    else
-//                    {
-//                        throw;
-//                    }
-//                }
-
-//                return RedirectToAction(nameof(Index));
-//            }
-
-//            return View(roleViewModel);
-//        }
-
-//        // GET: Role/Delete/5
-//        public async Task<IActionResult> Delete(string id)
-//        {
-//            if (id == null)
-//            {
-//                return NotFound();
-//            }
-
-//            var roleViewModel = await _context.RoleViewModel
-//                .FirstOrDefaultAsync(m => m.UserId == id);
-//            if (roleViewModel == null)
-//            {
-//                return NotFound();
-//            }
-
-//            return View(roleViewModel);
-//        }
-
-//        // POST: Role/Delete/5
-//        [HttpPost, ActionName("Delete")]
-//        [ValidateAntiForgeryToken]
-//        public async Task<IActionResult> DeleteConfirmed(string id)
-//        {
-//            var roleViewModel = await _context.RoleViewModel.FindAsync(id);
-//            _context.RoleViewModel.Remove(roleViewModel);
-//            await _context.SaveChangesAsync();
-//            return RedirectToAction(nameof(Index));
-//        }
-
-//        private bool RoleViewModelExists(string id)
-//        {
-//            return _context.RoleViewModel.Any(e => e.UserId == id);
-//        }
-//    }
-//}
