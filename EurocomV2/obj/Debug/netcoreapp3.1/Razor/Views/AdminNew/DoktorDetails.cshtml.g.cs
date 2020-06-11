@@ -35,7 +35,7 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cf8be5133d70851425350dc0f9b1668161b03409", @"/Views/AdminNew/DoktorDetails.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aab1f4d1d05d5e26acf194c03e6e93b22f616065", @"/Views/_ViewImports.cshtml")]
-    public class Views_AdminNew_DoktorDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<EurocomV2.Models.AdminCRUD>
+    public class Views_AdminNew_DoktorDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<EurocomV2.Models.Doctor>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "DoktorEdit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "DoktorIndex", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -63,7 +63,7 @@ using Microsoft.AspNetCore.Identity;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            WriteLiteral("\r\n<div>\r\n    <h4>AdminCRUD</h4>\r\n    <hr />\r\n    <dl class=\"row\">\r\n        <dt class = \"col-sm-2\">\r\n            ");
+            WriteLiteral("\r\n<div>\r\n    <h4>Doctor</h4>\r\n    <hr />\r\n    <dl class=\"row\">\r\n        <dt class = \"col-sm-2\">\r\n            ");
 #nullable restore
 #line 8 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\AdminNew\DoktorDetails.cshtml"
        Write(Html.DisplayNameFor(model => model.FirstName));
@@ -186,7 +186,7 @@ using Microsoft.AspNetCore.Identity;
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<EurocomV2.Models.AdminCRUD> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<EurocomV2.Models.Doctor> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

@@ -10,9 +10,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EurocomV2.Models;
 using EurocomV2.Models.Classes;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EurocomV2.Controllers
 {
+    //[Authorize(Roles = Role.Administrator)]
+    //[Authorize(Roles = Role.Doctor)]
     public class RoleController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;

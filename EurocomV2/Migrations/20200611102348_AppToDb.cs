@@ -8,22 +8,6 @@ namespace EurocomV2.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "AdminCRUD",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(nullable: true),
-                    Lastname = table.Column<string>(nullable: true),
-                    Specialty = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AdminCRUD", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -64,6 +48,22 @@ namespace EurocomV2.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Doctor",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: true),
+                    Lastname = table.Column<string>(nullable: true),
+                    Specialty = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Doctor", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -72,6 +72,25 @@ namespace EurocomV2.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.RoleName);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: true),
+                    Lastname = table.Column<string>(nullable: true),
+                    Username = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: false),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    Agreement = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -223,9 +242,6 @@ namespace EurocomV2.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AdminCRUD");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -241,7 +257,13 @@ namespace EurocomV2.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Doctor");
+
+            migrationBuilder.DropTable(
                 name: "Roles");
+
+            migrationBuilder.DropTable(
+                name: "User");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
