@@ -61,6 +61,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\AspNetUserTokens.sql" />
@@ -84,5 +85,9 @@
     <Build Include="dbo\Stored Procedures\sp_BoundaryValues_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\AssignPatientToDoctor.sql" />
     <Build Include="dbo\Stored Procedures\sp_BoundaryValues_InsertValue.sql" />
+    <Build Include="dbo\Stored Procedures\sp_PatientMeasurements_InsertValue.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Snapshots\EurocomEFDatabase_20200611_15-26-02.dacpac" />
   </ItemGroup>
 </Project>

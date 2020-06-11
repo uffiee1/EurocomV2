@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EurocomV2_Logic", "..\Euroc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EurocomV2_Model", "..\EurocomV2_Model\EurocomV2_Model.csproj", "{497CA706-F6BF-478C-A81A-C6F3F4053249}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EurocomEFDatabase", "..\EurocomEFDatabase\EurocomEFDatabase.sqlproj", "{EE8F579C-DD50-4A90-B539-6F92D008A5E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,12 @@ Global
 		{497CA706-F6BF-478C-A81A-C6F3F4053249}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{497CA706-F6BF-478C-A81A-C6F3F4053249}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{497CA706-F6BF-478C-A81A-C6F3F4053249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8F579C-DD50-4A90-B539-6F92D008A5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8F579C-DD50-4A90-B539-6F92D008A5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8F579C-DD50-4A90-B539-6F92D008A5E1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EE8F579C-DD50-4A90-B539-6F92D008A5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8F579C-DD50-4A90-B539-6F92D008A5E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8F579C-DD50-4A90-B539-6F92D008A5E1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
