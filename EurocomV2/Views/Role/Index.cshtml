@@ -22,15 +22,27 @@
                 <h5 class="card-title">@role.Name</h5>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary" asp-action="RoleEdit" asp-controller="Role" asp-route-id="@role.Id">
-                    Edit
-                </a>
+                <form asp-action="DeleteRole" asp-route-id="@role.Id" method="post">
+                    <a class="btn btn-primary" asp-action="RoleEdit" asp-controller="Role" asp-route-id="@role.Id">
+                        Edit
+                    </a>
 
-                <a class="btn btn-danger" asp-action="DeleteRole" asp-controller="Role" asp-route-id="@role.Id">
-                    Delete
-                </a>
+                    <a class="btn btn-danger" asp-action="DeleteRole" asp-controller="Role" asp-route-id="@role.Id">
+                        Delete
+                    </a>
+                    <span id="confirmDeleteSpan_@role.Id" style="display:none">
+                        <span>Are you sure you want to delete?</span>
+                        <button type="submit" class="btn btn-danger">Yes</button>
+                        <a class="btn btn-primary"
+                           onclick="confirmDelete('@role.Id', false)">No</a>
+                    </span>
 
-                @*<a href="#" class="btn btn-danger">Delete</a>*@
+                    <span id="deleteSpan_@role.Id">
+                        <a class="btn btn-danger"
+                           onclick="confirmDelete('@role.Id', true)">Delete</a>
+                    </span>
+                </form>
+                    @*<a href="#" class="btn btn-danger">Delete</a>*@
             </div>
         </div>
     }

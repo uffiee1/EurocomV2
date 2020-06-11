@@ -10,28 +10,71 @@ using Microsoft.Extensions.Logging;
 namespace EurocomV2.Controllers
 {
     //[Authorize(Roles = Role.Administrator)]
+    //[Authorize(Roles = Role.Doctor)]
     public class AccountController : Controller
     {
-        private readonly UserManager<User> userManager;
+        /// <summary>
+        /// These SignIn field is for logging in and creating users using the identity API
+        /// </summary>
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
-        private readonly ILogger logger;
 
-        [BindProperty] public RegisterViewModel RegisterViewModel { get; set; }
+        //[BindProperty] public RegisterViewModel RegisterViewModel { get; set; }
 
-        public AccountController(UserManager<User> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager, ILogger logger)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
-            this.userManager = userManager;
             this.signInManager = signInManager;
+            this.userManager = userManager;
             this.roleManager = roleManager;
-            this.logger = logger;
+        }
+        
+        /// <summary>
+        /// Logout button by header section
+        /// </summary>
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
         }
 
-      //  [Authorize(Roles = Role.Administrator)]
+        //Login
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+
+        //checks whether the correct combination of the entered email address and passwords are correct
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+               
+                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.Remember, false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                    
+                }
+                ModelState.AddModelError(string.Empty, "Email en/of Wachtwoord is incorrect. Probeer het opnieuw.");
+            }
+            return View(model);
+        }
+
+        //[Authorize(Roles = Role.Administrator)]
+        //[Authorize(Roles = Role.Doctor)]
         [HttpGet]
         public IActionResult Register()
         {
-           var RegisterViewModel = new RegisterViewModel
+
+            var account = new RegisterViewModel
             {
                 RoleItems = roleManager.Roles.Select(iR => new SelectListItem
                 {
@@ -39,37 +82,34 @@ namespace EurocomV2.Controllers
                     Value = iR.Name
                 })
             };
-            return View(RegisterViewModel);
+            return View(account);
         }
 
-
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new User { Username = model.Username, Email = model.Email, };
+                var user = new User { UserName = model.Username, Email = model.Email, };
                 var result = await userManager.CreateAsync((User)user, model.Password);
 
-                IdentityRole identityRole = new IdentityRole
+                if (!await roleManager.RoleExistsAsync(Role.User))
                 {
-                    Name = model.Role
-                };
+                    await roleManager.CreateAsync(new IdentityRole(Role.User));
+                }
+                if (!await roleManager.RoleExistsAsync(Role.Administrator))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(Role.Administrator));
+                }
 
-                result = await roleManager.CreateAsync(identityRole);
+                //IdentityRole identityRole = new IdentityRole
+                //{
+                //    Name = model.RoleName
+                //};
+
+                //result = await roleManager.CreateAsync(identityRole);
                 if (result.Succeeded)
                 {
-                    if (!await roleManager.RoleExistsAsync(Role.User))
-                    {
-                        await roleManager.CreateAsync(new IdentityRole(Role.User));
-                    }
-
-                    if (!await roleManager.RoleExistsAsync(Role.Administrator))
-                    {
-                        await roleManager.CreateAsync(new IdentityRole(Role.Administrator));
-                    }
-
                     if (model.Role == null)
                     {
                         await userManager.AddToRoleAsync(user, Role.User);
@@ -77,7 +117,7 @@ namespace EurocomV2.Controllers
 
                     await userManager.AddToRoleAsync(user, model.Role);
 
-                    //await signInManager.SignInAsync(user, false);
+                    await signInManager.SignInAsync(user, false);
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -89,49 +129,5 @@ namespace EurocomV2.Controllers
             }
             return View(model);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /// <summary>
-        /// Logout button by header section
-        /// </summary>
-        [Authorize]
-        [HttpPost]
-        public async Task<IActionResult> Logout()
-        {
-            await signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
-
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = await userManager.FindByEmailAsync(model.Email);
-                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.Remember, false);
-                //TempData["User"] = user;
-            }
-            ModelState.AddModelError(string.Empty, "Email en/of Wachtwoord is incorrect. Probeer het opnieuw.");
-            return View(model);
-        }
     }
-
 }

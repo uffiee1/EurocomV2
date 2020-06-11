@@ -153,11 +153,10 @@ namespace EurocomV2.Controllers
 
         //////////////////////
 
-
         // GET: Users
         public async Task<IActionResult> PatientIndex()
         {
-            return View(await _context.Users.ToListAsync());
+            return View(await _context.User.ToListAsync());
         }
 
         // GET: Users/Details/5

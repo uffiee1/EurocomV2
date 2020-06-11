@@ -30,7 +30,7 @@ namespace EurocomV2.Models
         
             public string Role { get; set; }
 
-            public IEnumerable<SelectListItem> RoleList { get; set; }
+            //public IEnumerable<SelectListItem> RoleList { get; set; }
         public IQueryable<SelectListItem> RoleItems { get; internal set; }
     }
 }

@@ -1,73 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace EurocomV2.Models
 {
-    public class User
+    public class User : IdentityUser
     {
-        private int _UserId;
-        private string _FirstName;
-        private string _LastName;
-        private string _Username;
-        private string _Email;
-        private string _Password;
-        private string _PhoneNumber;
-        private bool _Agreement;
+        public int UserId { get; set; }
 
+        public string FirstName { get; set; }
 
-        public int UserId
-        {
-            get { return this._UserId; }
-            set { _UserId = value; }
-        }
-
-        public string FirstName
-        {
-            get { return this._FirstName; }
-            set { _FirstName = value; }
-        }
-
-        public string Lastname
-        {
-            get { return this._LastName; }
-            set { _LastName = value; }
-        }
+        public string Lastname { get; set; }
 
         [Display(Name = "Username")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Username required")]
-        public string Username
-        {
-            get { return this._Username; }
-            set { _Username= value; }
-        }
+        public string UserName { get; set; }
 
-        public string Email
-        {
-            get { return this._Email; }
-            set { _Email = value; }
-        }
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password, ErrorMessage = "Incorrent or Missing password")]
-        public string Password
-        {
-            get { return this._Password; }
-            set { _Password = value; }
-        }
+        public string Password { get; set; }
 
-        public string PhoneNumber
-        {
-            get { return this._PhoneNumber; }
-            set { _PhoneNumber = value; }
-        }
+        public string PhoneNumber { get; set; }
 
-        public bool Agreement
-        {
-            get { return this._Agreement; }
-            set { _Agreement = value; }
-        }
+        public bool Agreement { get; set; }
+
+        [NotMapped]
+        public string Role { get; set; }
     }
 }

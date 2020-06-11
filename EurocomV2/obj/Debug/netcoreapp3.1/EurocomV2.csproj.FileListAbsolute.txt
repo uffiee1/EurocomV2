@@ -905,7 +905,6 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csprojAssemblyReference.cache
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.AssemblyInfoInputs.cache
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.AssemblyInfo.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache

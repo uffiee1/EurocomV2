@@ -29,7 +29,7 @@ namespace EurocomV2.Models
 
         public DbSet<User> User { get; set; }
 
-        public DbSet<CreateRole> Roles { get; set; }
+        //public DbSet<CreateRole> Roles { get; set; }
 
 
     }
