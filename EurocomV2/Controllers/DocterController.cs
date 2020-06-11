@@ -19,7 +19,7 @@ namespace EurocomV2.Controllers
         string username = "dTest5";
 
         //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
-        int userId = 1;
+        int userId = 6;
 
         public ActionResult Dashboard()
         {

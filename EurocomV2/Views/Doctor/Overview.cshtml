@@ -1,0 +1,159 @@
+﻿@model EurocomV2.Models.OverviewViewModel
+
+@{
+    string test = "collapse" + Convert.ToString(1);
+}
+
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+
+@if (Model.patientStatus.Count > 0)
+{
+    <head>
+        <script>
+        window.onload = function () {
+
+        var dataPoints = [];
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: "Overview status - @Model.patientViewModel.Firstname @Model.patientViewModel.Lastname"
+            },
+            axisY: {
+                title: "INR",
+                titleFontSize: 24,
+                includeZero: false
+            },
+            data: [{
+                type: "line",
+                //yValueFormatString: "HK$#,###",
+                dataPoints: dataPoints
+            }]
+        });
+
+        function addData(data) {
+            for (var i = 0; i < data.length; i++) {
+                dataPoints.push({
+                    x: new Date(data[i].x),
+                    y: data[i].y
+                });
+            }
+            chart.render();
+
+        }
+
+        $.getJSON("/doctor/json", addData);
+
+    }
+        </script>
+    </head>
+    <body>
+        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Dag', 'Onderwaarde', 'Streefwaarde', 'Bovenwaarde'],
+                    ['Maandag', 0.8, 1, 1.2],
+                    ['Dinsdag', 1.2, 1, 1.4],
+                    ['Woensdag', 0.9, 1, 1.3],
+                    ['Donderdag', 0.7, 1, 1.2]
+                ]);
+
+                var options = {
+                    title: 'INR-Waarde patiënt',
+                    curveType: 'function',
+                    legend: { position: 'bottom' }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                chart.draw(data, options);
+            }
+        </script>
+
+        <body>
+            <div id="curve_chart" style="width: 900px; height: 500px"></div>
+        </body>
+
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <div>
+            <p>@*witregel*@<br /></p>
+        </div>
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th>Date</th>
+                    <th>INR</th>
+                </tr>
+            </thead>
+            @foreach (var status in Model.patientStatus)
+            {
+                <tr>
+                    <td>@status.statusViewModel.Date</td>
+                    <td>@status.statusViewModel.INR</td>
+                </tr>
+            }
+        </table>
+        <div>
+            <p>@*witregel*@<br /></p>
+        </div>
+        <table class="table">
+            <tr class="table-primary">
+                <th>Phonenumber</th>
+                <th>Email</th>
+                <th>Date of birth</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>@Model.patientViewModel.Phonenumber</td>
+                <td>@Model.patientViewModel.Email</td>
+                <td>@Model.patientViewModel.DateOfBirth</td>
+                <td>@Model.patientViewModel.Age</td>
+            </tr>
+        </table>
+        <div>
+            <p>@*witregel*@<br /></p>
+        </div>
+
+        <form method="post" asp-controller="Doctor" asp-action="Status_RemovePatientFromDoctor">
+            <p><b>Remove patient from doctor</b></p>
+            <button type="submit" value="Remove" class="btn btn-primary">Remove</button>
+        </form> <br />
+    </body>
+}
+else
+{
+    <p>No status available</p>
+}
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <div class="float-md-right">
+                <div class="btn-group-white .bg-transparent" role="group" aria-label="Group">
+                    <button type="button" class="btn btn-danger">
+                        <i class="far fa-trash-alt"></i> Verwijderen
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        <i class="far fa-edit"></i> Bewerken
+                    </button>
+                    <button class="bg-primary" data-toggle="collapse" data-target="#@test" aria-expanded="true" aria-controls="@test">
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="@test" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <p><b>@DateTime.Now.ToShortDateString()</b> Mevrouw de Vries heeft veel stress gehad en daardoor zijn er veel schommelingen ontstaan in de INR-waarde van haar. Veel rust nemen is dus belangrijk.</p>
+            </div>
+        </div>
+    </div> <br /> <br />
+</div>

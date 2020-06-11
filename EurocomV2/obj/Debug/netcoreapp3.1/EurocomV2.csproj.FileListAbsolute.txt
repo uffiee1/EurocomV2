@@ -259,7 +259,6 @@ D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\staticwebassets\EurocomV2.
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
-D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Docter\Notes.cshtml.g.cs
 D:\Github\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Github\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 D:\Github\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -297,3 +296,9 @@ D:\Github\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Data.pdb
 D:\Github\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Model.pdb
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.Resources.Resource.resources
 D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.GenerateResource.cache
+D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Assign.cshtml.g.cs
+D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Dashboard.cshtml.g.cs
+D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Delete.cshtml.g.cs
+D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Notes.cshtml.g.cs
+D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Overview.cshtml.g.cs
+D:\Github\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Remove.cshtml.g.cs

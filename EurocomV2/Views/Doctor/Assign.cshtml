@@ -1,0 +1,16 @@
+﻿@model EurocomV2.Models.AssignViewModel
+
+<h1>Doctor - Assign</h1>
+
+<form asp-controller="Doctor" asp-action="Assign_Click">
+    <label>Please enter the code</label>
+    <input type="text" name="securityCode" required><br/>
+    <input type="submit" value="Confirm">
+</form>
+<div>
+    <br/>
+</div>
+@if(Model != null)
+{
+    <p>@Model.AssignMessage</p>
+}
