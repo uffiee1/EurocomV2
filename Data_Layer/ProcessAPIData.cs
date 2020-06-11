@@ -107,5 +107,18 @@ namespace Data_Layer
 
             return null;
         }
+
+        public static bool GetClientByID(List<InrDTO> allDevices, string id)
+        {
+            foreach (InrDTO inrDto in allDevices)
+            {
+                if (inrDto.client.id == id)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

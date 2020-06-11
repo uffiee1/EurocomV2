@@ -225,7 +225,6 @@ namespace EurocomV2.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            Random rnd = new Random();
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null)
             {
@@ -235,23 +234,6 @@ namespace EurocomV2.Controllers
                     var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.rememberMe, false);
                     if (result.Succeeded)
                     {
-                        string DeviceID = ProcessAPIData.GetClient(await ProcessAPIData.GetAllDevices(), user.Name);
-                        if (DeviceID != null)
-                        {
-                            StatusViewModel data = new StatusViewModel()
-                            {
-                                Measurement =
-                                    ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(DeviceID)),
-                                InrDto = await ProcessAPIData.LoadInrData(DeviceID)
-                            };
-                            if (data != null)
-                            {
-                                TempData["Id"] = data.InrDto.id;
-                                return RedirectToAction("Status", "Home");
-                            }
-                        }
-
-                        TempData["Email"] = user.Email;
                         return RedirectToAction("Status", "Home");
                     }
                 }
