@@ -26,10 +26,10 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1 justify-content-center">
-                        
+
                         @if (User.IsInRole(Role.Administrator))
                         {
-                            @*Dit is voor dropdown menu van Admin*@
+                            @*This is Admin Dashboard*@
                             <li class="nav-item dropdown">
                                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Manage
@@ -42,7 +42,22 @@
                                         <a class="nav-link text-white" asp-controller="AdminNew" asp-action="PatientIndex">Patienten</a>
                                     </center>
                                     <center>
-                                        <a class="nav-link text-white" asp-controller="Role" asp-action="EditUsersInRole">Patienten</a>
+                                        <a class="nav-link text-white" asp-controller="Role" asp-action="EditUserRole">Patienten</a>
+                                    </center>
+                                </div>
+                            </li>
+                        }
+
+                        @if (User.IsInRole(Role.Doctor))
+                        {
+                            @*This is Doctor's Dashboard*@
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Manage
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropDown" style="background-color:dodgerblue; border:2px solid white; width: 100%; ">
+                                    <center>
+                                        <a class="nav-link text-white" asp-controller="AdminNew" asp-action="PatientIndex">Patienten</a>
                                     </center>
                                 </div>
                             </li>

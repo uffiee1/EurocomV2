@@ -5599,24 +5599,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Julia\\.nuget\\packages\\": {},
+    "C:\\Users\\Ufuk\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
+      "projectUniqueName": "C:\\Users\\Ufuk\\source\\repos\\Eurocom v2\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
       "projectName": "Data_Layer",
-      "projectPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
-      "packagesPath": "C:\\Users\\Julia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Julia\\Documents\\GitHub\\EurocomV2\\Data_Layer\\obj\\",
+      "projectPath": "C:\\Users\\Ufuk\\source\\repos\\Eurocom v2\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
+      "packagesPath": "C:\\Users\\Ufuk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ufuk\\source\\repos\\Eurocom v2\\EurocomV2\\Data_Layer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Ufuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5670,6 +5673,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5678,7 +5687,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

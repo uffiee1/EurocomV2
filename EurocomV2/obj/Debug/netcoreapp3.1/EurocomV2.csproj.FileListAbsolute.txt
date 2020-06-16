@@ -938,7 +938,6 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Partial.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Status\Status.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.RazorTargetAssemblyInfo.cache
@@ -953,3 +952,17 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\RoleEdit.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditUserRole.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csprojAssemblyReference.cache
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\accgegevens.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\DokterDashboard.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Test.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\Delete.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\Details.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\Edit.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditUsersInRole.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Data_Layer.dll
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Data_Layer.pdb
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccesDenied.cshtml.g.cs

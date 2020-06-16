@@ -1,133 +1,184 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using EurocomV2.Models;
+using EurocomV2.Models.Classes;
+using EurocomV2.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
+using Data_Layer;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Logging;
+using RegisterViewModel = EurocomV2.ViewModels.RegisterViewModel;
+using LoginViewModel = EurocomV2.ViewModels.LoginViewModel;
 
 namespace EurocomV2.Controllers
 {
-    //[Authorize(Roles = Role.Administrator)]
-    //[Authorize(Roles = Role.Doctor)]
     public class AccountController : Controller
     {
-        /// <summary>
-        /// These SignIn field is for logging in and creating users using the identity API
-        /// </summary>
-        private readonly SignInManager<IdentityUser> signInManager;
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        //[BindProperty] public RegisterViewModel RegisterViewModel { get; set; }
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
-            this.signInManager = signInManager;
-            this.userManager = userManager;
-            this.roleManager = roleManager;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _roleManager = roleManager;
         }
-        
-        /// <summary>
-        /// Logout button by header section
-        /// </summary>
-        [Authorize]
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            var model = new RegisterViewModel
+            {
+                RoleItems = _roleManager.Roles.Select(iR => new SelectListItem
+                {
+                    Text = iR.Name,
+                    Value = iR.Name
+                })
+            };
+            return View(model);
+        }
+
+        [Authorize(Roles = Role.Administrator)]
+        [Authorize(Roles = Role.Doctor)]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            await signInManager.SignOutAsync();
-            return RedirectToAction("Login", "Account");
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser() 
+                {
+                UserName = model.FirstName + model.LastName, Name = model.FirstName + " " + model.LastName,
+                Email = model.Email, gender = model.gender, FirstName = model.FirstName, LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber
+                };
+            
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (!await _roleManager.RoleExistsAsync(Role.User))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(Role.User));
+                }
+
+                if (!await _roleManager.RoleExistsAsync(Role.Administrator))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(Role.Administrator));
+                }
+
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    TempData["UserID"] = user.Id;
+                    return RedirectToAction("Index", "Home");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(String.Empty, error.Description);
+                }
+                return View(model);
+            }
+            return View(model);
         }
 
-        //Login
+        //Login : GET
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-
-        //checks whether the correct combination of the entered email address and passwords are correct
+        //Login : POST
+        //Checks whether the correct combination of the entered email address and passwords are correct
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
             {
-               
-                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.Remember, false);
-
-                if (result.Succeeded)
+                if (ModelState.IsValid)
                 {
-                    return RedirectToAction("Index", "Home");
-                    
-                }
-                ModelState.AddModelError(string.Empty, "Email en/of Wachtwoord is incorrect. Probeer het opnieuw.");
-            }
-            return View(model);
-        }
 
-        //[Authorize(Roles = Role.Administrator)]
-        //[Authorize(Roles = Role.Doctor)]
-        [HttpGet]
-        public IActionResult Register()
-        {
-
-            var account = new RegisterViewModel
-            {
-                RoleItems = roleManager.Roles.Select(iR => new SelectListItem
-                {
-                    Text = iR.Name,
-                    Value = iR.Name
-                })
-            };
-            return View(account);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new User { UserName = model.Username, Email = model.Email, };
-                var result = await userManager.CreateAsync((User)user, model.Password);
-
-                if (!await roleManager.RoleExistsAsync(Role.User))
-                {
-                    await roleManager.CreateAsync(new IdentityRole(Role.User));
-                }
-                if (!await roleManager.RoleExistsAsync(Role.Administrator))
-                {
-                    await roleManager.CreateAsync(new IdentityRole(Role.Administrator));
-                }
-
-                //IdentityRole identityRole = new IdentityRole
-                //{
-                //    Name = model.RoleName
-                //};
-
-                //result = await roleManager.CreateAsync(identityRole);
-                if (result.Succeeded)
-                {
-                    if (model.Role == null)
+                    var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.rememberMe, false);
+                    if (result.Succeeded)
                     {
-                        await userManager.AddToRoleAsync(user, Role.User);
+                        return RedirectToAction("Status", "Home");
                     }
-
-                    await userManager.AddToRoleAsync(user, model.Role);
-
-                    await signInManager.SignInAsync(user, false);
-
-                    return RedirectToAction("Index", "Home");
+                    ModelState.AddModelError(string.Empty, "Email en/of Wachtwoord is incorrect. Probeer het opnieuw.");
                 }
 
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
             }
             return View(model);
+        }
+
+        // Logout button by header section
+        public IActionResult Logout()
+        {
+            _signInManager.SignOutAsync();
+            return RedirectToAction("Login");
+        }
+
+        //When user don't have permission to access some pages
+        public IActionResult AccesDenied()
+        {
+            return View();
         }
     }
 }
+
+
+
+
+
+//        [HttpPost]
+//        public async Task<IActionResult> Register(RegisterViewModel model)
+//        {
+//            if (ModelState.IsValid)
+//            {
+//                var user = new User { UserName = model.Username, Email = model.Email, };
+//                var result = await userManager.CreateAsync((User)user, model.Password);
+
+//                if (!await roleManager.RoleExistsAsync(Role.User))
+//                {
+//                    await roleManager.CreateAsync(new IdentityRole(Role.User));
+//                }
+//                if (!await roleManager.RoleExistsAsync(Role.Administrator))
+//                {
+//                    await roleManager.CreateAsync(new IdentityRole(Role.Administrator));
+//                }
+
+//                //IdentityRole identityRole = new IdentityRole
+//                //{
+//                //    Name = model.RoleName
+//                //};
+
+//                //result = await roleManager.CreateAsync(identityRole);
+//                if (result.Succeeded)
+//                {
+//                    if (model.Role == null)
+//                    {
+//                        await userManager.AddToRoleAsync(user, Role.User);
+//                    }
+
+//                    await userManager.AddToRoleAsync(user, model.Role);
+
+//                    await signInManager.SignInAsync(user, false);
+
+//                    return RedirectToAction("Index", "Home");
+//                }
+
+//                foreach (var error in result.Errors)
+//                {
+//                    ModelState.AddModelError("", error.Description);
+//                }
+//            }
+//            return View(model);
+//        }
+//    }
+//}

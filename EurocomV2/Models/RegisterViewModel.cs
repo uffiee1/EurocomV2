@@ -28,10 +28,9 @@ namespace EurocomV2.Models
             [DataType(DataType.Password, ErrorMessage = "Incorrent or Missing password")]
             public string Password { get; set; }
         
-            public string Role { get; set; }
+            public string RoleName { get; set; }
 
             //public IEnumerable<SelectListItem> RoleList { get; set; }
         public IQueryable<SelectListItem> RoleItems { get; internal set; }
     }
 }
-
