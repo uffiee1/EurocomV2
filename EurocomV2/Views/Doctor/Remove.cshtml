@@ -1,0 +1,11 @@
+﻿@model EurocomV2.Models.RemoveViewModel
+
+@if (Model != null)
+{
+    <form method="post" asp-controller="Doctor" asp-action="Remove_Click">
+        <p>@Model.Confirmation</p><br />
+        <input type="submit" value="Ok" />
+    </form>
+}
+
+

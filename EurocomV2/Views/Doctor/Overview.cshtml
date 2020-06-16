@@ -1,0 +1,94 @@
+﻿@model EurocomV2.Models.OverviewViewModel
+
+@if (Model.patientStatus.Count > 0)
+{
+    <head>
+        <script>
+        window.onload = function () {
+
+        var dataPoints = [];
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: "Overview status - @Model.patientViewModel.Firstname @Model.patientViewModel.Lastname"
+            },
+            axisY: {
+                title: "INR",
+                titleFontSize: 24,
+                includeZero: false
+            },
+            data: [{
+                type: "line",
+                //yValueFormatString: "HK$#,###",
+                dataPoints: dataPoints
+            }]
+        });
+
+        function addData(data) {
+            for (var i = 0; i < data.length; i++) {
+                dataPoints.push({
+                    x: new Date(data[i].x),
+                    y: data[i].y
+                });
+            }
+            chart.render();
+
+        }
+
+        $.getJSON("/doctor/json", addData);
+
+    }
+        </script>
+    </head>
+    <body>
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <div>
+            <p>@*witregel*@<br /></p>
+        </div>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>INR</th>
+            </tr>
+            @foreach (var status in Model.patientStatus)
+            {
+                <tr>
+                    <td>@status.statusViewModel.Date</td>
+                    <td>@status.statusViewModel.INR</td>
+                </tr>
+            }
+        </table>
+        <div>
+            <p>@*witregel*@<br /></p>
+        </div>
+        <table>
+            <tr>
+                <th>Phonenumber</th>
+                <th>Email</th>
+                <th>Date of birth</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>@Model.patientViewModel.Phonenumber</td>
+                <td>@Model.patientViewModel.Email</td>
+                <td>@Model.patientViewModel.DateOfBirth</td>
+                <td>@Model.patientViewModel.Age</td>
+            </tr>
+        </table>
+        <div>
+            <p>@*witregel*@<br/></p>
+        </div>
+        <form method="post" asp-controller="Doctor" asp-action="Status_RemovePatientFromDoctor">
+            <p><b>Remove patient from doctor</b></p>
+            <input type="submit" value="Remove" />
+        </form>
+    </body>
+}
+else
+{
+    <p>No status available</p>
+}

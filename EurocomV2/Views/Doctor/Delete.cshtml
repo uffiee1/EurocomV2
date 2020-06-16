@@ -1,0 +1,25 @@
+﻿@model EurocomV2.Models.DeleteViewModel
+
+<h1>Delete</h1>
+<link rel="stylesheet" href="~/css/Dropdown.css">
+
+<div class="dropdown">
+    <button class="dropbtn">Select a patient to remove...</button>
+    <div class="dropdown-content">
+        @foreach (var patient in Model.patients)
+        {
+            <a asp-controller="Doctor" asp-action="Delete_Click" asp-route-userId="@patient.UserId">@patient.Firstname @patient.Lastname</a>
+        }
+    </div>
+</div>
+@if (Model != null)
+{
+    <div>
+        <br />
+    </div>
+    if (Model.deleteMessage != null)
+    {
+        <p>@Model.deleteMessage</p>
+    }
+}
+
