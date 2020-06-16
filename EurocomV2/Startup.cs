@@ -1,23 +1,8 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using EurocomV2.Models;
-//using EurocomV2.Models.Classes;
-//using Microsoft.AspNetCore.Builder;
-//using Microsoft.AspNetCore.Hosting;
-//using Microsoft.AspNetCore.HttpsPolicy;
-//using Microsoft.AspNetCore.Identity;
-//using Microsoft.EntityFrameworkCore;
-//using Microsoft.Extensions.Configuration;
-//using Microsoft.Extensions.DependencyInjection;
-//using Microsoft.Extensions.Hosting;
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data_Layer;
 using EurocomV2.Models;
 using EurocomV2.Models.Classes;
 using Microsoft.AspNetCore.Builder;
@@ -28,9 +13,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-
-
 
 namespace EurocomV2
 {
@@ -55,9 +37,12 @@ namespace EurocomV2
 
             //Use to changing the code while the program is running.
             services.AddRazorPages().AddRazorRuntimeCompilation();
-
+            services.AddHttpClient();
             services.AddControllersWithViews();
-
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+            //services.AddSingleton<APICaller>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +68,7 @@ namespace EurocomV2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
             });
         }
     }

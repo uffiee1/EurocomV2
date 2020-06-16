@@ -10,10 +10,14 @@ using EurocomV2.Models;
 using EurocomV2.Models.Classes;
 using System.Data.SqlClient;
 using System.Security.Claims;
+using Data_Layer;
+using EurocomV2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
 namespace EurocomV2.Controllers
 {
+    // [Authorize]
     public class HomeController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -29,68 +33,120 @@ namespace EurocomV2.Controllers
             _logger = logger;
         }
 
-
-        SqlConnection sqlConnection = new SqlConnection("server = (LocalDB)\\MSSQLLocalDB; database = EurocomJulian; Trusted_Connection = true; MultipleActiveResultSets = True");
-        public IActionResult Status()
+        public async Task<IActionResult> Status()
         {
             if (_signInManager.IsSignedIn(User))
             {
-
-
-                var selectedUser = User.FindFirstValue(ClaimTypes.Name);
-
+                var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var user = await _userManager.FindByIdAsync(id);
+                var email = user.Email;
+                var userExists = ProcessAPIData.GetClient(await ProcessAPIData.GetAllDevices(), user.Name);
+                if (userExists != null)
+                {
+                    var measurement = new StatusViewModel()
+                    {
+                        InrDto = await ProcessAPIData.LoadInrData(userExists),
+                        Measurement = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(userExists))
+                    };
+                    if (measurement.InrDto.targetValue <= measurement.InrDto.lowerBoundary)
+                    {
+                        measurement.Status = "INR Waarde te laag!";
+                        measurement.Icon = StatusIcon.Slect;
+                    }
+                    else if (measurement.InrDto.targetValue >= measurement.InrDto.upperBoundary)
+                    {
+                        measurement.Status = "INR Waarde te hoog!";
+                        measurement.Icon = StatusIcon.Slect;
+                    }
+                    else if (measurement.InrDto.targetValue > measurement.InrDto.lowerBoundary && measurement.InrDto.targetValue < measurement.InrDto.upperBoundary)
+                    {
+                        measurement.Status = "INR Waarde is niet te hoog en ook niet te laag!";
+                        measurement.Icon = StatusIcon.Perfect;
+                    }
+                    return View(measurement);
+                }
 
                 Random rnd = new Random();
-                double inrValue = rnd.NextDouble(1.0, 5.0);
-
-                inrValue = Math.Round(inrValue, 1);
-                SqlCommand updateStatus = new SqlCommand("INSERT INTO  PatientStatus(userID, IR) VALUES(" + "'"+ selectedUser + "'"  +", " + inrValue + ")", sqlConnection);
-                updateStatus.CommandType = CommandType.Text;
-
-                SqlCommand checkStatus = new SqlCommand("CheckStatus", sqlConnection);
-                checkStatus.CommandType = CommandType.StoredProcedure;
-                checkStatus.Parameters.AddWithValue("@userID", selectedUser);
-                sqlConnection.Open();
-                updateStatus.ExecuteNonQuery();
-                checkStatus.ExecuteNonQuery();
-                sqlConnection.Close();
-
-
-                if (inrValue > 0 && inrValue < 2)
+                var nonAPIUser = await _userManager.FindByEmailAsync(email);
+                StatusViewModel data = new StatusViewModel()
                 {
-                    ViewBag.Status = "Perfect!";
-                    TempData["Statusicon"] = "Perfect";
-                    TempData["INR"] = inrValue;
-                }
-                else if (inrValue >= 2 && inrValue <= 3)
+                    Measurement = new MeasurementDTO()
+                    {
+                        deviceID = Guid.NewGuid().ToString(),
+                        measurementDate = DateTime.Now,
+                        measurementSucceeded = true,
+                        measurementTimeInSeconds = 1,
+                        measurementValue = (decimal)1.0
+                    },
+                    InrDto = new InrDTO()
+                    {
+                        client = new ClientDTO()
+                        {
+                            age = rnd.Next(20, 30),
+                            id = nonAPIUser.Id,
+                            name = nonAPIUser.Name
+                        },
+                        id = Guid.NewGuid().ToString(),
+                        lowerBoundary = Math.Round((decimal)rnd.NextDouble(0, 1.0), 2),
+                        targetValue = Math.Round((decimal)rnd.NextDouble(1.0, 1.5), 2),
+                        upperBoundary = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2)
+                    }
+                };
+
+
+                if (data.Measurement.measurementValue <= data.InrDto.lowerBoundary)
                 {
-                    ViewBag.Status = "Goed!";
-                    TempData["Statusicon"] = "Goed";
-                    TempData["INR"] = inrValue;
+                    data.Status = "INR Waarde te laag!";
+                    data.Icon = StatusIcon.Slect;
                 }
-                else
+                else if (data.Measurement.measurementValue >= data.InrDto.upperBoundary)
                 {
-                    ViewBag.Status = "Ga misschien langs bij uw huisarts";
-                    TempData["Statusicon"] = "Slecht";
-                    TempData["INR"] = inrValue;
+                    data.Status = "INR Waarde te hoog!";
+                    data.Icon = StatusIcon.Slect;
                 }
+                else if (data.Measurement.measurementValue > data.InrDto.lowerBoundary && data.Measurement.measurementValue < data.InrDto.upperBoundary)
+                {
+                    data.Status = "INR Waarde is niet te hoog en ook niet te laag!";
+                    data.Icon = StatusIcon.Perfect;
+                }
+                return View(data);
             }
 
-            return View();
+            return RedirectToAction("Login", "Account");
+
         }
 
-        public char getGender(ApplicationUser user)
+        [Route("Home")]
+        public async Task<IActionResult> Index()
         {
-            return user.gender;
-        }
-
-        public IActionResult Index()
-        {
-
+            TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            await _userManager.FindByIdAsync(TempData["UserID"].ToString());
             return View();
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public async Task<IActionResult> Account()
+        {
+            TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return View();
+        }
+        public IActionResult DokterDashboard()
+        {
+            patient bob = new patient("Bob", "bobson", "10", "test");
+            patient herman = new patient("herman", "hermanson", "42", "groen");
+            patient julius = new patient("julius", "De vries", "42", "groen");
+            patient Tony = new patient("Tony", "Zhou", "42", "groen");
+            patient Ruud = new patient("Ruud", "Willems", "42", "groen");
+            patient Julian = new patient("Julian", "Tekstra", "42", "groen");
+            patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
+            patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka);
+            return View(patientenviewmodel);
+        }
+        public IActionResult accgegevens()
         {
             return View();
         }
@@ -99,6 +155,19 @@ namespace EurocomV2.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult test()
+        {
+            patient bob = new patient("Bob", "bobson", "10", "test");
+            patient herman = new patient("herman", "hermanson", "42", "groen");
+            patient julius = new patient("julius", "De vries", "42", "groen");
+            patient Tony = new patient("Tony", "Zhou", "42", "groen");
+            patient Ruud = new patient("Ruud", "Willems", "42", "groen");
+            patient Julian = new patient("Julian", "Tekstra", "42", "groen");
+            patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
+            patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka);
+            return View(patientenviewmodel);
         }
     }
 }
