@@ -819,11 +819,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_EF\\EurocomV2_EF.csproj",
+      "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
       "projectName": "EurocomV2_EF",
-      "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_EF\\EurocomV2_EF.csproj",
+      "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
       "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_EF\\obj\\",
+      "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_EF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -877,7 +877,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

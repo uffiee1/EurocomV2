@@ -9,23 +9,24 @@ namespace EurocomV2_Logic.Container
 {
     public class PatientContainer
     {
-        public List<PatientModel> RetreivePatientsLinkedToDoctor(string username)
-        {
-            PatientData patientData = new PatientData();
-            List<PatientDTO> patientsDTO = patientData.GetPatientsLinkedToDoctor(username);
-            List<PatientModel> patients = new List<PatientModel>();
-            foreach(PatientDTO patient in patientsDTO)
-            {
-                PatientModel patientModel = new PatientModel
-                {
-                    UserId = patient.UserId,
-                    Firstname = patient.Firstname,
-                    Lastname = patient.Lastname
-                };
-                patients.Add(patientModel);
-            }
-            return patients;
-        }
+        //not used anymore in project
+        //public List<PatientModel> RetreivePatientsLinkedToDoctor(string username)
+        //{
+        //    PatientData patientData = new PatientData();
+        //    List<PatientDTO> patientsDTO = patientData.GetPatientsLinkedToDoctor(username);
+        //    List<PatientModel> patients = new List<PatientModel>();
+        //    foreach(PatientDTO patient in patientsDTO)
+        //    {
+        //        PatientModel patientModel = new PatientModel
+        //        {
+        //            UserId = patient.UserId,
+        //            Firstname = patient.Firstname,
+        //            Lastname = patient.Lastname
+        //        };
+        //        patients.Add(patientModel);
+        //    }
+        //    return patients;
+        //}
 
         public void CallRemovePatientLinkedToDoctor(string username, int userId)
         {
@@ -33,11 +34,11 @@ namespace EurocomV2_Logic.Container
             patientData.RemovePatientLinkedToDoctor(username, userId);
         }
 
-        public List<PatientModel> RetreivePatientStatus(string username, int userId)
+        public List<PatientModel> RetreivePatientStatus(int userId)
         {
             PatientData patientData = new PatientData();
             List<PatientModel> patientStatus = new List<PatientModel>();
-            List<PatientDTO> patientStatusDTO = patientData.GetPatientStatus(username, userId);
+            List<PatientDTO> patientStatusDTO = patientData.GetPatientStatus(userId);
             foreach(PatientDTO status in patientStatusDTO)
             {
                 PatientModel patientModel = new PatientModel
@@ -63,8 +64,7 @@ namespace EurocomV2_Logic.Container
                 Lastname = patientDTO.Lastname,
                 Phonenumber = patientDTO.Phonenumber,
                 Email = patientDTO.Email,
-                DateOfBirth = patientDTO.DateOfBirth,
-                Age = patientDTO.Age
+                DateOfBirth = patientDTO.DateOfBirth
             };
             return patientModel;
         }

@@ -8576,11 +8576,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2.csproj",
+      "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
       "projectName": "EurocomV2",
-      "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2.csproj",
+      "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
       "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\obj\\",
+      "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8599,14 +8599,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_EF\\EurocomV2_EF.csproj": {
-              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_EF\\EurocomV2_EF.csproj"
+            "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {
+              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj"
             },
-            "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
-              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Logic\\EurocomV2_Logic.csproj"
+            "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
+              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj"
             },
-            "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj": {
-              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj"
+            "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+              "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
             }
           }
         }
@@ -8657,7 +8657,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

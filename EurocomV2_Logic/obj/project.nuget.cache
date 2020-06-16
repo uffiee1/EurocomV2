@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S9/hl7xG1dAuQeFJ0LA34AyC7UJeI3wuVLIaespxdeZ0Jnt6FN0YOWj6Om7r2W4PtyBz/KwO688BxdrFn53Bnw==",
+  "dgSpecHash": "7zGrfO7j6/2I+FkOsAj07qSxaFya0mrrYQv8dWpZPqNhhiYbb18dUP03Hq8Ch+JS1pZO6g7XtTuKQNHXuhKqsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
+  "projectFilePath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gebruiker\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Gebruiker\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

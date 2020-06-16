@@ -9,45 +9,46 @@ namespace EurocomV2_Data
 {
     public class PatientData
     {
-        public List<PatientDTO> GetPatientsLinkedToDoctor(string username)
-        {
-            List<PatientDTO> patients = new List<PatientDTO>();
-            using (ConnectionString connectionString = new ConnectionString())
-            {
-                try
-                {
-                    connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("GetPatientsLinkedToDoctor", connectionString.sqlConnection);
-                    cmd.Parameters.AddWithValue("username", username);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if(reader.HasRows)
-                        {
-                            while(reader.Read())
-                            {
-                                PatientDTO patientDTO = new PatientDTO
-                                {
-                                    UserId = reader.GetInt32(0),
-                                    Firstname = reader.GetString(1),
-                                    Lastname = reader.GetString(2)
-                                };
-                                patients.Add(patientDTO);
-                            }
-                        }
-                    }
-                }
-                catch (Exception exception)
-                {
-                    if (exception is InvalidCastException || exception is SqlException)
-                    {
-                        Console.WriteLine("Error source: " + exception);
-                        throw;
-                    }
-                }
-            }
-            return patients;
-        }
+        //not used in project anymore
+        //public List<PatientDTO> GetPatientsLinkedToDoctor(string username)
+        //{
+        //    List<PatientDTO> patients = new List<PatientDTO>();
+        //    using (ConnectionString connectionString = new ConnectionString())
+        //    {
+        //        try
+        //        {
+        //            connectionString.sqlConnection.Open();
+        //            SqlCommand cmd = new SqlCommand("GetPatientsLinkedToDoctor", connectionString.sqlConnection);
+        //            cmd.Parameters.AddWithValue("username", username);
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                if(reader.HasRows)
+        //                {
+        //                    while(reader.Read())
+        //                    {
+        //                        PatientDTO patientDTO = new PatientDTO
+        //                        {
+        //                            UserId = reader.GetInt32(0),
+        //                            Firstname = reader.GetString(1),
+        //                            Lastname = reader.GetString(2)
+        //                        };
+        //                        patients.Add(patientDTO);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        catch (Exception exception)
+        //        {
+        //            if (exception is InvalidCastException || exception is SqlException)
+        //            {
+        //                Console.WriteLine("Error source: " + exception);
+        //                throw;
+        //            }
+        //        }
+        //    }
+        //    return patients;
+        //}
 
         public void RemovePatientLinkedToDoctor(string username, int userId)
         {
@@ -56,7 +57,7 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("RemovePatientLinkedToDoctor", connectionString.sqlConnection);
+                    SqlCommand cmd = new SqlCommand("sp_Doctor_RemovePatient", connectionString.sqlConnection);
                     cmd.Parameters.AddWithValue("username", username);
                     cmd.Parameters.AddWithValue("userId", userId);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -73,7 +74,7 @@ namespace EurocomV2_Data
             }
         }
 
-        public List<PatientDTO> GetPatientStatus(string username, int userId)
+        public List<PatientDTO> GetPatientStatus(int userId)
         {
             List<PatientDTO> patientStatus = new List<PatientDTO>();
             using (ConnectionString connectionString = new ConnectionString())
@@ -81,8 +82,7 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("GetPatientStatus", connectionString.sqlConnection);
-                    cmd.Parameters.AddWithValue("username", username);
+                    SqlCommand cmd = new SqlCommand("sp_Doctor_GetMeasurements", connectionString.sqlConnection);
                     cmd.Parameters.AddWithValue("userId", userId);
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -124,7 +124,7 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("GetPatientAdditionalInfo", connectionString.sqlConnection);
+                    SqlCommand cmd = new SqlCommand("sp_Doctor_GetPatientInfo", connectionString.sqlConnection);
                     cmd.Parameters.AddWithValue("userId", userId);
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -139,8 +139,7 @@ namespace EurocomV2_Data
                                     Lastname = reader.GetString(1),
                                     Phonenumber = reader.GetString(2),
                                     Email = reader.GetString(3),
-                                    DateOfBirth = reader.GetDateTime(4).ToString("dd-MM-yyyy"),
-                                    Age = reader.GetInt32(5)
+                                    DateOfBirth = reader.GetDateTime(4).ToString("dd-MM-yyyy")
                                 };
                             }
                         }
