@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YEFaQFoxX8U0B+UVMqf0Kt9I6WHi0vVMyPFg6gd+q4clwsm4C8b45uEmkp93F1Ni6CjLJYm4a3gIk/MbqftsLw==",
+  "dgSpecHash": "aVercHtiN3f0vCeA/DOq5G5gp8QIJw2p0Fpq+hOL5yJAAJ6JfPOm02euCnOCmeNvGvxHSHkGqT0SIEgbEbDSyw==",
   "success": true,
   "projectFilePath": "F:\\RenseGit\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
   "expectedPackageFiles": [
@@ -28,8 +28,7 @@
     "C:\\Users\\Rense\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.4\\microsoft.extensions.primitives.3.1.4.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\Rense\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
-    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\Rense\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

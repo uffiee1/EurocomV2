@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mLdIDN8uNstBc9QjKHWZePLfWBk+MG1/XrAqWWv7aCMCOKXwf+v86gHiqcbvxIp7ZMMZSROXf2+HxNHLt6AnAA==",
+  "dgSpecHash": "qu/UpEQBo0PbO1+6R/yHAjgv3VtKDAot/PlOjtC231EvrLN+a7i8VedRhm3cvizT7/pq9t7wsnmvR5pJXuisdA==",
   "success": true,
   "projectFilePath": "F:\\RenseGit\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
   "expectedPackageFiles": [
@@ -218,8 +218,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "C:\\Users\\Rense\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\Rense\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
-    "C:\\Users\\Rense\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\Rense\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
   "logs": []
 }

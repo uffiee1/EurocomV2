@@ -1392,3 +1392,12 @@ F:\RenseGit\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconf
 F:\RenseGit\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csproj.CoreCompileInputs.cache
 F:\RenseGit\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cs
 F:\RenseGit\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.MvcApplicationPartsAssemblyInfo.cache
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+F:\RenseGit\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll

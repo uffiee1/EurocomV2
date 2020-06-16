@@ -139,10 +139,29 @@
             </div>
         </div> <br /> <br />
 
+                      <div class="list-group w-100 Privacytext suggestions" style="overflow-y:scroll; height:17.5rem;">
+                          @for (int i = 0; i < Model.comments.Count(); i++)
+                          {
+                              bool value = false;
+                              if (i == 0)
+                              {
+                                  value = true;
+                              }
+                                if (Model.comments[i].State == true)
+                                  {
+                                  <p><button style="background-color:forestgreen;" onclick="myFunction('@Model.comments[i].Message', '@value')">@Model.comments[i].Date.ToShortDateString()</button></p>
+                                  }
+                                else
+                                  {
+                                  <p><button style="background-color:red;" onclick="myFunction('@Model.comments[i].Message', '@value')">@Model.comments[i].Date.ToShortDateString()</button></p>
+                                  }
+                          }
+                      </div>
         <p><button onclick="myFunction('input text by rense')">Click Me</button></p>
         <p><button onclick="myFunction('OHNEETOCHNIET')">Click Me</button></p>
-
-        <div id="myDIV">Hello</div>
+        <button id="EditButton">edit</button>
+        <div id="myDIV" value="false">Hello</div>
+        <div>@DateTime.Now.ToShortDateString()</div>
         <br />
         <br />
         <br />
@@ -154,9 +173,16 @@ else
     <p>No status available</p>
 }
 <script>
-    function myFunction(y) {
+    function myFunction(y, z) {
         var x = document.getElementById("myDIV");
         x.innerHTML = y;
-
+        if (z == 'True') {
+            var a = document.getElementById("EditButton");
+            a.style.visibility = "visible";
+        }
+        else {
+            var a = document.getElementById("EditButton");
+            a.style.visibility = "hidden";
+        }
     }
 </script>

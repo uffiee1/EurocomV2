@@ -12,6 +12,7 @@ using EurocomV2.Resources;
 //using ASPNET_MVC_ChartsDemo.Models;
 using Newtonsoft.Json;
 using EurocomV2_Data;
+using EurocomV2.Models.Classes;
 //using System.Web.Mvc;
 
 namespace EurocomV2.Controllers
@@ -66,9 +67,26 @@ namespace EurocomV2.Controllers
 
         public ActionResult Overview_Start()
         {
+            Comment comment = new Comment
+            {
+                Message = "Tester1",
+                Date = DateTime.Now,
+                State = true
+            };
+            Comment comment2 = new Comment
+            {
+                Message = "Tester2",
+                Date = DateTime.Now,
+                State = false
+            };
+            List<Comment> comments = new List<Comment>();
+            comments.Add(comment);
+            comments.Add(comment2);
             OverviewViewModel overviewViewModel = new OverviewViewModel
             {
-                patientStatus = GetPatientStatus(username, userId)
+                patientStatus = GetPatientStatus(username, userId),
+                comments = comments
+                
             };
 
             if (overviewViewModel.patientStatus.Count > 0)
