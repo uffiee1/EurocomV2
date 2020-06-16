@@ -15,13 +15,14 @@ namespace EurocomV2.Models
         public string Copy = "";
         public string ConnectionString = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocomv2; Persist Security Info = True; User ID = dbi406383_eurocomV2; Password = Handjeklap1234;";
             
-        public void Read(int UserId)
+        public void Read(string UserId)
         {
             userIds = "";
             patients.Clear();
 
-            string str2 = "SELECT patientId FROM [PatientDokterKoppel] WHERE doktersId = '" + UserId + "'";
+            string str2 = "SELECT patientId FROM [PatientDoctorLink] WHERE DoctorId = '" + UserId + "'";
             Copy = str2;
+
 
             ReadPatients(ReadPatientIds(ConnectionString, str2), ConnectionString);
         }
@@ -39,7 +40,7 @@ namespace EurocomV2.Models
                 // Call Read before accessing data.
                 while (reader.Read())
                 {
-                    patientIds.Add(Convert.ToString(reader.GetInt32("patientId")));
+                    patientIds.Add(reader.GetString("patientId"));
                 }
                 // Call Close when done reading.
                 reader.Close();
@@ -50,6 +51,7 @@ namespace EurocomV2.Models
         // Reads all the patients with the UserIds from ReadUserIds
         public void ReadPatients(List<string> UserIds, string connectionString)
         {
+            string queryString = "";
             for (int i = 0; i < UserIds.Count; i++)
             {
                 if (UserIds.Count == 1 || UserIds.Count - 1 == i)
@@ -61,8 +63,15 @@ namespace EurocomV2.Models
                     userIds += UserIds[i] + ", ";
                 }
             }
-
-            string queryString = "SELECT UserName, PhoneNumber, Email FROM [AspNetUsers] WHERE Id IN (" + userIds + ");";
+            if(UserIds.Count == 1)
+            {
+                queryString = "SELECT UserName, PhoneNumber, Email FROM [AspNetUsers] WHERE Id = '" + userIds + "';";
+            }
+            else
+            {
+                queryString = "SELECT UserName, PhoneNumber, Email FROM [AspNetUsers] WHERE Id IN (" + userIds + ");";
+            }
+            
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -74,10 +83,9 @@ namespace EurocomV2.Models
                 while (reader.Read())
                 {
                     string Name = reader.GetString("UserName");
-                    string Email = reader.GetString("Email");
-                    string Number = reader.GetString("PhoneNumber");
-                    string UserName = reader.GetString("Username");
-                    patient Patient = new patient(Name, Email, Number, UserName);
+                    string number = reader.GetString("PhoneNumber");
+                    string email = reader.GetString("Email");
+                    patient Patient = new patient(Name, email, number);
                     patients.Add(Patient);
                 }
                 // Call Close when done reading.

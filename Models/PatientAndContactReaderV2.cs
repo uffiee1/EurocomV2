@@ -13,19 +13,23 @@ namespace EurocomV2
     {
         public List<Doctor> DoctorsPerPatient = new List<Doctor>();
         public List<Contact> Contacts = new List<Contact>();
-        public patient CurrentPatient = new patient("error", "error", "error", "error");
+        public patient CurrentPatient = new patient("error", "error", "error");
 
         public void Read(string UserId)
         {
             DoctorsPerPatient.Clear();
             Contacts.Clear();
             string str = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocomv2; Persist Security Info = True; User ID = dbi406383_eurocomV2; Password = Handjeklap1234;";
-            string str2 = "SELECT FirstName, LastName, PhoneNumber, UserName FROM [AspNetUsers] WHERE Id = '" + UserId + "';";
+            string str2 = "SELECT Email, PhoneNumber, UserName FROM [AspNetUsers] WHERE Id = '" + UserId + "';";
             string str3 = "SELECT FirstName, LastName, PhoneNumber FROM [Contacts] WHERE Id = '" + UserId + "';";
-            string str4 = "SELECT doktersId FROM [PatientDokterKoppel] WHERE patientId = '" + UserId + "';";
+            string str4 = "SELECT DoctorId FROM [PatientDoctorLink] WHERE PatientId = '" + UserId + "';";
             ReadDataPatient(str, str2);
             ReadDataContact(str, str3);
-            ReadDataDocter(ReadDocterids(str, str4), str);
+            if(ReadDocterids(str, str4).Count > 0)
+            {
+                ReadDataDocter(ReadDocterids(str, str4), str);
+            }
+            
         }
 
         private List<string> ReadDocterids(string connectionString, string queryString)
@@ -41,7 +45,7 @@ namespace EurocomV2
                 // Call Read before accessing data.
                 while (reader.Read())
                 {
-                    ids.Add(reader.GetString("doktersId"));
+                    ids.Add(reader.GetString("DoctorId"));
                 }
 
                 // Call Close when done reading.
@@ -53,6 +57,7 @@ namespace EurocomV2
         private void ReadDataDocter(List<string>dokterIds ,string connectionString)
         {
             string DokterIds = "";
+            string queryString = "";
             for (int i = 0; i < dokterIds.Count; i++)
             {
                 if (dokterIds.Count == 1 || dokterIds.Count - 1 == i)
@@ -64,8 +69,15 @@ namespace EurocomV2
                     DokterIds += dokterIds[i] + ", ";
                 }
             }
-
-            string queryString = "SELECT FirstName, LastName, PhoneNumber FROM [AspNetUsers] WHERE Id IN (" + DokterIds + ");";
+            if(dokterIds.Count == 1)
+            {
+                queryString = "SELECT UserName, PhoneNumber FROM [AspNetUsers] WHERE Id = '" + dokterIds[0] + "';";
+            }
+            else
+            {
+                queryString = "SELECT UserName, PhoneNumber FROM [AspNetUsers] WHERE Id IN (" + DokterIds + ");";
+            }
+            
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -76,10 +88,9 @@ namespace EurocomV2
                 // Call Read before accessing data.
                 while (reader.Read())
                 {
-                    string LastName = reader.GetString("LastName");
-                    string FirstName = reader.GetString("FirstName");
+                    string UserName = reader.GetString("UserName");
                     string number = reader.GetString("PhoneNumber");
-                    Doctor doctor = new Doctor(FirstName + " " + LastName, number);
+                    Doctor doctor = new Doctor(UserName, number);
                     DoctorsPerPatient.Add(doctor);
                 }
 
@@ -101,11 +112,10 @@ namespace EurocomV2
                 // Call Read before accessing data.
                 while (reader.Read())
                 {
-                    string LastName = reader.GetString("LastName");
-                    string FirstName = reader.GetString("FirstName");
+                    string Name = reader.GetString("UserName");
                     string number = reader.GetString("PhoneNumber");
-                    string UserName = reader.GetString("UserName");
-                    patient Patient = new patient(FirstName, LastName, number, UserName);
+                    string email = reader.GetString("Email");
+                    patient Patient = new patient(Name, email, number);
                     CurrentPatient = Patient;
                 }
 

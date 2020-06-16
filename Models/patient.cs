@@ -7,17 +7,15 @@ namespace EurocomV2.Views
 {
     public class patient
     {
-        public patient(string firstName, string lastName, string number, string username)
+        public patient(string userName, string email, string number)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            UserName = userName;
+            Email = email;
             Number = number;
-            UserName = username;
         }
 
-        public string FirstName { get; private set;}
-        public string LastName { get; private set; }
+        public string UserName { get; private set;}
+        public string Email { get; private set; }
         public string Number { get; private set; }
-        public string UserName { get; private set; }
     }
 }

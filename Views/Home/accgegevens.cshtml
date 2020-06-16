@@ -4,12 +4,12 @@
     // ViewData["Title"] = "Account gegevens";
     //patientAndContactReader Connectionstring = new patientAndContactReader();
     PatientAndContactReaderV2 patientAndContactReaderV2 = new PatientAndContactReaderV2();
-    string UserId = "fd7e76f3-8b65-410f-903f-6ea812a1813b"; // this is where the UserId should be placed
+    string UserId = "d34a07a9-0ed0-4765-bbb8-3a4a6cde73b7"; // this is where the UserId should be placed
                                                                     //Connectionstring.Read(UserId);
     patientAndContactReaderV2.Read(UserId);
-    string FirstName = "voornaam: " + patientAndContactReaderV2.CurrentPatient.FirstName;
-    string LastName = "achternaam: " + patientAndContactReaderV2.CurrentPatient.LastName;
+    string UserName = "voornaam: " + patientAndContactReaderV2.CurrentPatient.UserName;
     string number = "telefoonnummer: " + patientAndContactReaderV2.CurrentPatient.Number;
+    string email = "Email: " + patientAndContactReaderV2.CurrentPatient.Email;
     string doctor = "huisarts: ";
     string numberdoctor = "nummer huisarts: ";
     List<string> contacts2 = new List<string>();
@@ -44,7 +44,7 @@
     <div class="text-center">
         <h1 style="padding-top:5%">Account gegevens</h1>
 
-        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">@FirstName<br><br>@LastName<br><br>@number<br><br>@doctor<br><br>@numberdoctor</p>
+        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">@UserName<br><br>@email<br><br>@number<br><br>@doctor<br><br>@numberdoctor</p>
     </div>
 
     <div class="text-center">

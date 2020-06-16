@@ -1,19 +1,19 @@
 ﻿
 @{
     ViewData["Title"] = "Patient Overzicht";
-    DoctorReader doctorReader = new DoctorReader();
-    int UserId = 26; // input UserId
+    DoctorReaderV2 doctorReader = new DoctorReaderV2();
+    string UserId = "27f36d8b-6661-4a99-954f-b8c1522852f8"; // input UserId
     doctorReader.Read(UserId);
     string InfoPatients = "";
     List<string> names = new List<string>(); // List with the names of the patients
-    List<string> ids = doctorReader.ReadUserIds(doctorReader.ReadPatientIds(doctorReader.ConnectionString, doctorReader.Copy), doctorReader.ConnectionString); // List with the ids
+    List<string> ids = doctorReader.ReadPatientIds(doctorReader.ConnectionString, doctorReader.Copy); // List with the ids
     for (int i = 0; i < doctorReader.patients.Count; i++)
     {
-        names.Add(doctorReader.patients[i].FirstName + " " + doctorReader.patients[i].LastName);
+        names.Add(doctorReader.patients[i].UserName);
     }
     for (int i = 0; i < doctorReader.patients.Count; i++)
     {
-        InfoPatients += doctorReader.patients[i].FirstName + " " + doctorReader.patients[i].LastName + "\n" + doctorReader.patients[i].Number + "\n------------------------------------------\n";
+        InfoPatients += doctorReader.patients[i].UserName + "\n" + doctorReader.patients[i].Email + "\n" + doctorReader.patients[i].Number + "\n------------------------------------------\n";
     }
 }
     <body style="background: #9fdefa">
