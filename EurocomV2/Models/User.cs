@@ -16,18 +16,23 @@ namespace EurocomV2.Models
 
         public string Lastname { get; set; }
 
+        [NotMapped]
         [Display(Name = "Username")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Username required")]
         public string UserName { get; set; }
 
+        [NotMapped]
         public string Email { get; set; }
 
+        [NotMapped]
         [Required]
         [DataType(DataType.Password, ErrorMessage = "Incorrent or Missing password")]
         public string Password { get; set; }
 
+        [NotMapped]
         public string PhoneNumber { get; set; }
 
+        [NotMapped]
         public bool Agreement { get; set; }
 
         [NotMapped]

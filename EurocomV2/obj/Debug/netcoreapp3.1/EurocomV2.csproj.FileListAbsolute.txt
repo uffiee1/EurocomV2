@@ -952,3 +952,4 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\RoleEdit.cshtml.g.cs
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditUserRole.cshtml.g.cs
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.csprojAssemblyReference.cache

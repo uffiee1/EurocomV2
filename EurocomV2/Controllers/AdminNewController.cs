@@ -29,7 +29,7 @@ namespace EurocomV2.Controllers
             return View(_context.Doctor.ToList());
         }
 
-        // GET: Doctor/Details/5
+        // GET: Doctor/Details/DoctorID
         public async Task<IActionResult> DoktorDetails(int? id)
         {
             if (id == null)
@@ -67,7 +67,7 @@ namespace EurocomV2.Controllers
             return View(Doctor);
         }
 
-        // GET: Doctor/Edit/5
+        // GET: Doctor/Edit/DoctorID
         public async Task<IActionResult> DoktorEdit(int? id)
         {
             if (id == null)
@@ -83,7 +83,7 @@ namespace EurocomV2.Controllers
             return View(Doctor);
         }
 
-        // POST: Doctor/Edit/5
+        // POST: Doctor/Edit/DoctorID
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DoktorEdit(int id, [Bind("ID,FirstName,Lastname,Specialty,Email")] Doctor Doctor)
@@ -116,7 +116,7 @@ namespace EurocomV2.Controllers
             return View(Doctor);
         }
 
-        // GET: Doctor/Delete/5
+        // GET: Doctor/Delete/DoctorID
         public async Task<IActionResult> DoktorDelete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace EurocomV2.Controllers
             return View(Doctor);
         }
 
-        // POST: Doctor/Delete/5
+        // POST: Doctor/Delete/DoctorID
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DoktorDeleteConfirmed(int id)
@@ -159,7 +159,7 @@ namespace EurocomV2.Controllers
             return View(await _context.User.ToListAsync());
         }
 
-        // GET: Users/Details/5
+        // GET: Users/Details/UserID
         public async Task<IActionResult> PatientDetails(int? id)
         {
             if (id == null)
@@ -197,7 +197,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // GET: Users/Edit/5
+        // GET: Users/Edit/PatientID
         public async Task<IActionResult> PatientEdit(int? id)
         {
             if (id == null)
@@ -213,7 +213,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // POST: Users/Edit/5
+        // POST: Users/Edit/PatientID
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> PatientEdit(int id, [Bind("UserId,FirstName,Lastname,Username,Email,Password,PhoneNumber,Agreement")] User user)
@@ -246,7 +246,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // GET: Users/Delete/5
+        // GET: Users/Delete/PatientID
         public async Task<IActionResult> PatientDelete(int? id)
         {
             if (id == null)
@@ -264,7 +264,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // POST: Users/Delete/5
+        // POST: Users/Delete/PatientID
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> PatientDeleteConfirmed(int id)
