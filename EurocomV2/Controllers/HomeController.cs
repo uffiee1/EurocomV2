@@ -48,17 +48,17 @@ namespace EurocomV2.Controllers
                         InrDto = await ProcessAPIData.LoadInrData(userExists),
                         Measurement = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(userExists))
                     };
-                    if (measurement.InrDto.targetValue <= measurement.InrDto.lowerBoundary)
+                    if (measurement.Measurement.measurementValue <= measurement.InrDto.lowerBoundary)
                     {
                         measurement.Status = "INR Waarde te laag!";
                         measurement.Icon = StatusIcon.Slect;
                     }
-                    else if (measurement.InrDto.targetValue >= measurement.InrDto.upperBoundary)
+                    else if (measurement.Measurement.measurementValue >= measurement.InrDto.upperBoundary)
                     {
                         measurement.Status = "INR Waarde te hoog!";
                         measurement.Icon = StatusIcon.Slect;
                     }
-                    else if (measurement.InrDto.targetValue > measurement.InrDto.lowerBoundary && measurement.InrDto.targetValue < measurement.InrDto.upperBoundary)
+                    else if (measurement.Measurement.measurementValue > measurement.InrDto.lowerBoundary && measurement.Measurement.measurementValue < measurement.InrDto.upperBoundary)
                     {
                         measurement.Status = "INR Waarde is niet te hoog en ook niet te laag!";
                         measurement.Icon = StatusIcon.Perfect;
