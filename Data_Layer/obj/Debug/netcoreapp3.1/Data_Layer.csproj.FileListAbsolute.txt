@@ -13,6 +13,9 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\bin\Debug\netcoreapp3.1\Dat
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csprojAssemblyReference.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.AssemblyInfoInputs.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.AssemblyInfo.cs
-C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csproj.CoreCompileInputs.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\bin\Debug\netcoreapp3.1\EurocomV2_Data.dll
+C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\bin\Debug\netcoreapp3.1\EurocomV2_Data.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csproj.CopyComplete
+C:\Users\Julia\Documents\GitHub\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csproj.CoreCompileInputs.cache

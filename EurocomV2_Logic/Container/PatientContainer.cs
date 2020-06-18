@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using EurocomV2_Model;
 using EurocomV2_Data;
 using EurocomV2_Data.DTO;
+using EurocomV2_Model;
 
 namespace EurocomV2_Logic.Container
 {

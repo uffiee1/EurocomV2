@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EurocomV2.Models.Classes
+namespace Data_Layer
 {
     public static class RandomExtensions
     {

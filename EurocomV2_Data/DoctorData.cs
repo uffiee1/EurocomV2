@@ -4,6 +4,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using EurocomV2_Data.DTO;
+using Microsoft.Data.SqlClient;
 
 namespace EurocomV2_Data
 {

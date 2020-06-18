@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.SqlClient;
+using System.Data;
+using Microsoft.Data.SqlClient;
 
 namespace EurocomV2_Data
 {

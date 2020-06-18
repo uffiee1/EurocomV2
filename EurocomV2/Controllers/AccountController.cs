@@ -124,18 +124,11 @@ namespace EurocomV2.Controllers
     }
 */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
 using System.Threading.Tasks;
-using EurocomV2.Models;
 using EurocomV2.Models.Classes;
 using EurocomV2.ViewModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MySql.Data.MySqlClient;
-using Data_Layer;
 
 namespace EurocomV2.Controllers
 {

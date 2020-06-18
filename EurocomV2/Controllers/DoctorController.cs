@@ -8,6 +8,7 @@ using EurocomV2_Model;
 using EurocomV2_Logic;
 using EurocomV2_Logic.Container;
 using EurocomV2.Resources;
+using EurocomV2.ViewModels;
 
 //using ASPNET_MVC_ChartsDemo.Models;
 using Newtonsoft.Json;
@@ -69,6 +70,7 @@ namespace EurocomV2.Controllers
         {
             OverviewViewModel overviewViewModel = new OverviewViewModel
             {
+                patientViewModel = new PatientViewModel(),
                 patientStatus = GetPatientStatus(userId)
             };
 
@@ -180,7 +182,7 @@ namespace EurocomV2.Controllers
             {
                 PatientViewModel patientViewModel = new PatientViewModel
                 {
-                    statusViewModel = new StatusViewModel
+                    statusViewModel = new Models.StatusViewModel
                     {
                         Date = patientModel.statusModel.Date,
                         INR = patientModel.statusModel.INR

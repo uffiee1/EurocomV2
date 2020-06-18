@@ -43,7 +43,7 @@ namespace EurocomV2.Controllers
                 var userExists = ProcessAPIData.GetClient(await ProcessAPIData.GetAllDevices(), user.Name);
                 if (userExists != null)
                 {
-                    var measurement = new StatusViewModel()
+                    var measurement = new ViewModels.StatusViewModel()
                     {
                         InrDto = await ProcessAPIData.LoadInrData(userExists),
                         Measurement = ProcessAPIData.GetMostRecentDate(await ProcessAPIData.GetMeasurementData(userExists))
@@ -65,20 +65,32 @@ namespace EurocomV2.Controllers
                     }
                     return View(measurement);
                 }
-
+                ViewModels.StatusViewModel data = new ViewModels.StatusViewModel();
                 Random rnd = new Random();
                 var nonAPIUser = await _userManager.FindByEmailAsync(email);
-                StatusViewModel data = new StatusViewModel()
+                if (BoundaryData.CheckIfBoundaryDataExists(nonAPIUser.Id))
                 {
-                    Measurement = new MeasurementDTO()
+                    data.InrDto = BoundaryData.GetBoundaryData(nonAPIUser.Id);
+                    data.Measurement = new MeasurementDTO()
                     {
                         deviceID = Guid.NewGuid().ToString(),
                         measurementDate = DateTime.Now,
                         measurementSucceeded = true,
                         measurementTimeInSeconds = 1,
                         measurementValue = (decimal)1.0
-                    },
-                    InrDto = new InrDTO()
+                    };
+                }
+                else
+                {
+                    data.Measurement = new MeasurementDTO()
+                    {
+                        deviceID = Guid.NewGuid().ToString(),
+                        measurementDate = DateTime.Now,
+                        measurementSucceeded = true,
+                        measurementTimeInSeconds = 1,
+                        measurementValue = (decimal)1.0
+                    };
+                    data.InrDto = new InrDTO()
                     {
                         client = new ClientDTO()
                         {
@@ -90,8 +102,9 @@ namespace EurocomV2.Controllers
                         lowerBoundary = Math.Round((decimal)rnd.NextDouble(0, 1.0), 2),
                         targetValue = Math.Round((decimal)rnd.NextDouble(1.0, 1.5), 2),
                         upperBoundary = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2)
-                    }
-                };
+                    };
+                    BoundaryData.InsertBoundaryValues(nonAPIUser.Id, data.InrDto.lowerBoundary, data.InrDto.upperBoundary, data.InrDto.targetValue);
+                }
 
 
                 if (data.Measurement.measurementValue <= data.InrDto.lowerBoundary)
@@ -109,10 +122,13 @@ namespace EurocomV2.Controllers
                     data.Status = "INR Waarde is niet te hoog en ook niet te laag!";
                     data.Icon = StatusIcon.Perfect;
                 }
+
+
                 return View(data);
             }
 
             return RedirectToAction("Login", "Account");
+
 
         }
 
