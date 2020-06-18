@@ -16,7 +16,7 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("AssignPatientToDoctor", connectionString.sqlConnection);
+                    SqlCommand cmd = new SqlCommand("sp_Doctor_AssignPatient", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@userId", userId);
@@ -41,7 +41,7 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("CheckSecurityCode", connectionString.sqlConnection);
+                    SqlCommand cmd = new SqlCommand("sp_Doctor_CheckSecurityCode", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@securityCode", securityCode);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -83,7 +83,7 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("CheckExistingRelationDoctorPatient", connectionString.sqlConnection);
+                    SqlCommand cmd = new SqlCommand("sp_Doctor_CheckExistingRelation", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@userId", userId);

@@ -1,9 +1,0 @@
-C:\Users\Gebruiker\Source\Repos\EurocomV2_Data\bin\Debug\netstandard2.0\EurocomV2_Data.deps.json
-C:\Users\Gebruiker\Source\Repos\EurocomV2_Data\bin\Debug\netstandard2.0\EurocomV2_Data.dll
-C:\Users\Gebruiker\Source\Repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.csprojAssemblyReference.cache
-C:\Users\Gebruiker\Source\Repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.AssemblyInfoInputs.cache
-C:\Users\Gebruiker\Source\Repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.AssemblyInfo.cs
-C:\Users\Gebruiker\source\repos\EurocomV2_Data\bin\Debug\netstandard2.0\EurocomV2_Data.pdb
-C:\Users\Gebruiker\source\repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.dll
-C:\Users\Gebruiker\source\repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.pdb
-C:\Users\Gebruiker\source\repos\EurocomV2_Data\obj\Debug\netstandard2.0\EurocomV2_Data.csproj.CoreCompileInputs.cache

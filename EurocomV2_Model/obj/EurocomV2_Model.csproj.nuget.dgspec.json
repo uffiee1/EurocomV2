@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj": {}
+    "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+    "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj",
+        "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
         "projectName": "EurocomV2_Model",
-        "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Model\\EurocomV2_Model.csproj",
+        "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
         "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2_Model\\obj\\",
+        "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\EurocomV2\\EurocomV2_Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

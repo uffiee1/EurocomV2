@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EurocomV2_Data\EurocomV2_Data.csproj" />
     <ProjectReference Include="..\EurocomV2_Model\EurocomV2_Model.csproj" />
   </ItemGroup>
 

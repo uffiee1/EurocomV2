@@ -22,7 +22,7 @@ namespace EurocomV2.Controllers
         string username = "dTest5";
 
         //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
-        int userId = 1;
+        int userId = 6;
 
         public ActionResult Dashboard()
         {
@@ -55,6 +55,7 @@ namespace EurocomV2.Controllers
             return View("Dashboard");
         }
 
+        //not used in project anymore
         //public ActionResult Delete_Start()
         //{
         //    DeleteViewModel deleteViewModel = new DeleteViewModel
@@ -68,7 +69,7 @@ namespace EurocomV2.Controllers
         {
             OverviewViewModel overviewViewModel = new OverviewViewModel
             {
-                patientStatus = GetPatientStatus(username, userId)
+                patientStatus = GetPatientStatus(userId)
             };
 
             if (overviewViewModel.patientStatus.Count > 0)
@@ -81,8 +82,7 @@ namespace EurocomV2.Controllers
                     Lastname = patientModel.Lastname,
                     Phonenumber = patientModel.Phonenumber,
                     Email = patientModel.Email,
-                    DateOfBirth = patientModel.DateOfBirth,
-                    Age = patientModel.Age
+                    DateOfBirth = patientModel.DateOfBirth
                 };
             }
 
@@ -152,28 +152,29 @@ namespace EurocomV2.Controllers
             return View("Remove", removeViewModel);
         }
 
-        public List<PatientViewModel> GetPatients(string username)
-        {
-            PatientContainer patientContainer = new PatientContainer();
-            List<PatientModel> patientsModel = patientContainer.RetreivePatientsLinkedToDoctor(username);
-            List<PatientViewModel> patients = new List<PatientViewModel>();
-            foreach (PatientModel patient in patientsModel)
-            {
-                PatientViewModel patientViewModel = new PatientViewModel
-                {
-                    UserId = patient.UserId,
-                    Firstname = patient.Firstname,
-                    Lastname = patient.Lastname
-                };
-                patients.Add(patientViewModel);
-            }
-            return patients;
-        }
+        //not used in project anymore
+        //public List<PatientViewModel> GetPatients(string username)
+        //{
+        //    PatientContainer patientContainer = new PatientContainer();
+        //    List<PatientModel> patientsModel = patientContainer.RetreivePatientsLinkedToDoctor(username);
+        //    List<PatientViewModel> patients = new List<PatientViewModel>();
+        //    foreach (PatientModel patient in patientsModel)
+        //    {
+        //        PatientViewModel patientViewModel = new PatientViewModel
+        //        {
+        //            UserId = patient.UserId,
+        //            Firstname = patient.Firstname,
+        //            Lastname = patient.Lastname
+        //        };
+        //        patients.Add(patientViewModel);
+        //    }
+        //    return patients;
+        //}
 
-        public List<PatientViewModel> GetPatientStatus(string username, int userId)
+        public List<PatientViewModel> GetPatientStatus(int userId)
         {
             PatientContainer patientContainer = new PatientContainer();
-            List<PatientModel> patientStatusM = patientContainer.RetreivePatientStatus(username, userId);
+            List<PatientModel> patientStatusM = patientContainer.RetreivePatientStatus(userId);
             List<PatientViewModel> patientStatus = new List<PatientViewModel>();
             foreach(PatientModel patientModel in patientStatusM)
             {
@@ -194,7 +195,7 @@ namespace EurocomV2.Controllers
         {
             List<DataPoint> dataPoints = new List<DataPoint>();
 
-            List<PatientViewModel> patientStatus = GetPatientStatus(username, userId);
+            List<PatientViewModel> patientStatus = GetPatientStatus(userId);
             foreach (PatientViewModel status in patientStatus)
             {
                 dataPoints.Add(new DataPoint(status.statusViewModel.Date, Convert.ToDouble(status.statusViewModel.INR)));

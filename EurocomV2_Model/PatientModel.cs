@@ -8,6 +8,5 @@ namespace EurocomV2_Model
     {
         public StatusModel statusModel { get; set; }
         public string DateOfBirth { get; set; }
-        public int Age { get; set; }
     }
 }
