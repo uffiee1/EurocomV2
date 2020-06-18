@@ -93,20 +93,21 @@ namespace EurocomV2.Controllers
             return View(data);
         }
 
-        /*   [Route("Home")]
+           [Route("Home")]
            public async Task<IActionResult> Index()
            {
                TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
                await _userManager.FindByIdAsync(TempData["UserID"].ToString());
                return View();
            }
-           */
+           
 
-        [HttpGet]
+    /*    [HttpGet]
         public async Task<List<MeasurementDTO>> Index()
         {
             return await ProcessAPIData.GetMeasurementData("00000bb9-00c8-0000-0000-000000000000");
         }
+    */
 
         public IActionResult Privacy()
         {

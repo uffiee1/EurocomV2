@@ -23,19 +23,13 @@
                     @if (signInManager.IsSignedIn(User))
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Privacy"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a>
+                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Index">Home<span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
                         </li>
                         <li>
                             <a class="nav-link"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-                        </li>
-                        <li>
-                            <a class="nav-link"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Account" asp-action="Logout">Log uit<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
                         </li>
                     }
                 </ul>
