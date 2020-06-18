@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EurocomV2", "EurocomV2.csproj", "{494900EF-0523-4E5A-B3BC-9A481FC0FAA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EurocomV2_Data", "..\EurocomV2_Data\EurocomV2_Data.csproj", "{CA0BA09A-BC12-4372-9EE5-CED8A5830B1A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EurocomV2_Model", "..\EurocomV2_Model\EurocomV2_Model.csproj", "{A90AFE16-7945-4999-B7E9-FDBC58AC2479}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EurocomV2_Logic", "..\EurocomV2_Logic\EurocomV2_Logic.csproj", "{2428F2CD-6466-4CCD-ADA4-C62DB9C2C77B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EurocomV2_EF", "..\EurocomV2_EF\EurocomV2_EF.csproj", "{3CD63FD9-CFF0-443F-A3F4-49362EFEDE82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EurocomV2_EF", "..\EurocomV2_EF\EurocomV2_EF.csproj", "{3CD63FD9-CFF0-443F-A3F4-49362EFEDE82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EurocomV2_Data", "..\EurocomV2_Data\EurocomV2_Data.csproj", "{FCF33134-99DC-467A-99F2-19A12F160A00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{494900EF-0523-4E5A-B3BC-9A481FC0FAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{494900EF-0523-4E5A-B3BC-9A481FC0FAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{494900EF-0523-4E5A-B3BC-9A481FC0FAA0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA0BA09A-BC12-4372-9EE5-CED8A5830B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA0BA09A-BC12-4372-9EE5-CED8A5830B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA0BA09A-BC12-4372-9EE5-CED8A5830B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA0BA09A-BC12-4372-9EE5-CED8A5830B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A90AFE16-7945-4999-B7E9-FDBC58AC2479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A90AFE16-7945-4999-B7E9-FDBC58AC2479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A90AFE16-7945-4999-B7E9-FDBC58AC2479}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{3CD63FD9-CFF0-443F-A3F4-49362EFEDE82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD63FD9-CFF0-443F-A3F4-49362EFEDE82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD63FD9-CFF0-443F-A3F4-49362EFEDE82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF33134-99DC-467A-99F2-19A12F160A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF33134-99DC-467A-99F2-19A12F160A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF33134-99DC-467A-99F2-19A12F160A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF33134-99DC-467A-99F2-19A12F160A00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
