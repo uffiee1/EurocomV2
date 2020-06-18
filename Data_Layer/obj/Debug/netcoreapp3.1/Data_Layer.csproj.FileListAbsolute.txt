@@ -24,3 +24,4 @@ C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Data_Layer\obj\Debug\netcoreapp3
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csproj.CoreCompileInputs.cache
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.dll
 C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.pdb
+C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\Data_Layer\obj\Debug\netcoreapp3.1\Data_Layer.csprojAssemblyReference.cache

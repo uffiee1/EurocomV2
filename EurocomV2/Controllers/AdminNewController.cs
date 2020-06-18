@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EurocomV2.Controllers
 {
-    //[Authorize(Roles = Role.Administrator)]
-    //[Authorize(Roles = Role.Doctor)]
+    //Only Admin has permission to see Admin Dashboard
+    [Authorize(Roles = Role.Administrator)]
     public class AdminNewController : Controller
     {
         private readonly AppDbContext _context;
@@ -67,6 +67,7 @@ namespace EurocomV2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(DoktorIndex));
             }
+
             return View(Doctor);
         }
 

@@ -14,8 +14,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace EurocomV2.Controllers
 {
-    //[Authorize(Roles = Role.Administrator)]
-    //[Authorize(Roles = Role.Doctor)]
+    //Only Admin has permission to CRUD Roles
+    [Authorize(Roles = Role.Administrator)]
     public class RoleController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -88,9 +88,7 @@ namespace EurocomV2.Controllers
             // Retrieve all the Users
             foreach (var user in userManager.Users)
             {
-                // If the user is in this role, add the username to
-                // Users property of EditRoleViewModel. This model
-                // object is then passed to the view for display
+                //If the user is in this role, add the username to Users property of RoleEditViewModel. This model object is then passed to the view for display
                 if (await userManager.IsInRoleAsync(user, role.Name))
                 {
                     model.UserList.Add(user.UserName);
@@ -99,7 +97,7 @@ namespace EurocomV2.Controllers
             return View(model);
         }
 
-        // This action responds to HttpPost and receives EditRoleViewModel
+        // This action responds to HttpPost and receives RoleEditViewModel
         [HttpPost]
         public async Task<IActionResult> RoleEdit(RoleEditViewModel model)
         {

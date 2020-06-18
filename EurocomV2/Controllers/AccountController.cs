@@ -23,7 +23,6 @@ namespace EurocomV2.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
@@ -31,7 +30,10 @@ namespace EurocomV2.Controllers
             _roleManager = roleManager;
         }
 
+        //Only Admin & Doctor have permission to register new user
         [HttpGet]
+        [Authorize(Roles = Role.Administrator)]
+        [Authorize(Roles = Role.Doctor)]
         public IActionResult Register()
         {
             var model = new RegisterViewModel
@@ -45,8 +47,6 @@ namespace EurocomV2.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = Role.Administrator)]
-        [Authorize(Roles = Role.Doctor)]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -131,54 +131,3 @@ namespace EurocomV2.Controllers
         }
     }
 }
-
-
-
-
-
-//        [HttpPost]
-//        public async Task<IActionResult> Register(RegisterViewModel model)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                var user = new User { UserName = model.Username, Email = model.Email, };
-//                var result = await userManager.CreateAsync((User)user, model.Password);
-
-//                if (!await roleManager.RoleExistsAsync(Role.User))
-//                {
-//                    await roleManager.CreateAsync(new IdentityRole(Role.User));
-//                }
-//                if (!await roleManager.RoleExistsAsync(Role.Administrator))
-//                {
-//                    await roleManager.CreateAsync(new IdentityRole(Role.Administrator));
-//                }
-
-//                //IdentityRole identityRole = new IdentityRole
-//                //{
-//                //    Name = model.RoleName
-//                //};
-
-//                //result = await roleManager.CreateAsync(identityRole);
-//                if (result.Succeeded)
-//                {
-//                    if (model.Role == null)
-//                    {
-//                        await userManager.AddToRoleAsync(user, Role.User);
-//                    }
-
-//                    await userManager.AddToRoleAsync(user, model.Role);
-
-//                    await signInManager.SignInAsync(user, false);
-
-//                    return RedirectToAction("Index", "Home");
-//                }
-
-//                foreach (var error in result.Errors)
-//                {
-//                    ModelState.AddModelError("", error.Description);
-//                }
-//            }
-//            return View(model);
-//        }
-//    }
-//}
