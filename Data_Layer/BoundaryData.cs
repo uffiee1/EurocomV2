@@ -22,10 +22,10 @@ namespace Data_Layer
                 var reader = check.ExecuteReader();
                 while (reader.Read())
                 {
-                    inrDto.id = reader.GetString(0);
-                    inrDto.upperBoundary = reader.GetDecimal(1);
-                    inrDto.targetValue = reader.GetDecimal(2);
-                    inrDto.lowerBoundary = reader.GetDecimal(3);
+                    inrDto.id = userID;
+                    inrDto.upperBoundary = reader.GetDecimal(0);
+                    inrDto.targetValue = reader.GetDecimal(1);
+                    inrDto.lowerBoundary = reader.GetDecimal(2);
                 }
                 connectionString.Dispose();
             }
@@ -37,19 +37,27 @@ namespace Data_Layer
         {
             using (ConnectionString connectionString = new ConnectionString())
             {
+                int timesRead = 0;
                 connectionString.sqlConnection.Open();
                 SqlCommand check = new SqlCommand("sp_BoundaryValues_GetById", connectionString.sqlConnection);
                 check.CommandType = CommandType.StoredProcedure;
                 check.Parameters.AddWithValue("@Id", userID);
-                SqlDataReader reader = check.ExecuteReader();
+                var reader = check.ExecuteReader();
                 while (reader.Read())
                 {
+                    timesRead++;
                     if (reader.GetValue(0) == DBNull.Value || reader.GetValue(1) == DBNull.Value ||
-                        reader.GetValue(2) == DBNull.Value || reader.GetValue(3) == DBNull.Value)
+                        reader.GetValue(2) == DBNull.Value)
                     {
                         connectionString.Dispose();
                         return false;
                     }
+                }
+
+                if (timesRead == 0)
+                {
+                    connectionString.Dispose();
+                    return false;
                 }
                 connectionString.Dispose();
                 return true;
@@ -59,12 +67,11 @@ namespace Data_Layer
         public static InrDTO GenerateBoundaryData(ClientDTO client)
         {
             Random rnd = new Random();
-
             InrDTO inrDto = new InrDTO()
             {
                 client = client,
                 id = new Guid().ToString(),
-                lowerBoundary = Math.Round((decimal) rnd.NextDouble(0, 1.0), 2),
+                lowerBoundary = Math.Round((decimal) rnd.NextDouble(0.7, 1.0), 2),
                 targetValue = Math.Round((decimal) rnd.NextDouble(1.0, 1.5), 2),
                 upperBoundary = Math.Round((decimal) rnd.NextDouble(1.0, 2.0), 2)
             };

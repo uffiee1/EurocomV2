@@ -71,6 +71,12 @@ namespace EurocomV2.Controllers
                 if (BoundaryData.CheckIfBoundaryDataExists(nonAPIUser.Id))
                 {
                     data.InrDto = BoundaryData.GetBoundaryData(nonAPIUser.Id);
+                    data.InrDto.client = new ClientDTO()
+                    {
+                        age = rnd.Next(20, 30),
+                        id = nonAPIUser.Id,
+                        name = nonAPIUser.Name
+                    };
                     data.Measurement = new MeasurementDTO()
                     {
                         deviceID = Guid.NewGuid().ToString(),
@@ -90,19 +96,12 @@ namespace EurocomV2.Controllers
                         measurementTimeInSeconds = 1,
                         measurementValue = (decimal)1.0
                     };
-                    data.InrDto = new InrDTO()
+                    data.InrDto = BoundaryData.GenerateBoundaryData(new ClientDTO
                     {
-                        client = new ClientDTO()
-                        {
-                            age = rnd.Next(20, 30),
-                            id = nonAPIUser.Id,
-                            name = nonAPIUser.Name
-                        },
-                        id = Guid.NewGuid().ToString(),
-                        lowerBoundary = Math.Round((decimal)rnd.NextDouble(0, 1.0), 2),
-                        targetValue = Math.Round((decimal)rnd.NextDouble(1.0, 1.5), 2),
-                        upperBoundary = Math.Round((decimal)rnd.NextDouble(1.0, 2.0), 2)
-                    };
+                        age = rnd.Next(20, 30),
+                        id = nonAPIUser.Id,
+                        name = nonAPIUser.Name
+                    });
                     BoundaryData.InsertBoundaryValues(nonAPIUser.Id, data.InrDto.lowerBoundary, data.InrDto.upperBoundary, data.InrDto.targetValue);
                 }
 
@@ -123,10 +122,9 @@ namespace EurocomV2.Controllers
                     data.Icon = StatusIcon.Perfect;
                 }
 
-
+                MeasurementData.InsertMeasurement(data.Measurement);
                 return View(data);
             }
-
             return RedirectToAction("Login", "Account");
 
 
