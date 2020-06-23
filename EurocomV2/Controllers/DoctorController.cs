@@ -9,13 +9,11 @@ using EurocomV2_Logic;
 using EurocomV2_Logic.Container;
 using EurocomV2.Resources;
 using EurocomV2.ViewModels;
-using Microsoft.AspNetCore.Identity;
 
 //using ASPNET_MVC_ChartsDemo.Models;
 using Newtonsoft.Json;
 using EurocomV2_Data;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
+using EurocomV2.Models.Classes;
 //using System.Web.Mvc;
 
 namespace EurocomV2.Controllers
@@ -27,7 +25,8 @@ namespace EurocomV2.Controllers
             this.SignInManager = signInManager;
         }
 
-        public SignInManager<IdentityUser> SignInManager { get; }
+        //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
+        int userId = 6;
 
         ////Id v.d. dokter, wordt uiteindelijk verkregen vanuit een andere view.
         //string idD = "d34a07a9-0ed0-4765-bbb8-3a4a6cde73b7";
@@ -78,11 +77,25 @@ namespace EurocomV2.Controllers
 
         public ActionResult Overview_Start(string ID)
         {
-            HttpContext.Session.SetString("patientId", ID);
+            Comment comment = new Comment
+            {
+                Message = "Tester1",
+                Date = DateTime.Now,
+                State = true
+            };
+            Comment comment2 = new Comment
+            {
+                Message = "Tester2",
+                Date = DateTime.Now,
+                State = false
+            };
+            List<Comment> comments = new List<Comment>();
+            comments.Add(comment);
+            comments.Add(comment2);
             OverviewViewModel overviewViewModel = new OverviewViewModel
             {
-                patientViewModel = new PatientViewModel(),
-                patientStatus = GetPatientStatus(id)
+                patientStatus = GetPatientStatus(username, userId),
+                comments = comments
             };
 
             if (overviewViewModel.patientStatus.Count > 0)
@@ -99,7 +112,6 @@ namespace EurocomV2.Controllers
                     DateOfBirth = patientModel.DateOfBirth
                 };
             }
-
             return View("Overview", overviewViewModel);
         }
 
@@ -197,7 +209,7 @@ namespace EurocomV2.Controllers
             {
                 PatientViewModel patientViewModel = new PatientViewModel
                 {
-                    statusViewModel = new Models.StatusViewModel
+                    statusViewModel = new StatusGraphViewModel
                     {
                         Date = patientModel.statusModel.Date,
                         INR = patientModel.statusModel.INR
@@ -221,6 +233,12 @@ namespace EurocomV2.Controllers
 
             JsonSerializerSettings _jsonSetting = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore };
             return Content(JsonConvert.SerializeObject(dataPoints, _jsonSetting), "application/json");
+        }
+        public IActionResult DokterDashboard()
+        {
+            List<patient> patients = new List<patient>();
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(patients);
+            return View(patientenviewmodel);
         }
     }
 }

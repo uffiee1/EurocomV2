@@ -10372,7 +10372,7 @@
             "target": "Package",
             "version": "[3.1.5, )"
           },
-          "Microsoft.EntityFrameworkCore": {
+          "Microsoft.AspNetCore.Razor.Runtime": {
             "target": "Package",
             "version": "[3.1.5, )"
           },

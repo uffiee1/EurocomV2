@@ -40,6 +40,7 @@ namespace EurocomV2
             services.AddControllersWithViews();
 
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
 
             //Use to changing the code while the program is running.
             services.AddRazorPages().AddRazorRuntimeCompilation();
