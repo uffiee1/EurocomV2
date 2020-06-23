@@ -117,7 +117,7 @@ namespace EurocomV2.Controllers
             return View(model);
         }
 
-        // Logout button by header section
+        //Logout button by header section
         public IActionResult Logout()
         {
             _signInManager.SignOutAsync();

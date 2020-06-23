@@ -66,11 +66,11 @@ namespace EurocomV2.Controllers
             return View(model);
         }
 
-        // Role ID is passed from the URL to the action
+        //Role ID is passed from the URL to the action
         [HttpGet]
         public async Task<IActionResult> RoleEdit(string id)
         {
-            // Find the role by Role ID
+            //Find the role by Role ID
             var role = await roleManager.FindByIdAsync(id);
 
             if (role == null)
@@ -85,7 +85,7 @@ namespace EurocomV2.Controllers
                 RoleName = role.Name
             };
 
-            // Retrieve all the Users
+            //Retrieve all the Users
             foreach (var user in userManager.Users)
             {
                 //If the user is in this role, add the username to Users property of RoleEditViewModel. This model object is then passed to the view for display
@@ -97,7 +97,7 @@ namespace EurocomV2.Controllers
             return View(model);
         }
 
-        // This action responds to HttpPost and receives RoleEditViewModel
+        //This action responds to HttpPost and receives RoleEditViewModel
         [HttpPost]
         public async Task<IActionResult> RoleEdit(RoleEditViewModel model)
         {
@@ -112,7 +112,7 @@ namespace EurocomV2.Controllers
             {
                 role.Name = model.RoleName;
 
-                // Update the Role using UpdateAsync
+                //Update the Role using UpdateAsync
                 var result = await roleManager.UpdateAsync(role);
 
                 if (result.Succeeded)
