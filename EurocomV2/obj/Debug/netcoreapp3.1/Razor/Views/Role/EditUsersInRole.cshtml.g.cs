@@ -13,21 +13,21 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\_ViewImports.cshtml"
 using EurocomV2;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\_ViewImports.cshtml"
 using EurocomV2.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
@@ -74,7 +74,7 @@ using Microsoft.AspNetCore.Identity;
         {
             WriteLiteral("\n");
 #nullable restore
-#line 3 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 3 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
   
     var roleId = ViewBag.roleId;
 
@@ -85,7 +85,7 @@ using Microsoft.AspNetCore.Identity;
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c3a75e6de5a92ad57a366387e540807a9fbd9bd6396", async() => {
                 WriteLiteral("\n    <div class=\"card\">\n        <div class=\"card-header\">\n            <h2>CRUD Role</h2>\n        </div>\n        <div class=\"card-body\">\n");
 #nullable restore
-#line 13 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 13 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
              for (int i = 0; i < Model.Count; i++)
             {
 
@@ -101,7 +101,7 @@ using Microsoft.AspNetCore.Identity;
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
 #nullable restore
-#line 16 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 16 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => Model[i].UserId);
 
 #line default
@@ -124,7 +124,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
 #nullable restore
-#line 17 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 17 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => Model[i].UserName);
 
 #line default
@@ -145,7 +145,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
 #nullable restore
-#line 18 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 18 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => Model[i].IsSelected);
 
 #line default
@@ -164,7 +164,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c3a75e6de5a92ad57a366387e540807a9fbd9bd12189", async() => {
                     WriteLiteral("\n                        ");
 #nullable restore
-#line 20 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 20 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
                    Write(Model[i].UserName);
 
 #line default
@@ -177,7 +177,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
 #nullable restore
-#line 19 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 19 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => Model[i].IsSelected);
 
 #line default
@@ -193,7 +193,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                </div>\n");
 #nullable restore
-#line 23 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 23 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
             }
 
 #line default
@@ -214,7 +214,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 }
                 BeginWriteTagHelperAttribute();
 #nullable restore
-#line 28 "C:\Users\Ufuk\source\repos\Eurocom v2\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
+#line 28 "C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\Views\Role\EditUsersInRole.cshtml"
                                        WriteLiteral(roleId);
 
 #line default

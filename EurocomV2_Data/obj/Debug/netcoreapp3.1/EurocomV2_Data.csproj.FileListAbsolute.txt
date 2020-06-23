@@ -1,4 +1,3 @@
-C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.csprojAssemblyReference.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.AssemblyInfoInputs.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.AssemblyInfo.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.csproj.CoreCompileInputs.cache

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EurocomV2.Models;
@@ -14,15 +15,20 @@ using EurocomV2.ViewModels;
 using Newtonsoft.Json;
 using EurocomV2_Data;
 using EurocomV2.Models.Classes;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+
 //using System.Web.Mvc;
 
 namespace EurocomV2.Controllers
 {
     public class DoctorController : Controller
     {
-        public DoctorController(SignInManager<IdentityUser> signInManager)
+        private readonly SignInManager<ApplicationUser> _signInManager;
+
+        public DoctorController(SignInManager<ApplicationUser> signInManager)
         {
-            this.SignInManager = signInManager;
+            _signInManager = signInManager;
         }
 
         //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
@@ -94,7 +100,7 @@ namespace EurocomV2.Controllers
             comments.Add(comment2);
             OverviewViewModel overviewViewModel = new OverviewViewModel
             {
-                patientStatus = GetPatientStatus(username, userId),
+                patientStatus = GetPatientStatus(ID),
                 comments = comments
             };
 

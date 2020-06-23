@@ -932,3 +932,6 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\Euro
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_EF.pdb
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Logic.pdb
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\bin\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccesDenied.cshtml.g.cs
+C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditUserRole.cshtml.g.cs
+C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\RoleEdit.cshtml.g.cs

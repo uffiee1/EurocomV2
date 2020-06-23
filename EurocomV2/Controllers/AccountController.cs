@@ -9,7 +9,6 @@ using EurocomV2.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MySql.Data.MySqlClient;
 using Data_Layer;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RegisterViewModel = EurocomV2.ViewModels.RegisterViewModel;
@@ -52,13 +51,17 @@ namespace EurocomV2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() 
+                var user = new ApplicationUser()
                 {
-                UserName = model.FirstName + model.LastName, Name = model.FirstName + " " + model.LastName,
-                Email = model.Email, gender = model.gender, FirstName = model.FirstName, LastName = model.LastName,
-                PhoneNumber = model.PhoneNumber
+                    UserName = model.FirstName + model.LastName,
+                    Name = model.FirstName + " " + model.LastName,
+                    Email = model.Email,
+                    gender = model.gender,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    PhoneNumber = model.PhoneNumber
                 };
-            
+
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (!await _roleManager.RoleExistsAsync(Role.User))
@@ -82,32 +85,8 @@ namespace EurocomV2.Controllers
                 {
                     ModelState.AddModelError(String.Empty, error.Description);
                 }
-                return View(model);
-            }
-            
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            var user = new ApplicationUser() { UserName = model.FirstName + model.LastName, Name = model.FirstName + " " + model.LastName, Email = model.Email, gender = model.gender, FirstName = model.FirstName, LastName = model.LastName, PhoneNumber = model.PhoneNumber };
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (result.Succeeded)
-            {
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                TempData["UserID"] = user.Id;
-                return RedirectToAction("Index", "Home");
             }
 
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(String.Empty, error.Description);
-            }
             return View(model);
         }
 

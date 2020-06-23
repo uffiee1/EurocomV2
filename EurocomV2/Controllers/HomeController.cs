@@ -157,7 +157,11 @@ namespace EurocomV2.Controllers
             patient Julian = new patient("Julian", "Tekstra", "42", "groen");
             patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
             patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
-            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka);
+            
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(new List<patient>
+            {
+                bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka
+            });
             return View(patientenviewmodel);
         }
         public IActionResult accgegevens()
@@ -180,7 +184,10 @@ namespace EurocomV2.Controllers
             patient Julian = new patient("Julian", "Tekstra", "42", "groen");
             patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
             patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
-            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka);
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(new List<patient>
+            {
+                bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka
+            });
             return View(patientenviewmodel);
         }
     }
