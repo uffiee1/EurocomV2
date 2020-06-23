@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EurocomV2.ViewModels
 {
@@ -24,6 +25,10 @@ namespace EurocomV2.ViewModels
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Display(Name = "Username")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Username required")]
+        public string Username { get; set; }
+
         [Required]
         [Display(Name = "Confirm Password")]
         [DataType(DataType.Password)]
@@ -36,5 +41,11 @@ namespace EurocomV2.ViewModels
 
         [Required]
         public char gender { get; set; }
+
+        
+        public string Role { get; set; }
+
+        //public IEnumerable<SelectListItem> RoleList { get; set; }
+        public IQueryable<SelectListItem> RoleItems { get; internal set; }
     }
 }

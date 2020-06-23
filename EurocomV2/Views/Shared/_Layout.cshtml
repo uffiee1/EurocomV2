@@ -1,6 +1,6 @@
 ﻿@using EurocomV2.Models.Classes
 
-@inject SignInManager<ApplicationUser> signInManager;
+@inject  SignInManager<ApplicationUser> signInManager;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,30 +15,89 @@
     <link href="~/css/Style.css" rel="stylesheet" />
 </head>
 <body>
-
+    
     <header>
         <nav class="navbar navbar-expand navbar-light border-bottom box-shadow mb-3" style="background-color:steelblue;">
             <div class="container">
-                <ul class="navbar-nav flex-grow-1 justify-content-center">
-                    @if (signInManager.IsSignedIn(User))
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Privacy"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a>
-                        </li>
-                        <li>
-                            <a class="nav-link"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-                        </li>
-                        <li>
-                            <a class="nav-link"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
-                        </li>
-                    }
-                </ul>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EurocomV2</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+
+                        @if (User.IsInRole(Role.Administrator))
+                        {
+                            @*This is Admin Dashboard*@
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Manage
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropDown" style="background-color:dodgerblue; border:2px solid white; width: 100%; ">
+                                    <center>
+                                        <a class="nav-link text-white" asp-controller="AdminNew" asp-action="DoktorIndex">Doktors</a>
+                                    </center>
+                                    <center>
+                                        <a class="nav-link text-white" asp-controller="AdminNew" asp-action="PatientIndex">Patients</a>
+                                    </center>
+                                    <center>
+                                        <a class="nav-link text-white" asp-controller="Role" asp-action="EditUserRole">Roles</a>
+                                    </center>
+                                </div>
+                            </li>
+                        }
+
+                        @if (User.IsInRole(Role.Doctor))
+                        {
+                            @*This is Doctor's Dashboard*@
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Manage
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropDown" style="background-color:dodgerblue; border:2px solid white; width: 100%; ">
+                                    <center>
+                                        <a class="nav-link text-white" asp-controller="AdminNew" asp-action="PatientIndex">Patients</a>
+                                    </center>
+                                </div>
+                            </li>
+                        }
+
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Privacy"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a>
+                            </li>
+                            <li>
+                                <a class="nav-link"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                            </li>
+                            <li>
+                                <a class="nav-link"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Privacy"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a>
+                            </li>
+                            <li>
+                                <a class="nav-link"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white navGlyph" asp-area="" asp-controller="Home" asp-action="Index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                            </li>
+                            <li>
+                                <a class="nav-link"></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>

@@ -4,7 +4,7 @@
         text-align: center;
         border-color: white;
         color: white;
-        font-size: 7.5vw;
+        font-size: 6.5vw;
         font-weight: bold;
     }
     .Head2 {
@@ -12,8 +12,9 @@
         text-align: center;
         border-color: white;
         color: white;
-        font-size: 6.5vw;
+        font-size: 5vw;
         font-weight: bold;
+        min-height: 50vw;
     }
     .button {
         background-color: lightskyblue;
@@ -41,14 +42,6 @@
         border-color: white;
         color: white;
     }
-    .Privacytext {
-        background-color: lightskyblue;
-        font-size: 1.4rem;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        height:auto;
-    }
 }
 @media screen and (min-width:800px) {
     .Head {
@@ -56,7 +49,7 @@
         text-align: center;
         border-color: white;
         color: white;
-        font-size: 4vw;
+        font-size: 6vw;
         font-weight: bold;
     }
     .Head2 {
@@ -64,8 +57,9 @@
         text-align: center;
         border-color: white;
         color: white;
-        font-size: 4vw;
+        font-size: 3.5vw;
         font-weight: bold;
+        min-height: 20vw;
     }
     .button {
         background-color: lightskyblue;
@@ -93,14 +87,6 @@
         border-color: white;
         color: white;
     }
-    .Privacytext {
-        background-color: lightskyblue;
-        font-size: 1.7rem;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        height:auto;
-    }
 }
 @media screen and (min-width:1100px) {
     .navGlyph {
@@ -112,11 +98,3 @@
         font-size: 4.4vw;
     }
 }
-.searchresults {
-    background-color: transparent;
-    border-bottom-style: solid;
-    border-bottom-color: white;
-    font-size: x-large;
-}
-
-

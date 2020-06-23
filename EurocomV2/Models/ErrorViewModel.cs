@@ -1,7 +1,6 @@
 using System;
 
 namespace EurocomV2.Models
-
 {
     public class ErrorViewModel
     {

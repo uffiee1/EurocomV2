@@ -10,21 +10,30 @@
 <div class="container">
     <br/><br/><br/><br/><br/><br/><br/><br/>
     <div class="row">
-        <div class="col-6" style="text-align: center; min-height: 150px;">
+        <div class="col-4" style="text-align: center; min-height: 150px;">
             <a href="DoktorIndex">
-                <button asp-action="DoktorIndex" type="button" class="btn btn-primary button btn w-75 h-100">
-                    Doktoren
+                <button asp-controller="AdminNew" asp-action="DoktorIndex" type="button" class="btn btn-primary button btn w-75 h-100">
+                    Doctor
                     <div></div>
                     <span class="glyphicon glyphicon-plus buttonGlyph" aria-hidden="true"></span>
                 </button>
             </a>
         </div>
-        <div class="col-6" style="text-align: center; min-height: 150px;">
+        <div class="col-4" style="text-align: center; min-height: 150px;">
             <a href="PatientIndex">
-                <button asp-action="PatientIndex" type="button" class="btn btn-primary button btn w-75 h-100">
-                    Patiënten
+                <button asp-controller="AdminNew" asp-action="PatientIndex" type="button" class="btn btn-primary button btn w-75 h-100">
+                    Patient
                     <div></div>
-                    <span class="glyphicon glyphicon-plus buttonGlyph" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-user buttonGlyph" aria-hidden="true"></span>
+                </button>
+            </a>
+        </div>
+        <div class="col-4" style="text-align: center; min-height: 150px;">
+            <a href="../Role/Index">
+                <button asp-controller="Role" asp-action="Index" type="button" class="btn btn-primary button btn w-75 h-100">
+                    Roles
+                    <div></div>
+                    <span class="glyphicon glyphicon-lock buttonGlyph" aria-hidden="true"></span>
                 </button>
             </a>
         </div>

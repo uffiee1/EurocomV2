@@ -1,7 +1,8 @@
-﻿@model IEnumerable<EurocomV2.Models.AdminCRUD>
+﻿@model IEnumerable<EurocomV2.Models.Doctor>
 
 <p>
-    <a asp-action="DoktorCreate">Create New Doctor</a>
+    @*<a asp-action="DoktorCreate">Create New Doctor</a>*@
+    <a asp-controller="Account" asp-action="Register">Create New Doctor</a>
 </p>
 <table class="table">
     <thead>

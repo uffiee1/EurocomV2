@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EurocomV2.Models
 {
-    public class AdminCRUD
+    public class Doctor
     {
         private int _ID;
         private string _FirstName;

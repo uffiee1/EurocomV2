@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EurocomV2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EurocomV2.Controllers
 {
+    //Only Admin has permission to see Admin Dashboard
+    [Authorize(Roles = Role.Administrator)]
     public class AdminNewController : Controller
     {
         private readonly AppDbContext _context;
@@ -23,13 +26,13 @@ namespace EurocomV2.Controllers
         }
 
 
-        // GET: Admin
+        // GET: Doctor
         public async Task<IActionResult> DoktorIndex()
         {
-            return View(_context.AdminCRUD.ToList());
+            return View(_context.Doctor.ToList());
         }
 
-        // GET: Admin/Details/5
+        // GET: Doctor/Details/DoctorID
         public async Task<IActionResult> DoktorDetails(int? id)
         {
             if (id == null)
@@ -37,37 +40,38 @@ namespace EurocomV2.Controllers
                 return NotFound();
             }
 
-            var adminCRUD = await _context.AdminCRUD
+            var Doctor = await _context.Doctor
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (adminCRUD == null)
+            if (Doctor == null)
             {
                 return NotFound();
             }
 
-            return View(adminCRUD);
+            return View(Doctor);
         }
 
-        // GET: Admin/Create
+        // GET: Doctor/Create
         public IActionResult DoktorCreate()
         {
             return View();
         }
 
-        // POST: Admin/Create
+        // POST: Doctor/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DoktorCreate([Bind("ID,FirstName,Lastname,Specialty,Email")] AdminCRUD adminCRUD)
+        public async Task<IActionResult> DoktorCreate([Bind("ID,FirstName,Lastname,Specialty,Email")] Doctor Doctor)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(adminCRUD);
+                _context.Add(Doctor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(DoktorIndex));
             }
-            return View(adminCRUD);
+
+            return View(Doctor);
         }
 
-        // GET: Admin/Edit/5
+        // GET: Doctor/Edit/DoctorID
         public async Task<IActionResult> DoktorEdit(int? id)
         {
             if (id == null)
@@ -75,20 +79,20 @@ namespace EurocomV2.Controllers
                 return NotFound();
             }
 
-            var adminCRUD = await _context.AdminCRUD.FindAsync(id);
-            if (adminCRUD == null)
+            var Doctor = await _context.Doctor.FindAsync(id);
+            if (Doctor == null)
             {
                 return NotFound();
             }
-            return View(adminCRUD);
+            return View(Doctor);
         }
 
-        // POST: Admin/Edit/5
+        // POST: Doctor/Edit/DoctorID
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DoktorEdit(int id, [Bind("ID,FirstName,Lastname,Specialty,Email")] AdminCRUD adminCRUD)
+        public async Task<IActionResult> DoktorEdit(int id, [Bind("ID,FirstName,Lastname,Specialty,Email")] Doctor Doctor)
         {
-            if (id != adminCRUD.ID)
+            if (id != Doctor.ID)
             {
                 return NotFound();
             }
@@ -97,12 +101,12 @@ namespace EurocomV2.Controllers
             {
                 try
                 {
-                    _context.Update(adminCRUD);
+                    _context.Update(Doctor);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AdminCRUDExists(adminCRUD.ID))
+                    if (!DoctorExists(Doctor.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +117,10 @@ namespace EurocomV2.Controllers
                 }
                 return RedirectToAction(nameof(DoktorIndex));
             }
-            return View(adminCRUD);
+            return View(Doctor);
         }
 
-        // GET: Admin/Delete/5
+        // GET: Doctor/Delete/DoctorID
         public async Task<IActionResult> DoktorDelete(int? id)
         {
             if (id == null)
@@ -124,35 +128,34 @@ namespace EurocomV2.Controllers
                 return NotFound();
             }
 
-            var adminCRUD = await _context.AdminCRUD
+            var Doctor = await _context.Doctor
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (adminCRUD == null)
+            if (Doctor == null)
             {
                 return NotFound();
             }
 
-            return View(adminCRUD);
+            return View(Doctor);
         }
 
-        // POST: Admin/Delete/5
+        // POST: Doctor/Delete/DoctorID
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DoktorDeleteConfirmed(int id)
         {
-            var adminCRUD = await _context.AdminCRUD.FindAsync(id);
-            _context.AdminCRUD.Remove(adminCRUD);
+            var Doctor = await _context.Doctor.FindAsync(id);
+            _context.Doctor.Remove(Doctor);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AdminCRUDExists(int id)
+        private bool DoctorExists(int id)
         {
-            return _context.AdminCRUD.Any(e => e.ID == id);
+            return _context.Doctor.Any(e => e.ID == id);
         }
-        
+
 
         //////////////////////
-        
 
         // GET: Users
         public async Task<IActionResult> PatientIndex()
@@ -160,7 +163,7 @@ namespace EurocomV2.Controllers
             return View(await _context.User.ToListAsync());
         }
 
-        // GET: Users/Details/5
+        // GET: Users/Details/UserID
         public async Task<IActionResult> PatientDetails(int? id)
         {
             if (id == null)
@@ -198,7 +201,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // GET: Users/Edit/5
+        // GET: Users/Edit/PatientID
         public async Task<IActionResult> PatientEdit(int? id)
         {
             if (id == null)
@@ -214,7 +217,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // POST: Users/Edit/5
+        // POST: Users/Edit/PatientID
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> PatientEdit(int id, [Bind("UserId,FirstName,Lastname,Username,Email,Password,PhoneNumber,Agreement")] User user)
@@ -247,7 +250,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // GET: Users/Delete/5
+        // GET: Users/Delete/PatientID
         public async Task<IActionResult> PatientDelete(int? id)
         {
             if (id == null)
@@ -265,7 +268,7 @@ namespace EurocomV2.Controllers
             return View(user);
         }
 
-        // POST: Users/Delete/5
+        // POST: Users/Delete/PatientID
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> PatientDeleteConfirmed(int id)

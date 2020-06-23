@@ -25,9 +25,11 @@ namespace EurocomV2.Models
             model.Seed();
         }
 
-        public DbSet<AdminCRUD> AdminCRUD { get; set; }
+        public DbSet<Doctor> Doctor { get; set; }
 
         public DbSet<User> User { get; set; }
+
+        //public DbSet<CreateRole> Roles { get; set; }
 
 
     }
