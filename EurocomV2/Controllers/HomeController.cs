@@ -118,19 +118,6 @@ namespace EurocomV2.Controllers
             TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
-        public IActionResult DokterDashboard()
-        {
-            patient bob = new patient("Bob", "bobson", "10", "test");
-            patient herman = new patient("herman", "hermanson", "42", "groen");
-            patient julius = new patient("julius", "De vries", "42", "groen");
-            patient Tony = new patient("Tony", "Zhou", "42", "groen");
-            patient Ruud = new patient("Ruud", "Willems", "42", "groen");
-            patient Julian = new patient("Julian", "Tekstra", "42", "groen");
-            patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
-            patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
-            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka);
-            return View(patientenviewmodel);
-        }
         public IActionResult accgegevens()
         {
             return View();
@@ -140,19 +127,6 @@ namespace EurocomV2.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-        public IActionResult test()
-        {
-            patient bob = new patient("Bob", "bobson", "10", "test");
-            patient herman = new patient("herman", "hermanson", "42", "groen");
-            patient julius = new patient("julius", "De vries", "42", "groen");
-            patient Tony = new patient("Tony", "Zhou", "42", "groen");
-            patient Ruud = new patient("Ruud", "Willems", "42", "groen");
-            patient Julian = new patient("Julian", "Tekstra", "42", "groen");
-            patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
-            patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
-            patientenviewmodel patientenviewmodel = new patientenviewmodel(bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka);
-            return View(patientenviewmodel);
         }
     }
 }

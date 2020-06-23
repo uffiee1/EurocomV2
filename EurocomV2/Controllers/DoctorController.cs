@@ -8,6 +8,7 @@ using EurocomV2_Model;
 using EurocomV2_Logic;
 using EurocomV2_Logic.Container;
 using EurocomV2.Resources;
+using EurocomV2.ViewModels;
 
 //using ASPNET_MVC_ChartsDemo.Models;
 using Newtonsoft.Json;
@@ -65,7 +66,7 @@ namespace EurocomV2.Controllers
         //    return View("Delete", deleteViewModel);
         //}
 
-        public ActionResult Overview_Start()
+        public ActionResult Overview_Start(string ID)
         {
             Comment comment = new Comment
             {
@@ -86,7 +87,6 @@ namespace EurocomV2.Controllers
             {
                 patientStatus = GetPatientStatus(username, userId),
                 comments = comments
-                
             };
 
             if (overviewViewModel.patientStatus.Count > 0)
@@ -103,7 +103,6 @@ namespace EurocomV2.Controllers
                     Age = patientModel.Age
                 };
             }
-
             return View("Overview", overviewViewModel);
         }
 
@@ -220,6 +219,12 @@ namespace EurocomV2.Controllers
 
             JsonSerializerSettings _jsonSetting = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore };
             return Content(JsonConvert.SerializeObject(dataPoints, _jsonSetting), "application/json");
+        }
+        public IActionResult DokterDashboard()
+        {
+            List<patient> patients = new List<patient>();
+            patientenviewmodel patientenviewmodel = new patientenviewmodel(patients);
+            return View(patientenviewmodel);
         }
     }
 }
