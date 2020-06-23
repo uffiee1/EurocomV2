@@ -51,7 +51,7 @@ namespace EurocomV2_Data
         //    return patients;
         //}
 
-        public void RemovePatientLinkedToDoctor(string username, int userId)
+        public void RemovePatientLinkedToDoctor(string username, string id)
         {
             using (ConnectionString connectionString = new ConnectionString())
             {
@@ -60,7 +60,7 @@ namespace EurocomV2_Data
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_RemovePatient", connectionString.sqlConnection);
                     cmd.Parameters.AddWithValue("username", username);
-                    cmd.Parameters.AddWithValue("userId", userId);
+                    cmd.Parameters.AddWithValue("id", id);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -75,7 +75,7 @@ namespace EurocomV2_Data
             }
         }
 
-        public List<PatientDTO> GetPatientStatus(int userId)
+        public List<PatientDTO> GetPatientStatus(string id)
         {
             List<PatientDTO> patientStatus = new List<PatientDTO>();
             using (ConnectionString connectionString = new ConnectionString())
@@ -84,7 +84,7 @@ namespace EurocomV2_Data
                 {
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_GetMeasurements", connectionString.sqlConnection);
-                    cmd.Parameters.AddWithValue("userId", userId);
+                    cmd.Parameters.AddWithValue("id", id);
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -117,7 +117,7 @@ namespace EurocomV2_Data
             return patientStatus;
         }
 
-        public PatientDTO GetPatientAdditionalInfo(int userId)
+        public PatientDTO GetPatientAdditionalInfo(string id)
         {
             PatientDTO patientDTO = new PatientDTO();
             using (ConnectionString connectionString = new ConnectionString())
@@ -126,7 +126,7 @@ namespace EurocomV2_Data
                 {
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_GetPatientInfo", connectionString.sqlConnection);
-                    cmd.Parameters.AddWithValue("userId", userId);
+                    cmd.Parameters.AddWithValue("id", id);
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -155,6 +155,7 @@ namespace EurocomV2_Data
                     }
                 }
             }
+            
             return patientDTO;
         }
     }
