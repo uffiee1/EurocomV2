@@ -9,10 +9,10 @@ namespace EurocomV2_Logic.Container
 {
     public class DoctorContainer
     {
-        public void UseAddPatientToDoctor(string username, string id)
+        public void UseAddPatientToDoctor(string idD, string idP)
         {
             DoctorData doctorData = new DoctorData();
-            doctorData.AddPatientToDoctor(username, id);
+            doctorData.AddPatientToDoctor(idD, idP);
         }
 
         public AssignModel CallCheckingSecurityCodeMatch(string securityCode)
@@ -38,12 +38,12 @@ namespace EurocomV2_Logic.Container
             return assignModel;
         }
 
-        public bool CallCheckRelationDoctorPatient(string username, string id)
+        public bool CallCheckRelationDoctorPatient(string idD, string idP)
         {
             DoctorData doctorData = new DoctorData();
             AssignModel assignModel = new AssignModel
             {
-                ExistingRelation = doctorData.CheckExistingRelationDoctorPatient(username, id)
+                ExistingRelation = doctorData.CheckExistingRelationDoctorPatient(idD, idP)
             };
             return assignModel.ExistingRelation;
         }

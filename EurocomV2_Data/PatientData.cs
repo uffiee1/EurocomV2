@@ -50,7 +50,7 @@ namespace EurocomV2_Data
         //    return patients;
         //}
 
-        public void RemovePatientLinkedToDoctor(string username, string id)
+        public void RemovePatientLinkedToDoctor(string idD, string idP)
         {
             using (ConnectionString connectionString = new ConnectionString())
             {
@@ -58,8 +58,8 @@ namespace EurocomV2_Data
                 {
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_RemovePatient", connectionString.sqlConnection);
-                    cmd.Parameters.AddWithValue("username", username);
-                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("@idD", idD);
+                    cmd.Parameters.AddWithValue("@idP", idP);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -74,7 +74,7 @@ namespace EurocomV2_Data
             }
         }
 
-        public List<PatientDTO> GetPatientStatus(string id)
+        public List<PatientDTO> GetPatientStatus(string idP)
         {
             List<PatientDTO> patientStatus = new List<PatientDTO>();
             using (ConnectionString connectionString = new ConnectionString())
@@ -83,7 +83,7 @@ namespace EurocomV2_Data
                 {
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_GetMeasurements", connectionString.sqlConnection);
-                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("@idP", idP);
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -116,7 +116,7 @@ namespace EurocomV2_Data
             return patientStatus;
         }
 
-        public PatientDTO GetPatientAdditionalInfo(string id)
+        public PatientDTO GetPatientAdditionalInfo(string idP)
         {
             PatientDTO patientDTO = new PatientDTO();
             using (ConnectionString connectionString = new ConnectionString())
@@ -125,7 +125,7 @@ namespace EurocomV2_Data
                 {
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_GetPatientInfo", connectionString.sqlConnection);
-                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("@idP", idP);
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -154,7 +154,6 @@ namespace EurocomV2_Data
                     }
                 }
             }
-            
             return patientDTO;
         }
     }
