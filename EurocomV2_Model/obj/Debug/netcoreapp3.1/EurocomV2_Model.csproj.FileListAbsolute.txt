@@ -33,3 +33,4 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache
+C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csprojAssemblyReference.cache

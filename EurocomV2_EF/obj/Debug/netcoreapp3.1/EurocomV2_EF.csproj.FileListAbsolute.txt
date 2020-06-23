@@ -24,3 +24,4 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\E
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.csproj.CoreCompileInputs.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.dll
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.pdb
+C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.csprojAssemblyReference.cache
