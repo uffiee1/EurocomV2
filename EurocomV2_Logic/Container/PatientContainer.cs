@@ -28,17 +28,17 @@ namespace EurocomV2_Logic.Container
         //    return patients;
         //}
 
-        public void CallRemovePatientLinkedToDoctor(string username, string id)
+        public void CallRemovePatientLinkedToDoctor(string idD, string idP)
         {
             PatientData patientData = new PatientData();
-            patientData.RemovePatientLinkedToDoctor(username, id);
+            patientData.RemovePatientLinkedToDoctor(idD, idP);
         }
 
-        public List<PatientModel> RetreivePatientStatus(string id)
+        public List<PatientModel> RetreivePatientStatus(string idP)
         {
             PatientData patientData = new PatientData();
             List<PatientModel> patientStatus = new List<PatientModel>();
-            List<PatientDTO> patientStatusDTO = patientData.GetPatientStatus(id);
+            List<PatientDTO> patientStatusDTO = patientData.GetPatientStatus(idP);
             foreach(PatientDTO status in patientStatusDTO)
             {
                 PatientModel patientModel = new PatientModel
@@ -54,10 +54,10 @@ namespace EurocomV2_Logic.Container
             return patientStatus;
         }
 
-        public PatientModel RetreivePatientAdditionalInfo(string id)
+        public PatientModel RetreivePatientAdditionalInfo(string idP)
         {
             PatientData patientData = new PatientData();
-            PatientDTO patientDTO = patientData.GetPatientAdditionalInfo(id);
+            PatientDTO patientDTO = patientData.GetPatientAdditionalInfo(idP);
             PatientModel patientModel = new PatientModel
             {
                 Firstname = patientDTO.Firstname,

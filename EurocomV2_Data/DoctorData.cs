@@ -10,7 +10,7 @@ namespace EurocomV2_Data
 {
     public class DoctorData
     {
-        public void AddPatientToDoctor(string username, string id)
+        public void AddPatientToDoctor(string idD, string idP)
         {
             using (ConnectionString connectionString = new ConnectionString())
             {
@@ -19,8 +19,8 @@ namespace EurocomV2_Data
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_AssignPatient", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@idD", idD);
+                    cmd.Parameters.AddWithValue("@idP", idP);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception exception)
@@ -76,7 +76,7 @@ namespace EurocomV2_Data
             return assignDTO;
         }
 
-        public bool CheckExistingRelationDoctorPatient(string username, string id)
+        public bool CheckExistingRelationDoctorPatient(string idD, string idP)
         {
             AssignDTO assignDTO = new AssignDTO();
             using (ConnectionString connectionString = new ConnectionString())
@@ -86,8 +86,8 @@ namespace EurocomV2_Data
                     connectionString.sqlConnection.Open();
                     SqlCommand cmd = new SqlCommand("sp_Doctor_CheckExistingRelation", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@idD", idD);
+                    cmd.Parameters.AddWithValue("@idP", idP);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if(reader.Read())
