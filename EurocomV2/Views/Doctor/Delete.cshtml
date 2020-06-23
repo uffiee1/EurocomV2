@@ -8,7 +8,7 @@
     <div class="dropdown-content">
         @foreach (var patient in Model.patients)
         {
-            <a asp-controller="Doctor" asp-action="Delete_Click" asp-route-userId="@patient.UserId">@patient.Firstname @patient.Lastname</a>
+            <a asp-controller="Doctor" asp-action="Delete_Click" asp-route-userId="@patient.Id">@patient.Firstname @patient.Lastname</a>
         }
     </div>
 </div>

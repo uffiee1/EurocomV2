@@ -19,10 +19,10 @@ namespace EurocomV2.Controllers
     public class DoctorController : Controller
     {
         //username v.d. dokter, wordt uiteindelijk verkregen vanuit een andere view.
-        string username = "dTest5";
+        string username = "RuudGelebus";
 
-        //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
-        int userId = 6;
+        //Id v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
+        string id = "27f36d8b-6661-4a99-954f-b8c1522852f8";
 
         public ActionResult Dashboard()
         {
@@ -69,13 +69,14 @@ namespace EurocomV2.Controllers
         {
             OverviewViewModel overviewViewModel = new OverviewViewModel
             {
-                patientStatus = GetPatientStatus(userId)
+                patientViewModel = new PatientViewModel(),
+                patientStatus = GetPatientStatus(id)
             };
 
             if (overviewViewModel.patientStatus.Count > 0)
             {
                 PatientContainer patientContainer = new PatientContainer();
-                PatientModel patientModel = patientContainer.RetreivePatientAdditionalInfo(userId);
+                PatientModel patientModel = patientContainer.RetreivePatientAdditionalInfo(id);
                 overviewViewModel.patientViewModel = new PatientViewModel
                 {
                     Firstname = patientModel.Firstname,
@@ -107,10 +108,10 @@ namespace EurocomV2.Controllers
             {
                 assignViewModel = new AssignViewModel
                 {
-                    patientViewModel = new PatientViewModel { UserId = assignModel.patientModel.UserId },
+                    patientViewModel = new PatientViewModel { Id = assignModel.patientModel.Id },
                     SecurityCodeMatch = assignModel.SecurityCodeMatch
                 };
-                assignViewModel.ExistingRelation = doctorContainer.CallCheckRelationDoctorPatient(username, assignViewModel.patientViewModel.UserId);
+                assignViewModel.ExistingRelation = doctorContainer.CallCheckRelationDoctorPatient(username, assignViewModel.patientViewModel.Id);
                 if(assignViewModel.ExistingRelation)
                 {
                     assignViewModel.AssignMessage = Resource.AssignExistingRelation;
@@ -118,17 +119,17 @@ namespace EurocomV2.Controllers
                 }
                 else
                 {
-                    doctorContainer.UseAddPatientToDoctor(username, assignViewModel.patientViewModel.UserId);
+                    doctorContainer.UseAddPatientToDoctor(username, assignViewModel.patientViewModel.Id);
                     assignViewModel.AssignMessage = Resource.AssignSuccess;
                     return View("Assign", assignViewModel);
                 }
             }
         }
 
-        //public ActionResult Delete_Click(int userId)
+        //public ActionResult Delete_Click(int id)
         //{
         //    PatientContainer patientContainer = new PatientContainer();
-        //    patientContainer.CallRemovePatientLinkedToDoctor(username, userId);
+        //    patientContainer.CallRemovePatientLinkedToDoctor(username, id);
 
         //    DeleteViewModel deleteViewModel = new DeleteViewModel
         //    {
@@ -142,7 +143,7 @@ namespace EurocomV2.Controllers
         public ActionResult Status_RemovePatientFromDoctor()
         {
             PatientContainer patientContainer = new PatientContainer();
-            patientContainer.CallRemovePatientLinkedToDoctor(username, userId);
+            patientContainer.CallRemovePatientLinkedToDoctor(username, id);
 
             RemoveViewModel removeViewModel = new RemoveViewModel
             {
@@ -162,7 +163,7 @@ namespace EurocomV2.Controllers
         //    {
         //        PatientViewModel patientViewModel = new PatientViewModel
         //        {
-        //            UserId = patient.UserId,
+        //            id = patient.id,
         //            Firstname = patient.Firstname,
         //            Lastname = patient.Lastname
         //        };
@@ -171,10 +172,10 @@ namespace EurocomV2.Controllers
         //    return patients;
         //}
 
-        public List<PatientViewModel> GetPatientStatus(int userId)
+        public List<PatientViewModel> GetPatientStatus(string id)
         {
             PatientContainer patientContainer = new PatientContainer();
-            List<PatientModel> patientStatusM = patientContainer.RetreivePatientStatus(userId);
+            List<PatientModel> patientStatusM = patientContainer.RetreivePatientStatus(id);
             List<PatientViewModel> patientStatus = new List<PatientViewModel>();
             foreach(PatientModel patientModel in patientStatusM)
             {
@@ -195,7 +196,7 @@ namespace EurocomV2.Controllers
         {
             List<DataPoint> dataPoints = new List<DataPoint>();
 
-            List<PatientViewModel> patientStatus = GetPatientStatus(userId);
+            List<PatientViewModel> patientStatus = GetPatientStatus(id);
             foreach (PatientViewModel status in patientStatus)
             {
                 dataPoints.Add(new DataPoint(status.statusViewModel.Date, Convert.ToDouble(status.statusViewModel.INR)));

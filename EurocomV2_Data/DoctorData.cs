@@ -9,7 +9,7 @@ namespace EurocomV2_Data
 {
     public class DoctorData
     {
-        public void AddPatientToDoctor(string username, int userId)
+        public void AddPatientToDoctor(string username, string id)
         {
             using (ConnectionString connectionString = new ConnectionString())
             {
@@ -19,7 +19,7 @@ namespace EurocomV2_Data
                     SqlCommand cmd = new SqlCommand("sp_Doctor_AssignPatient", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception exception)
@@ -50,7 +50,7 @@ namespace EurocomV2_Data
                         {
                             assignDTO = new AssignDTO
                             {
-                                patientDTO = new PatientDTO { UserId = reader.GetInt32(0) },
+                                patientDTO = new PatientDTO { Id = reader.GetString(0) },
                                 SecurityCodeMatch = true
                             };
                         }
@@ -75,7 +75,7 @@ namespace EurocomV2_Data
             return assignDTO;
         }
 
-        public bool CheckExistingRelationDoctorPatient(string username, int userId)
+        public bool CheckExistingRelationDoctorPatient(string username, string id)
         {
             AssignDTO assignDTO = new AssignDTO();
             using (ConnectionString connectionString = new ConnectionString())
@@ -86,7 +86,7 @@ namespace EurocomV2_Data
                     SqlCommand cmd = new SqlCommand("sp_Doctor_CheckExistingRelation", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if(reader.Read())
