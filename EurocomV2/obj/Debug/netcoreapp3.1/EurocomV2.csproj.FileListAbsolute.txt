@@ -474,7 +474,6 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\AdminNew\PatientIndex.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\accgegevens.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Account.cshtml.g.cs
-C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\DokterDashboard.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Status.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Test.cshtml.g.cs
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Role\CreateRole.cshtml.g.cs

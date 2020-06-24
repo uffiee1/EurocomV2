@@ -31,8 +31,8 @@ namespace EurocomV2.Controllers
 
         //Only Admin & Doctor have permission to register new user
         [HttpGet]
-        [Authorize(Roles = Role.Administrator)]
-        [Authorize(Roles = Role.Doctor)]
+        //[Authorize(Roles = Role.Administrator)]
+        //[Authorize(Roles = Role.Doctor)]
         public IActionResult Register()
         {
             var model = new RegisterViewModel
@@ -80,13 +80,11 @@ namespace EurocomV2.Controllers
                     TempData["UserID"] = user.Id;
                     return RedirectToAction("Index", "Home");
                 }
-
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(String.Empty, error.Description);
                 }
             }
-
             return View(model);
         }
 
