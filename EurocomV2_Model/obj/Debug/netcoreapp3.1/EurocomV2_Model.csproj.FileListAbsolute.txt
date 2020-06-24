@@ -34,3 +34,14 @@ C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache
 C:\Users\Julia\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csprojAssemblyReference.cache
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.deps.json
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.json
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.dev.json
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.dll
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfoInputs.cache
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfo.cs
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csproj.CoreCompileInputs.cache
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.dll
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache

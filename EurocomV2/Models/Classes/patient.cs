@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace EurocomV2.Models.Classes
 {
-    public class patient
+    public class Patient
     {
-        public patient(string firstName, string lastName, string number, string username)
+        public Patient(string firstName, string lastName, string number, string username)
         {
             FirstName = firstName;
             LastName = lastName;

@@ -1,4 +1,4 @@
-﻿@model EurocomV2.ViewModels.patientenviewmodel
+﻿@model EurocomV2.ViewModels.PatientsViewModel;
 <div class="container">
     <input class="search-input" type="text" placeholder="Search here..." />
     <div class="suggestions">
@@ -7,9 +7,9 @@
 <script type="text/javascript" language="javascript">
     const Patienten = [
     ];
-    var count = @Model.patienten.Count();
-    var arr = JSON.parse('@Html.Raw(Json.Serialize(@Model.Namen))');
-    var arrid = JSON.parse('@Html.Raw(Json.Serialize(@Model.ids))');
+    var count = @Model.Patients.Count();
+    var arr = JSON.parse('@Html.Raw(Json.Serialize(@Model.Names))');
+    var arrid = JSON.parse('@Html.Raw(Json.Serialize(@Model.Ids))');
 
     for (var i = 0; i < count; i++) {
         Patienten.push({ name: arr[i], value: arrid[i] });

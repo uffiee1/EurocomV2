@@ -13,7 +13,7 @@ namespace EurocomV2
     {
         public List<Doctor> DoctorsPerPatient = new List<Doctor>();
         public List<Contact> Contacts = new List<Contact>(); 
-        public patient CurrentPatient = new patient("error","error","error","error");
+        public Patient CurrentPatient = new Patient("error","error","error","error");
         
         public void Read(int UserId)
         {
@@ -44,7 +44,7 @@ namespace EurocomV2
                     string FirstName2 = reader.GetString("Firstname");
                     string number = reader.GetString("PhoneNumber");
                     string UserName = reader.GetString("Username");
-                    patient Patient = new patient(FirstName2, LastName2, number, UserName);
+                    Patient Patient = new Patient(FirstName2, LastName2, number, UserName);
                     CurrentPatient = Patient;
                 }
 

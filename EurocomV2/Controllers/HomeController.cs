@@ -147,23 +147,7 @@ namespace EurocomV2.Controllers
             TempData["UserID"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
-        public IActionResult DokterDashboard()
-        {
-            patient bob = new patient("Bob", "bobson", "10", "test");
-            patient herman = new patient("herman", "hermanson", "42", "groen");
-            patient julius = new patient("julius", "De vries", "42", "groen");
-            patient Tony = new patient("Tony", "Zhou", "42", "groen");
-            patient Ruud = new patient("Ruud", "Willems", "42", "groen");
-            patient Julian = new patient("Julian", "Tekstra", "42", "groen");
-            patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
-            patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
-            
-            patientenviewmodel patientenviewmodel = new patientenviewmodel(new List<patient>
-            {
-                bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka
-            });
-            return View(patientenviewmodel);
-        }
+
         public IActionResult accgegevens()
         {
             return View();
@@ -176,19 +160,19 @@ namespace EurocomV2.Controllers
         }
         public IActionResult test()
         {
-            patient bob = new patient("Bob", "bobson", "10", "test");
-            patient herman = new patient("herman", "hermanson", "42", "groen");
-            patient julius = new patient("julius", "De vries", "42", "groen");
-            patient Tony = new patient("Tony", "Zhou", "42", "groen");
-            patient Ruud = new patient("Ruud", "Willems", "42", "groen");
-            patient Julian = new patient("Julian", "Tekstra", "42", "groen");
-            patient Rens = new patient("Rens", "van Lieshout", "42", "groen");
-            patient Hendrieka = new patient("Hendrieka", "Hendriks", "42", "groen");
-            patientenviewmodel patientenviewmodel = new patientenviewmodel(new List<patient>
+            Patient bob = new Patient("Bob", "bobson", "10", "test");
+            Patient herman = new Patient("herman", "hermanson", "42", "groen");
+            Patient julius = new Patient("julius", "De vries", "42", "groen");
+            Patient Tony = new Patient("Tony", "Zhou", "42", "groen");
+            Patient Ruud = new Patient("Ruud", "Willems", "42", "groen");
+            Patient Julian = new Patient("Julian", "Tekstra", "42", "groen");
+            Patient Rens = new Patient("Rens", "van Lieshout", "42", "groen");
+            Patient Hendrieka = new Patient("Hendrieka", "Hendriks", "42", "groen");
+            PatientsViewModel model = new PatientsViewModel(new List<Patient>
             {
                 bob, herman, julius, Tony, Ruud, Julian, Rens, Hendrieka
             });
-            return View(patientenviewmodel);
+            return View(model);
         }
     }
 }

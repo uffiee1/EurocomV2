@@ -42,7 +42,14 @@ namespace EurocomV2.Controllers
 
         public ActionResult Dashboard()
         {
-            return View();
+            List<Patient> patients = new List<Patient>
+            {
+                new Patient("Bob", "Bobson", "10", "Bob"),
+                new Patient("Herman", "Hermanson", "42", "Herman"),
+                new Patient("Julius", "De Vries", "42", "Bob")
+            };
+            PatientsViewModel model = new PatientsViewModel(patients);
+            return View(model);
         }
 
         public ActionResult Assign()
@@ -242,9 +249,9 @@ namespace EurocomV2.Controllers
         }
         public IActionResult DokterDashboard()
         {
-            List<patient> patients = new List<patient>();
-            patientenviewmodel patientenviewmodel = new patientenviewmodel(patients);
-            return View(patientenviewmodel);
+            List<Patient> patients = new List<Patient>();
+            PatientsViewModel model = new PatientsViewModel(patients);
+            return View(model);
         }
     }
 }
