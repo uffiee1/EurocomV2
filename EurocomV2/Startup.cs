@@ -39,6 +39,8 @@ namespace EurocomV2
 
             services.AddControllersWithViews();
 
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("eurocomdb")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
