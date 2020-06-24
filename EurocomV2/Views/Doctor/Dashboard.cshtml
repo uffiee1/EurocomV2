@@ -65,8 +65,7 @@
             const a = document.createElement('a');
             const div = document.createElement('div');
             div.innerHTML = suggested.name;
-            a.setAttribute("Asp-Action", "Overview_Start");
-            a.setAttribute("Asp-Route-ID", suggested.value);
+            a.href = "doctor/overview_start/" + suggested.value;
             a.setAttribute("style", "color:white;");
             a.appendChild(div);
             Uberdiv.setAttribute("class", "searchresults")
