@@ -6,9 +6,9 @@ namespace EurocomV2.ViewModels
 {
     public class patientenviewmodel
     {
-        public List<patient> patienten { get; set; }
-        public List<string> Namen { get; set; }
-        public List<string> ids { get; set; }
+        public List<patient> patienten { get; set; } = new List<patient>();
+        public List<string> Namen { get; set; } = new List<string>();
+        public List<string> ids { get; set; } = new List<string>();
         public patientenviewmodel(List<patient> patients)
         {
             this.patienten = patients;

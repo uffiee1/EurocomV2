@@ -26,9 +26,21 @@ namespace EurocomV2.Controllers
         //userId v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
         int userId = 6;
 
+        public DoctorController()
+        {
+
+        }
+
         public ActionResult Dashboard()
         {
-            return View();
+            List<patient> patients = new List<patient>
+            {
+               new patient("Bob", "Bob", "1", "Bob"),
+               new patient("Herman", "Bob", "2", "Herman"),
+               new patient("Hans", "Bob", "3", "Hans")
+            };
+            patientenviewmodel model = new patientenviewmodel(patients);
+            return View(model);
         }
 
         public ActionResult Assign()
@@ -66,7 +78,7 @@ namespace EurocomV2.Controllers
         //    return View("Delete", deleteViewModel);
         //}
 
-        public ActionResult Overview_Start(string ID)
+        public ActionResult Overview_Start(string id)
         {
             Comment comment = new Comment
             {

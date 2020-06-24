@@ -6362,23 +6362,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rense\\.nuget\\packages\\": {},
+    "C:\\Users\\Tony\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+      "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
       "projectName": "EurocomV2_Data",
-      "projectPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
-      "packagesPath": "C:\\Users\\Rense\\.nuget\\packages\\",
-      "outputPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\obj\\",
+      "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+      "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+      "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rense\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

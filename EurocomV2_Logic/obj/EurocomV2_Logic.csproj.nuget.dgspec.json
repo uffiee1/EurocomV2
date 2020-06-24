@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\RenseGit\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {}
+    "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {}
   },
   "projects": {
-    "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+    "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
         "projectName": "EurocomV2_Data",
-        "projectPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
-        "packagesPath": "C:\\Users\\Rense\\.nuget\\packages\\",
-        "outputPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\obj\\",
+        "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rense\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,20 +80,20 @@
         }
       }
     },
-    "F:\\RenseGit\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
+    "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\RenseGit\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
         "projectName": "EurocomV2_Logic",
-        "projectPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
-        "packagesPath": "C:\\Users\\Rense\\.nuget\\packages\\",
-        "outputPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Logic\\obj\\",
+        "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rense\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,11 +106,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
-                "projectPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
+              "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+                "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
               },
-              "F:\\RenseGit\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
-                "projectPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
+              "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+                "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
               }
             }
           }
@@ -158,20 +158,20 @@
         }
       }
     },
-    "F:\\RenseGit\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+    "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\RenseGit\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
         "projectName": "EurocomV2_Model",
-        "projectPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
-        "packagesPath": "C:\\Users\\Rense\\.nuget\\packages\\",
-        "outputPath": "F:\\RenseGit\\EurocomV2\\EurocomV2_Model\\obj\\",
+        "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rense\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
