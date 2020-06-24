@@ -33,3 +33,4 @@ D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.
 D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.csproj.CoreCompileInputs.cache
 D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.dll
 D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.pdb
+D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.csprojAssemblyReference.cache

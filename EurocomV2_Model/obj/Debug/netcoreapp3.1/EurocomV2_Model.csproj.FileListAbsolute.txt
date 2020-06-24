@@ -45,3 +45,4 @@ D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_
 D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.dll
 D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
 D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csprojAssemblyReference.cache

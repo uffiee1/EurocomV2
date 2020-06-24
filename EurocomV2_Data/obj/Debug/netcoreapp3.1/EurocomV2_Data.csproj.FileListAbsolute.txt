@@ -15,3 +15,4 @@ D:\Github\EurocomV3\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_D
 D:\Github\EurocomV3\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.csproj.CoreCompileInputs.cache
 D:\Github\EurocomV3\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.dll
 D:\Github\EurocomV3\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.pdb
+D:\Github\EurocomV3\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.csprojAssemblyReference.cache
