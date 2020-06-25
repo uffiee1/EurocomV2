@@ -9,12 +9,12 @@ namespace EurocomV2_Logic
     {
         public string GetMailServerConnection()
         {
-            string receiverMail = "tony.zhou125@gmail.com";
+            string receiverMail = "test@invalidmail.com";
             string subject = "Test";
             string message = "Het gaat niet goed met de gezondheid van Bob";
-            string userNameSender = "testmaileurocom@gmail.com";
+            string userNameSender = "test@invalidmail.com";
             //This is a secret. Sometimes it is better not to know certain things.
-            string senderPassword = "TestEurocom2020!";
+            string senderPassword = "invalidmailpassword";
 
             try
             {
