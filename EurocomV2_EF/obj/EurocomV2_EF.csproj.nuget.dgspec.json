@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {}
+    "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {}
   },
   "projects": {
-    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {
+    "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
+        "projectUniqueName": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
         "projectName": "EurocomV2_EF",
-        "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
-        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\obj\\",
+        "projectPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
+        "packagesPath": "C:\\Users\\rawmw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_EF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rawmw\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,12 +60,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

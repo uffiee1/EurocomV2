@@ -17,7 +17,7 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("sp_Doctor_AssignPatient", connectionString.sqlConnection);
+                    Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand("sp_Doctor_AssignPatient", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idD", idD);
                     cmd.Parameters.AddWithValue("@idP", idP);
@@ -25,7 +25,7 @@ namespace EurocomV2_Data
                 }
                 catch (Exception exception)
                 {
-                    if(exception is InvalidCastException || exception is SqlException)
+                    if(exception is InvalidCastException || exception is Microsoft.Data.SqlClient.SqlException)
                     {
                         Console.WriteLine("Error source: " + exception);
                         throw;
@@ -42,10 +42,10 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("sp_Doctor_CheckSecurityCode", connectionString.sqlConnection);
+                    Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand("sp_Doctor_CheckSecurityCode", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@securityCode", securityCode);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (Microsoft.Data.SqlClient.SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
@@ -66,7 +66,7 @@ namespace EurocomV2_Data
                 }
                 catch (Exception exception)
                 {
-                    if (exception is InvalidCastException || exception is SqlException)
+                    if (exception is InvalidCastException || exception is Microsoft.Data.SqlClient.SqlException)
                     {
                         Console.WriteLine("Error source: " + exception);
                         throw;
@@ -84,11 +84,11 @@ namespace EurocomV2_Data
                 try
                 {
                     connectionString.sqlConnection.Open();
-                    SqlCommand cmd = new SqlCommand("sp_Doctor_CheckExistingRelation", connectionString.sqlConnection);
+                    Microsoft.Data.SqlClient.SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand("sp_Doctor_CheckExistingRelation", connectionString.sqlConnection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idD", idD);
                     cmd.Parameters.AddWithValue("@idP", idP);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (Microsoft.Data.SqlClient.SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if(reader.Read())
                         {
@@ -102,7 +102,7 @@ namespace EurocomV2_Data
                 }
                 catch (Exception exception)
                 {
-                    if (exception is InvalidCastException || exception is SqlException)
+                    if (exception is InvalidCastException || exception is Microsoft.Data.SqlClient.SqlException)
                     {
                         Console.WriteLine("Error source: " + exception);
                         throw;

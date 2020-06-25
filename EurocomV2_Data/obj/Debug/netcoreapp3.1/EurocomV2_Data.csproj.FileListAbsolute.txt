@@ -25,3 +25,11 @@ D:\Github\EurocomV2\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_D
 D:\Github\EurocomV2\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.csproj.CoreCompileInputs.cache
 D:\Github\EurocomV2\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.dll
 D:\Github\EurocomV2\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.pdb
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\bin\Debug\netcoreapp3.1\EurocomV2_Data.deps.json
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\bin\Debug\netcoreapp3.1\EurocomV2_Data.dll
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\bin\Debug\netcoreapp3.1\EurocomV2_Data.pdb
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.csprojAssemblyReference.cache
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.AssemblyInfoInputs.cache
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.AssemblyInfo.cs
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.dll
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.pdb
