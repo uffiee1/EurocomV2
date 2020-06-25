@@ -55,20 +55,20 @@ namespace EurocomV2_Data
             {
                 if (UserIds.Count == 1 || UserIds.Count - 1 == i)
                 {
-                    userIds += UserIds[i];
+                    userIds += "'" + UserIds[i] + "'";
                 }
                 else
                 {
-                    userIds += UserIds[i] + ", ";
+                    userIds += "'" + UserIds[i] + "'" + ", ";
                 }
             }
             if(UserIds.Count == 1)
             {
-                queryString = "SELECT UserName, PhoneNumber, Email FROM [AspNetUsers] WHERE Id = '" + userIds + "';";
+                queryString = "SELECT FirstName, PhoneNumber, Email FROM [AspNetUsers] WHERE Id = '" + userIds + "';";
             }
             else
             {
-                queryString = "SELECT UserName, PhoneNumber, Email FROM [AspNetUsers] WHERE Id IN (" + userIds + ");";
+                queryString = "SELECT FirstName, PhoneNumber, Email FROM [AspNetUsers] WHERE Id IN (" + userIds + ");";
             }
             
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -81,7 +81,7 @@ namespace EurocomV2_Data
                 // Call Read before accessing data.
                 while (reader.Read())
                 {
-                    string Name = reader.GetString("UserName");
+                    string Name = reader.GetString("FirstName");
                     string number = reader.GetString("PhoneNumber");
                     string email = reader.GetString("Email");
                     patient Patient = new patient(Name, email, number);
