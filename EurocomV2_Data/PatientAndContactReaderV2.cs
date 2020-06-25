@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace EurocomV2_Data
 {
     public class PatientAndContactReaderV2

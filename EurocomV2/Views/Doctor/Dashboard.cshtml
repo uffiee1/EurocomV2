@@ -1,6 +1,21 @@
 ﻿@model EurocomV2.ViewModels.PatientsViewModel
+@using EurocomV2_Data;
 @{
     ViewData["Title"] = "Dashboard";
+    DoctorReaderV2 doctorReader = new DoctorReaderV2();
+    string UserId = "d34a07a9-0ed0-4765-bbb8-3a4a6cde73b7"; // input UserId
+    doctorReader.Read(UserId);
+    string InfoPatients = "";
+    List<string> names = new List<string>(); // List with the names of the patients
+    List<string> ids = doctorReader.ReadPatientIds(doctorReader.ConnectionString, doctorReader.Copy); // List with the ids
+    for (int i = 0; i < doctorReader.patients.Count; i++)
+    {
+        names.Add(doctorReader.patients[i].UserName);
+    }
+    for (int i = 0; i < doctorReader.patients.Count; i++)
+    {
+        InfoPatients += doctorReader.patients[i].UserName + "\n" + doctorReader.patients[i].Email + "\n" + doctorReader.patients[i].Number + "\n------------------------------------------\n";
+    }
 }
 
 <body style="background: #9fdefa">
@@ -27,9 +42,9 @@
                 <div class="w-100 Privacytext" style="height:3rem">Patienten</div>
                 <input type="text" class="w-100 search-input" style="height:2rem; border-style:solid; border-color:white;" placeholder="Zoek hier..." />
                 <div class="list-group w-100 Privacytext suggestions" style="overflow-y:scroll; height:17.5rem;">
-                    @foreach (EurocomV2.Models.Classes.Patient patient in Model.Patients)
+                    @for (int i = 0; i < names.Count; i++)
                     {
-                        <div class="searchresults"><a style="color:white;" asp-controller="doctor" asp-action="overview_start" asp-route-id="@patient.Number"><div>@patient.UserName</div></a></div>
+                        <div class="searchresults"><a style="color:white;" asp-controller="doctor" asp-action="overview_start" asp-route-id="@ids[i]"><div>@names[i]</div></a></div>
                     }
                 </div>
 
@@ -44,8 +59,8 @@
     const Patienten = [
     ];
     var count = @Model.Patients.Count();
-    var arr = JSON.parse('@Html.Raw(Json.Serialize(@Model.Names))');
-    var arrid = JSON.parse('@Html.Raw(Json.Serialize(@Model.Ids))');
+    var arr = JSON.parse('@Html.Raw(Json.Serialize(names))');
+    var arrid = JSON.parse('@Html.Raw(Json.Serialize(ids))');
 
     for (var i = 0; i < count; i++) {
         Patienten.push({ name: arr[i], value: arrid[i] });

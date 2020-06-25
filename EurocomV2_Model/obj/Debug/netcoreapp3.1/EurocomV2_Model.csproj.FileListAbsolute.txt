@@ -58,3 +58,15 @@ D:\Github\EurocomV2\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_
 D:\Github\EurocomV2\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.dll
 D:\Github\EurocomV2\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
 D:\Github\EurocomV2\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.deps.json
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.json
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.runtimeconfig.dev.json
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.dll
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\bin\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csprojAssemblyReference.cache
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfoInputs.cache
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.AssemblyInfo.cs
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.csproj.CoreCompileInputs.cache
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.dll
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.pdb
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Model\obj\Debug\netcoreapp3.1\EurocomV2_Model.genruntimeconfig.cache

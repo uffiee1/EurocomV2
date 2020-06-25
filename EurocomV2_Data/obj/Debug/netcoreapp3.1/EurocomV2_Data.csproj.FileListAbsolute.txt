@@ -33,3 +33,4 @@ C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netc
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.AssemblyInfo.cs
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.dll
 C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.pdb
+C:\Users\rawmw\OneDrive\Documents\GitHub\EurocomV2\EurocomV2_Data\obj\Debug\netcoreapp3.1\EurocomV2_Data.csproj.CoreCompileInputs.cache

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
-using System.Data.SqlClient;
 using EurocomV2_Data;
 using Microsoft.Data.SqlClient;
 
