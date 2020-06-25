@@ -3,14 +3,16 @@
 @{
     ViewData["Title"] = "Dashboard";
     DoctorReaderV2 doctorReader = new DoctorReaderV2();
-    string UserId = "d34a07a9-0ed0-4765-bbb8-3a4a6cde73b7"; // input UserId
-    doctorReader.Read(UserId);
     string InfoPatients = "";
     List<string> names = new List<string>(); // List with the names of the patients
-    List<string> ids = doctorReader.ReadPatientIds(doctorReader.ConnectionString, doctorReader.Copy); // List with the ids
-    for (int i = 0; i < doctorReader.patients.Count; i++)
+    List<string> ids = new List<string>();
+
+    doctorReader.Read(Model.DoctorId);
+    var data = doctorReader.GetPatientData();
+    foreach (var patient in data)
     {
-        names.Add(doctorReader.patients[i].UserName);
+        names.Add(patient.FirstName);
+        ids.Add(patient.Id);
     }
     for (int i = 0; i < doctorReader.patients.Count; i++)
     {
@@ -58,7 +60,7 @@
 <script type="text/javascript" language="javascript">
     const Patienten = [
     ];
-    var count = @Model.Patients.Count();
+    var count = @names.Count;
     var arr = JSON.parse('@Html.Raw(Json.Serialize(names))');
     var arrid = JSON.parse('@Html.Raw(Json.Serialize(ids))');
 
@@ -80,7 +82,7 @@
             const a = document.createElement('a');
             const div = document.createElement('div');
             div.innerHTML = suggested.name;
-            a.href = "doctor/overview_start/" + suggested.value;
+            a.href = "overview_start/" + suggested.value;
             a.setAttribute("style", "color:white;");
             a.appendChild(div);
             Uberdiv.setAttribute("class", "searchresults")

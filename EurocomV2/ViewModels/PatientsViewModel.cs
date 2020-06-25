@@ -9,6 +9,7 @@ namespace EurocomV2.ViewModels
         public List<Patient> Patients { get; set; } = new List<Patient>();
         public List<string> Names { get; set; } = new List<string>();
         public List<string> Ids { get; set; } = new List<string>();
+        public string DoctorId { get; set; }
         public PatientsViewModel(List<Patient> patients)
         {
             this.Patients = patients;

@@ -37,21 +37,16 @@ namespace EurocomV2.Controllers
         //int userId = 6;
 
         ////Id v.d. dokter, wordt uiteindelijk verkregen vanuit een andere view.
-        //string idD = "d34a07a9-0ed0-4765-bbb8-3a4a6cde73b7";
+        string idD = "d34a07a9-0ed0-4765-bbb8-3a4a6cde73b7";
 
         ////Id v.d. patiënt, wordt uiteindelijk meegegeven vanuit een andere view.
         //string idP = "27f36d8b-6661-4a99-954f-b8c1522852f8";
 
         public ActionResult Dashboard()
         {
-            List<Patient> patients = new List<Patient>
-            {
-                new Patient("Hans", "Hermanson", "5898ab70-b0ec-4c48-b53d-c0dc2b4d9a77", "Herman"),
-                new Patient("Samuel", "De Vries", "38f3f06f-c201-4e34-94ee-6d8edb5fac68", "Samuel"),
-                new Patient("Sara", "De Vries", "262c7721-ede9-45b1-9214-08334ee720c1", "Sara"),
-                new Patient("Tom", "Nook", "27f36d8b-6661-4a99-954f-b8c1522852f8", "Nook")
-            };
+            List<Patient> patients = new List<Patient>();
             PatientsViewModel model = new PatientsViewModel(patients);
+            model.DoctorId = idD;
             return View(model);
         }
 
@@ -114,6 +109,7 @@ namespace EurocomV2.Controllers
                 comments = comments
             };
 
+            HttpContext.Session.SetString("patientId", ID);
             if (overviewViewModel.patientStatus.Count > 0)
             {
                 PatientContainer patientContainer = new PatientContainer();

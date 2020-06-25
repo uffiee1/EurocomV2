@@ -5294,23 +5294,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rawmw\\.nuget\\packages\\": {},
+    "C:\\Users\\Tony\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+      "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
       "projectName": "EurocomV2_Data",
-      "projectPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
-      "packagesPath": "C:\\Users\\rawmw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\obj\\",
+      "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+      "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+      "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rawmw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5353,18 +5353,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

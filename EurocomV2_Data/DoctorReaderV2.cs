@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EurocomV2_Data.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,17 +14,12 @@ namespace EurocomV2_Data
         string userIds = "";
         public string Copy = "";
         public string ConnectionString = "Data Source = mssql.fhict.local; Initial Catalog = dbi406383_eurocomv2; Persist Security Info = True; User ID = dbi406383_eurocomV2; Password = Handjeklap1234;";
-            
+        private string QueryString { get; set; }    
+
         public void Read(string UserId)
         {
-            userIds = "";
-            patients.Clear();
-
-            string str2 = "SELECT patientId FROM [PatientDoctorLink] WHERE DoctorId = '" + UserId + "'";
-            Copy = str2;
-
-
-            ReadPatients(ReadPatientIds(ConnectionString, str2), ConnectionString);
+            string str = string.Format("SELECT PatientDoctorLink.PatientId, AspNetUsers.FirstName FROM AspNetUsers INNER JOIN PatientDoctorLink ON AspNetUsers.Id = PatientDoctorLink.PatientId WHERE PatientDoctorLink.DoctorId = '{0}'", UserId);
+            QueryString = str;
         }
         // Reads all patientIds that are linked to the doctorId that was found in ReadDocterId
         public List<string> ReadPatientIds(string connectionString, string queryString)
@@ -90,6 +86,34 @@ namespace EurocomV2_Data
                 // Call Close when done reading.
                 reader.Close();
             }
+        }
+
+        public List<PatientDataDTO> GetPatientData()
+        {
+            List<PatientDataDTO> dataDTOs = new List<PatientDataDTO>();
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                
+                SqlCommand command = new SqlCommand(QueryString, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Call Read before accessing data.
+                while (reader.Read())
+                {
+                    PatientDataDTO patient = new PatientDataDTO
+                    {
+                        Id = reader.GetString(0),
+                        FirstName = reader.GetString(1)
+                    };
+                    dataDTOs.Add(patient);
+                }
+                // Call Close when done reading.
+                reader.Close();
+            }
+            QueryString = string.Empty;
+            return dataDTOs;
         }
     }
 }

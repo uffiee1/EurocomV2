@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {}
+    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
         "projectName": "EurocomV2_Data",
-        "projectPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
-        "packagesPath": "C:\\Users\\rawmw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\obj\\",
+        "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rawmw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,35 +60,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
+    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
         "projectName": "EurocomV2_Logic",
-        "projectPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
-        "packagesPath": "C:\\Users\\rawmw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Logic\\obj\\",
+        "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rawmw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,11 +95,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
-                "projectPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
+              "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+                "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
               },
-              "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
-                "projectPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
+              "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+                "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
               }
             }
           }
@@ -144,35 +138,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
         "projectName": "EurocomV2_Model",
-        "projectPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
-        "packagesPath": "C:\\Users\\rawmw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rawmw\\OneDrive\\Documents\\GitHub\\EurocomV2\\EurocomV2_Model\\obj\\",
+        "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rawmw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -221,18 +209,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

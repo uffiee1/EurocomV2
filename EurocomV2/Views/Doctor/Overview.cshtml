@@ -1,7 +1,9 @@
 ﻿@model EurocomV2.Models.OverviewViewModel
 
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 @if (Model.patientStatus.Count > 0)
 {
+
     <head>
         <script>
         window.onload = function () {
@@ -34,7 +36,6 @@
                 });
             }
             chart.render();
-
         }
 
         $.getJSON("/doctor/json", addData);
@@ -42,51 +43,134 @@
     }
         </script>
     </head>
-    <body>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-        <div>
-            <p>@*witregel*@<br /></p>
+    <body style="background: #9fdefa">
+        <div style="text-align:center;" class="Head">Patientoverzicht</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <table class="table table-light w-100" style="max-height: 370px;border-style: solid;border-color: white;">
+                        <thead class="w-100" style="display:block; height:42px; background-color:lightskyblue">
+                            <tr>
+                                <th scope="col">INR</th>
+                                <th scope="col">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody class="w-100" style=" overflow-y:auto; display:block; height:328px">
+                            @foreach (var status in Model.patientStatus)
+                            {
+                                <tr>
+                                    <td>@status.statusViewModel.INR</td>
+                                    <td>@status.statusViewModel.Date</td>
+                                </tr>
+                                <tr>
+                                    <td>@status.statusViewModel.INR</td>
+                                    <td>@status.statusViewModel.Date</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-9">
+                    <div class="w-100" id="chartContainer" style="height: 370px;"></div>
+                    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+                    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+                </div>
+            </div>
+            <div>
+                <p style="font-size:xx-large; color:white; font-weight:bold; text-align:center;">Gegevens</p>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-light" style="border-style: solid; border-color: white;">
+                        <thead style="background-color:lightskyblue;">
+                            <tr>
+                                <th>Phonenumber</th>
+                                <th>Email</th>
+                                <th>Date of birth</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.patientViewModel.Phonenumber</td>
+                                <td>@Model.patientViewModel.Email</td>
+                                <td>@Model.patientViewModel.DateOfBirth</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <p style="font-size:xx-large; color:white; font-weight:bold; text-align:center;">Opmerkingen</p>
+            </div>
+            <div class="row">
+                <div class="col-3" style="height:17.5rem;">
+                    <div class="list-group w-100 Privacytext suggestions" style="overflow-y:scroll; height:17.5rem;">
+                        @for (int i = 0; i < Model.comments.Count(); i++)
+                        {
+                            bool value = false;
+                            if (i == 0)
+                            {
+                                value = true;
+                            }
+                            if (Model.comments[i].State == true)
+                            {
+                                <button class="btn btn-success" onclick="myFunction('@Model.comments[i].Message', '@value', '@Model.comments[i].Date.ToShortDateString()')">@Model.comments[i].Date.ToShortDateString()</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-danger" onclick="myFunction('@Model.comments[i].Message', '@value', '@Model.comments[i].Date.ToShortDateString()')">@Model.comments[i].Date.ToShortDateString()</button>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="col-9" style="height:auto;">
+                    <table class="table table-light" style="border-style: solid; border-color: white; min-height:17.5rem;">
+                        <thead style="background-color:lightskyblue; height:3.5rem;">
+                            <tr>
+                                <th id="Date" style="vertical-align:middle;">@Model.comments[0].Date.ToShortDateString()</th>
+                                <th><button class="btn btn-success" style="float:right;" id="EditButton">edit</button></th>
+                            </tr>
+                        </thead>
+                        <tbody style="min-height:14rem;">
+                            <tr>
+                                <td id="myDIV">@Model.comments[0].Message</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>INR</th>
-            </tr>
-            @foreach (var status in Model.patientStatus)
-            {
-                <tr>
-                    <td>@status.statusViewModel.Date</td>
-                    <td>@status.statusViewModel.INR</td>
-                </tr>
-            }
-        </table>
-        <div>
-            <p>@*witregel*@<br /></p>
+        <div style="text-align:center;">
+            <form method="post" asp-controller="Doctor" asp-action="Status_RemovePatientFromDoctor" asp-route-ID="@Model.patientViewModel.UserId">
+                <p><b>Remove patient from doctor</b></p>
+                <input class="btn btn-danger" type="submit" value="Remove"
+                       onclick="return confirm('Are you sure you want to remove this patient?');" />
+            </form>
         </div>
-        <table>
-            <tr>
-                <th>Phonenumber</th>
-                <th>Email</th>
-                <th>Date of birth</th>
-            </tr>
-            <tr>
-                <td>@Model.patientViewModel.Phonenumber</td>
-                <td>@Model.patientViewModel.Email</td>
-                <td>@Model.patientViewModel.DateOfBirth</td>
-            </tr>
-        </table>
-        <div>
-            <p>@*witregel*@<br /></p>
-        </div>
-        <form method="post" asp-controller="Doctor" asp-action="Status_RemovePatientFromDoctor">
-            <p><b>Remove patient from doctor</b></p>
-            <input type="submit" value="Remove" />
-        </form>
+        <br />
+        <br />
+        <br />
+        <br />
     </body>
+
 }
 else
 {
     <p>No status available</p>
 }
+<script>
+    function myFunction(y, z, c) {
+        var x = document.getElementById("myDIV");
+        var b = document.getElementById("Date");
+        x.innerHTML = y;
+        b.innerHTML = c;
+        if (z == 'True') {
+            var a = document.getElementById("EditButton");
+            a.style.visibility = "visible";
+        }
+        else {
+            var a = document.getElementById("EditButton");
+            a.style.visibility = "hidden";
+        }
+    }
+</script>
