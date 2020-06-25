@@ -34,3 +34,12 @@ D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.
 D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.dll
 D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.pdb
 D:\Github\EurocomV3\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.csprojAssemblyReference.cache
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\bin\Debug\netcoreapp3.1\EurocomV2_EF.deps.json
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\bin\Debug\netcoreapp3.1\EurocomV2_EF.dll
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\bin\Debug\netcoreapp3.1\EurocomV2_EF.pdb
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.csprojAssemblyReference.cache
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.AssemblyInfoInputs.cache
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.AssemblyInfo.cs
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.csproj.CoreCompileInputs.cache
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.dll
+D:\Github\EurocomV2\EurocomV2\EurocomV2_EF\obj\Debug\netcoreapp3.1\EurocomV2_EF.pdb

@@ -50,17 +50,17 @@ namespace EurocomV2.Controllers
                     };
                     if (measurement.Measurement.measurementValue <= measurement.InrDto.lowerBoundary)
                     {
-                        measurement.Status = "INR-Waarde te laag!";
+                        measurement.Status = "INR-Waarde te laag! Probeer meer water te drinken.";
                         measurement.Icon = StatusIcon.Slect;
                     }
                     else if (measurement.Measurement.measurementValue >= measurement.InrDto.upperBoundary)
                     {
-                        measurement.Status = "INR-Waarde te hoog!";
+                        measurement.Status = "INR-Waarde te hoog!  Probeer een wandeling te maken om stress te verminderen.";
                         measurement.Icon = StatusIcon.Slect;
                     }
                     else if (measurement.Measurement.measurementValue > measurement.InrDto.lowerBoundary && measurement.Measurement.measurementValue < measurement.InrDto.upperBoundary)
                     {
-                        measurement.Status = "Een prima INR-Waarde!";
+                        measurement.Status = "Een prima INR-Waarde! Ga zo door!";
                         measurement.Icon = StatusIcon.Perfect;
                     }
                     return View(measurement);
@@ -83,7 +83,7 @@ namespace EurocomV2.Controllers
                         measurementDate = DateTime.Now,
                         measurementSucceeded = true,
                         measurementTimeInSeconds = 1,
-                        measurementValue = (decimal)1.0
+                        measurementValue = Math.Round((decimal)rnd.NextDouble(0.9, 2.1), 2)
                     };
                 }
                 else
@@ -94,7 +94,7 @@ namespace EurocomV2.Controllers
                         measurementDate = DateTime.Now,
                         measurementSucceeded = true,
                         measurementTimeInSeconds = 1,
-                        measurementValue = (decimal)1.0
+                        measurementValue = Math.Round((decimal)rnd.NextDouble(0.9, 2.1), 2)
                     };
                     data.InrDto = BoundaryData.GenerateBoundaryData(new ClientDTO
                     {
@@ -107,17 +107,17 @@ namespace EurocomV2.Controllers
 
                 if (data.Measurement.measurementValue <= data.InrDto.lowerBoundary)
                 {
-                    data.Status = "INR-Waarde te laag!";
+                    data.Status = "INR-Waarde te laag! Probeer meer water te drinken.";
                     data.Icon = StatusIcon.Slect;
                 }
                 else if (data.Measurement.measurementValue >= data.InrDto.upperBoundary)
                 {
-                    data.Status = "INR-Waarde te hoog!";
+                    data.Status = "INR-Waarde te hoog! Probeer een wandeling te maken om stress te verminderen.";
                     data.Icon = StatusIcon.Slect;
                 }
                 else if (data.Measurement.measurementValue > data.InrDto.lowerBoundary && data.Measurement.measurementValue < data.InrDto.upperBoundary)
                 {
-                    data.Status = "INR-Waarde prima!";
+                    data.Status = "INR-Waarde prima! Ga zo door!";
                     data.Icon = StatusIcon.Perfect;
                 }
 

@@ -5094,11 +5094,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+      "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
       "projectName": "EurocomV2_Data",
-      "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+      "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
       "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\obj\\",
+      "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

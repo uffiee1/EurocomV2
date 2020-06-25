@@ -3369,7 +3369,10 @@
         },
         "runtime": {
           "bin/placeholder/Data_Layer.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "EurocomV2_Data/1.0.0": {
         "type": "project",
@@ -10300,11 +10303,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
+      "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
       "projectName": "EurocomV2",
-      "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
+      "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
       "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2\\obj\\",
+      "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -10323,20 +10326,20 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Github\\EurocomV3\\EurocomV2\\Data_Layer\\Data_Layer.csproj": {
-              "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\Data_Layer\\Data_Layer.csproj"
+            "D:\\Github\\EurocomV2\\EurocomV2\\Data_Layer\\Data_Layer.csproj": {
+              "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\Data_Layer\\Data_Layer.csproj"
             },
-            "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
-              "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
+            "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+              "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
             },
-            "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {
-              "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj"
+            "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {
+              "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj"
             },
-            "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
-              "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj"
+            "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj": {
+              "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj"
             },
-            "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
-              "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
+            "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+              "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
             }
           }
         }

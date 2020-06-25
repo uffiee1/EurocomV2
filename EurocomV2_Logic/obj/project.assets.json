@@ -5874,11 +5874,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
+      "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
       "projectName": "EurocomV2_Logic",
-      "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
+      "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\EurocomV2_Logic.csproj",
       "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Logic\\obj\\",
+      "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Logic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5897,11 +5897,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
-              "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
+            "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+              "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
             },
-            "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
-              "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
+            "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj": {
+              "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Model\\EurocomV2_Model.csproj"
             }
           }
         }

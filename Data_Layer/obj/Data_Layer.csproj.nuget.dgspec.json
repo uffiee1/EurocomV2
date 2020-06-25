@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\EurocomV3\\EurocomV2\\Data_Layer\\Data_Layer.csproj": {}
+    "D:\\Github\\EurocomV2\\EurocomV2\\Data_Layer\\Data_Layer.csproj": {}
   },
   "projects": {
-    "D:\\Github\\EurocomV3\\EurocomV2\\Data_Layer\\Data_Layer.csproj": {
+    "D:\\Github\\EurocomV2\\EurocomV2\\Data_Layer\\Data_Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
         "projectName": "Data_Layer",
-        "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
+        "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\Data_Layer\\Data_Layer.csproj",
         "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\Data_Layer\\obj\\",
+        "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\Data_Layer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
-                "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
+              "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+                "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj"
               }
             }
           }
@@ -92,14 +92,14 @@
         }
       }
     },
-    "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
+    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
         "projectName": "EurocomV2_Data",
-        "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
+        "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\EurocomV2_Data.csproj",
         "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_Data\\obj\\",
+        "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

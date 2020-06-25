@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V1m7iBNX+8ixAz79g0FGPx1PeQGJZW+oJaGmhpOSGDgWlJYxJ0lxaB4wlX8TX4yLV5VZVEhLLwjLyZvj76wCcw==",
+  "dgSpecHash": "G7rPqYicKnOjTatMs7I1Y2OseN1sUpGyqVmiJT8+JfJMFsCFWmPDxESNPlMi4F9ODcRlqcGLnh+nSo5z/eVXaw==",
   "success": true,
-  "projectFilePath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
+  "projectFilePath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2\\EurocomV2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Tony\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

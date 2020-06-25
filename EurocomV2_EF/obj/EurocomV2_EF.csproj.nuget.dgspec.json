@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {}
+    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {}
   },
   "projects": {
-    "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {
+    "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
+        "projectUniqueName": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
         "projectName": "EurocomV2_EF",
-        "projectPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
+        "projectPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\EurocomV2_EF.csproj",
         "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\EurocomV3\\EurocomV2\\EurocomV2_EF\\obj\\",
+        "outputPath": "D:\\Github\\EurocomV2\\EurocomV2\\EurocomV2_EF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
