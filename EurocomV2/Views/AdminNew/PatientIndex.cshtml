@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EurocomV2.Models.User>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PatientIndex</title>
+</head>
+<body>
+    <p>
+        @*<a asp-action="PatientCreate">Create New Patient</a>*@
+        <a asp-controller="Account" asp-action="Register">Create New Patient</a>
+    </p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Agreement)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Agreement)
+            </td>
+            <td>
+                <a asp-action="PatientEdit" asp-route-id="@item.UserId">Edit</a> |
+                <a asp-action="PatientDetails" asp-route-id="@item.UserId">Details</a> |
+                <a asp-action="PatientDelete" asp-route-id="@item.UserId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

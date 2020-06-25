@@ -1,0 +1,54 @@
+﻿@page
+@model accgegevensModel
+@{
+    // ViewData["Title"] = "Account gegevens";
+    connectionstring Connectionstring = new connectionstring();
+    int UserId = 2; // this is where the UserId should be placed
+    Connectionstring.Read(UserId);
+    string FirstName = "voornaam: " + Connectionstring.CurrentPatient.FirstName;
+    string LastName = "achternaam: " + Connectionstring.CurrentPatient.LastName;
+    string number = "telefoonnummer: " + Connectionstring.CurrentPatient.Number;
+    string doctor = "huisarts: ";
+    string numberdoctor = "nummer huisarts: ";
+    List<string> contacts2 = new List<string>();
+    contacts2.Add("x");
+    contacts2.Add("x");
+    contacts2.Add("x");
+    
+
+    // adding all the doctors to the string
+    for (int i = 0; i < Connectionstring.DoctorsPerPatient.Count; i++)
+    {
+        if(i == 0)
+        {
+            doctor += Connectionstring.DoctorsPerPatient[i].Name;
+            numberdoctor += Connectionstring.DoctorsPerPatient[i].Number;
+        }
+        else
+        {
+            doctor += " || " + Connectionstring.DoctorsPerPatient[i].Name;
+            numberdoctor += " || " + Connectionstring.DoctorsPerPatient[i].Number;
+        }
+    }
+    // adding the contacts
+    for (int i = 0; i < Connectionstring.Contacts.Count; i++)
+    {
+        contacts2[i] = Connectionstring.Contacts[i].FirstName + " " + Connectionstring.Contacts[i].LastName + " || " + Connectionstring.Contacts[i].Number;
+    }
+
+}
+
+    <div class="text-center">
+        <h1 style="padding-top:5%">Account gegevens</h1>
+
+        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">@FirstName<br><br>@LastName<br><br>@number<br><br>@doctor<br><br>@numberdoctor</p>
+    </div>
+
+    <div class="text-center">
+        <h1 style="padding-top:5%">Contactpersonen</h1>
+
+        <p style="border:2px;border-image-width:1px; border-style:solid; border-color:#000000; padding: 1em;">@contacts2[0]<br><br>@contacts2[1]<br><br>@contacts2[2]</p>
+
+    </div>
+    
+ 
