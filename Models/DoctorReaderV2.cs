@@ -56,11 +56,11 @@ namespace EurocomV2.Models
             {
                 if (UserIds.Count == 1 || UserIds.Count - 1 == i)
                 {
-                    userIds += UserIds[i];
+                    userIds += "'" + UserIds[i] + "'";
                 }
                 else
                 {
-                    userIds += UserIds[i] + ", ";
+                    userIds += "'" + UserIds[i] + "'" + ", ";
                 }
             }
             if(UserIds.Count == 1)
