@@ -50,17 +50,17 @@ namespace EurocomV2.Controllers
                     };
                     if (measurement.Measurement.measurementValue <= measurement.InrDto.lowerBoundary)
                     {
-                        measurement.Status = "INR Waarde te laag!";
+                        measurement.Status = "INR-Waarde te laag!";
                         measurement.Icon = StatusIcon.Slect;
                     }
                     else if (measurement.Measurement.measurementValue >= measurement.InrDto.upperBoundary)
                     {
-                        measurement.Status = "INR Waarde te hoog!";
+                        measurement.Status = "INR-Waarde te hoog!";
                         measurement.Icon = StatusIcon.Slect;
                     }
                     else if (measurement.Measurement.measurementValue > measurement.InrDto.lowerBoundary && measurement.Measurement.measurementValue < measurement.InrDto.upperBoundary)
                     {
-                        measurement.Status = "INR Waarde is niet te hoog en ook niet te laag!";
+                        measurement.Status = "Een prima INR-Waarde!";
                         measurement.Icon = StatusIcon.Perfect;
                     }
                     return View(measurement);
@@ -105,20 +105,19 @@ namespace EurocomV2.Controllers
                     BoundaryData.InsertBoundaryValues(nonAPIUser.Id, data.InrDto.lowerBoundary, data.InrDto.upperBoundary, data.InrDto.targetValue);
                 }
 
-
                 if (data.Measurement.measurementValue <= data.InrDto.lowerBoundary)
                 {
-                    data.Status = "INR Waarde te laag!";
+                    data.Status = "INR-Waarde te laag!";
                     data.Icon = StatusIcon.Slect;
                 }
                 else if (data.Measurement.measurementValue >= data.InrDto.upperBoundary)
                 {
-                    data.Status = "INR Waarde te hoog!";
+                    data.Status = "INR-Waarde te hoog!";
                     data.Icon = StatusIcon.Slect;
                 }
                 else if (data.Measurement.measurementValue > data.InrDto.lowerBoundary && data.Measurement.measurementValue < data.InrDto.upperBoundary)
                 {
-                    data.Status = "INR Waarde is niet te hoog en ook niet te laag!";
+                    data.Status = "INR-Waarde prima!";
                     data.Icon = StatusIcon.Perfect;
                 }
 
@@ -126,8 +125,6 @@ namespace EurocomV2.Controllers
                 return View(data);
             }
             return RedirectToAction("Login", "Account");
-
-
         }
 
         [Route("Home")]

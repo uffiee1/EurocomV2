@@ -1437,3 +1437,4 @@ D:\Github\EurocomV3\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\staticwebassets\
 D:\Github\EurocomV3\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.dll
 D:\Github\EurocomV3\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.pdb
 D:\Github\EurocomV3\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\EurocomV2.genruntimeconfig.cache
+D:\Github\EurocomV3\EurocomV2\EurocomV2\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Mail.cshtml.g.cs

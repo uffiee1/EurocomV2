@@ -109,7 +109,7 @@ namespace EurocomV2.Controllers
                     var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.rememberMe, false);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Status", "Home");
+                        return RedirectToAction("Index", "Home");
                     }
                     ModelState.AddModelError(string.Empty, "Email en/of Wachtwoord is incorrect. Probeer het opnieuw.");
                 }

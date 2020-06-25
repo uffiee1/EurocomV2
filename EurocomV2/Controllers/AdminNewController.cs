@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EurocomV2.Controllers
 {
     //Only Admin has permission to see Admin Dashboard
-    [Authorize(Roles = Role.Administrator)]
+    //[Authorize(Roles = Role.Administrator)]
     public class AdminNewController : Controller
     {
         private readonly AppDbContext _context;
